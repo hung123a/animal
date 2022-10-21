@@ -1,0 +1,104 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@charset "UTF-8";
+
+a {
+	text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #333;
+}
+
+a:hover {
+	background: #444;
+	color: #ccc;
+} 
+
+.wrap { /* 중복 클래스 */
+	max-width: 1500px; /* 중복되는 태그 넓이를 1200으로 */
+	margin: 0 auto; /* 중복되는 태그 중앙 정렬 */
+}
+
+/* 헤더 영역 */
+#head {
+	box-shadow: 0 -5px 20px rgb(0 0 0/ 50%); /* 헤더 바닥 선 밑 음영 주기 */
+	background-color: #eee; /* 배경색 */
+	 position: absolute;
+	height: 6rem; /* 높이 지정 */
+	width: 100%; /* 넓이 화면만큼 */
+	top: 0; /* 스크롤 시 위치 고정을 위한 값 */
+  left: 0;
+}
+#head.drop{
+  position: fixed;
+  animation: dropHeader 0.3s;
+}
+
+@keyframes dropHeader {
+  0% {
+    top: -5rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+#head_cont {
+	height: 6rem; /* 영역 높이 지정 */
+}
+
+#tap_menu { /* 헤더 왼쪽 영역 */
+	float: left; /* 위치를 왼쪽 배열로 */
+	height: 100px; /* 높이를 100px로 지정 */
+	width: 30%; /* 넓이를 250px로 지정 */
+}
+
+.tap_list {
+	transform: translateY(70%); /* 높이 지정 */
+	list-style: none; /* ul태그 스타일 제거 */
+	padding-left: 0; /* 왼쪽 패딩값 지정 */
+  display: flex;
+   justify-content: center;
+  align-items: center;
+}
+
+.tap_list>li {
+	text-align: center; /* 글자 중앙 정렬 */
+	padding: 13px; /* padding값  지정 */
+	cursor: pointer; /* 해당 영역 손모양 마우스 표시 */
+}
+
+.tap_list>li>a {
+	color: black;
+}
+
+#logo { /* 헤더 중앙 영역 */
+	text-align: center; /* 글자를 가운데로 */
+	height: 100px; /* 영역 높이 지정 */
+	width: 40%; /* 넓이 로 지정 */
+	float: left; /* 위치를 왼쪽 배열로 */
+}
+
+#logo_img { /* 로고 이미지 */
+	width: 350px; /* 넓이 지정 */
+}
+
+#menu {
+	float: right; /* 위치를 오른쪽 배열로 */
+	width: 30%; /* 넓이 지정 */
+}
+
+#menu_list {
+	padding-left: 46%; /* padding값 45으로 */
+	list-style: none; /* ul태그 스타일 제거 */
+	font-size: 14px; /* 폰트 사이즈 지정 */
+	display: flex; /* ul의 li를 가로배치 */
+}
+
+#menu_list>li {
+	margin-left: 14px; /* 가로배치된 li태그 간격주기 */
+}
+
+#menu_list>li>a {
+	color: black; /* a태그 글자색을 검은색으로 지정 */
+}
