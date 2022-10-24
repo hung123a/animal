@@ -4,10 +4,7 @@
 @charset "UTF-8";
 
 a {
-	text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-    color: #333;
+	text-decoration: none; /* a태그 밑줄 요소 제거 */
 }
 
 a:hover {
@@ -23,12 +20,12 @@ a:hover {
 /* 헤더 영역 */
 #head {
 	box-shadow: 0 -5px 20px rgb(0 0 0/ 50%); /* 헤더 바닥 선 밑 음영 주기 */
-	background-color: #eee; /* 배경색 */
-	 position: absolute;
+	background-color: white; /* 배경색 */
+	position: absolute;
 	height: 6rem; /* 높이 지정 */
 	width: 100%; /* 넓이 화면만큼 */
 	top: 0; /* 스크롤 시 위치 고정을 위한 값 */
-  left: 0;
+    left: 0;
 }
 #head.drop{
   position: fixed;
@@ -57,9 +54,9 @@ a:hover {
 	transform: translateY(70%); /* 높이 지정 */
 	list-style: none; /* ul태그 스타일 제거 */
 	padding-left: 0; /* 왼쪽 패딩값 지정 */
-  display: flex;
-   justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tap_list>li {

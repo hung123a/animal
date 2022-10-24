@@ -25,27 +25,226 @@
 
 			<!-- 센터 영역 -->
 			<div id="center">
+				<!-- 동물 소개  -->
 				<div id="animal" class="section home" data-section-name="동물소개">
-					<h3>동물 소개</h3>
-				</div>
-				<div id="photo" class="section panel1" data-section-name="사진첩">
-					<h3>사진첩</h3>
-				</div>
-				<div id="free" class="section panel2" data-section-name="자유게시판">
-					<h3>자유게시판</h3>
-				</div>
-				<div id="tendinous" class="section panel3" data-section-name="건의게시판">
-					<h3>건의게시판</h3>
-				</div>
-			</div>
+					<!-- 동물 소개 영역을 감싸는 div -->
+					<div id="animal_menu" class="center_menu">
+						<!-- 동물 소개 제목 -->
+						<div id="animal_title" class="title">
+							<h1>
+								<a href="">동물 소개</a>
+							</h1>
+						</div>
+						<!-- 동물 소개 제목 끝 -->
+						<!--  동물 소개의 미리보기 -->
+						<div id="animal_tap">
+							<!-- 육지 동물 소개 -->
+							<div id="land_animal" class="animal_tap">
+								<!-- 육지 동물 소제목 -->
+								<div id="land_title" class="animal_title">
+									<h2>
+										<a href="">육지 동물</a>
+									</h2>
+								</div>
+								<!-- 육지 동물 소제목 끝 -->
+								<!-- 육지 동물 내용 -->
+								<div class="animal_img_tap">
+									<!-- img 영역 -->
+									<div class="animal_img">
+										<a href=""><img src="/resources/img/st_1.png"></a>
+									</div>
+									<!-- img 영역 끝 -->
+									<!-- 설명 -->
+									<div class="conten">
+										<div class="animal_small_title">
+											<h3>치타</h3>
+										</div>
+										<div class="animal_conten">육지에서 가장 빠른동물</div>
+									</div>
+									<!-- 설명 끝 -->
+								</div>
+								<!-- 육지 동물 내용 끝 -->
+							</div>
+							<!-- 육지 동물 소개 끝 -->
 
-			<!-- 바닥 영역 -->
-			<div id="footer">
-				<footer>
-					<div>&copy;2021</div>
-				</footer>
+							<!-- 해상 동물 소개 -->
+							<div id="sea ​​_nimals" class="animal_tap">
+								<!-- 해상 동물 소제목 -->
+								<div id="sea_title" class="animal_title">
+									<h2>
+										<a href="">해상 동물</a>
+									</h2>
+								</div>
+								<!-- 해상 동물 소제목 끝 -->
+								<!-- 해상 동물 내용 -->
+								<div class="animal_img_tap">
+									<!-- img 영역 -->
+									<div class="animal_img">
+										<a href=""><img src="/resources/img/st_2.png"></a>
+									</div>
+									<!-- img 영역 끝 -->
+									<!-- 설명 -->
+									<div class="conten">
+										<div class="animal_small_title">
+											<h3>흰수염고래</h3>
+										</div>
+										<div class="animal_conten">바다에서 가장 큰 동물</div>
+									</div>
+									<!-- 설명 끝 -->
+								</div>
+								<!-- 해양 동물 내용 끝 -->
+							</div>
+							<!-- 해상 동물 소개 끝 -->
+
+							<!-- 공중 동물 소개 -->
+							<div id="aerial_animal" class="animal_tap">
+								<!-- 공중 동물 소제목 -->
+								<div id="aerial_title" class="animal_title">
+									<h2>
+										<a href="">공중 동물</a>
+									</h2>
+								</div>
+								<!-- 공중 동물 소제목 끝 -->
+								<!-- 공중 동물 내용-->
+								<div class="animal_img_tap">
+									<!-- img 영역 -->
+									<div class="animal_img">
+										<a href=""><img src="/resources/img/st_3.png"></a>
+									</div>
+									<!-- img 영역 끝 -->
+									<!-- 설명 -->
+									<div class="conten">
+										<div class="animal_small_title">
+											<h3>매</h3>
+										</div>
+										<div class="animal_conten">공중에서 가장 빠른 동물</div>
+									</div>
+									<!-- 설명 끝 -->
+								</div>
+								<!-- 공중 동물 내용 끝 -->
+							</div>
+							<!-- 공중 동물 소개 끝 -->
+						</div>
+						<!--  동물 소개의 미리보기 끝 -->
+					</div>
+					<!-- 동물 소개 영역을 감싸는 div 끝 -->
+				</div>
+				<!-- 동물 소개 끝 -->
+
+				<!-- 사진첩 -->
+				<div id="photo" class="section panel1" data-section-name="사진첩">
+					<!-- 사진첩 영역을 감싸는 div -->
+					<div id="photo_menu" class="center_menu">
+						<!-- 사진첩 제목 -->
+						<div class="title">
+							<h1>
+								<a href="">사진첩</a>
+							</h1>
+						</div>
+						<!-- 사진첩 제목 끝 -->
+						<!-- 사진첩 미리 보기 -->
+						<div id="photo_tap">
+							<div id="photo_list">
+								<div class="photo_img">
+									<a href="#"><img src="/resources/img/image1.jpg"></a>
+								</div>
+								<div class="photo_img">
+									<a href="#"><img src="/resources/img/image1.jpg"></a>
+								</div>
+								<div class="photo_img">
+									<a href="#"><img src="/resources/img/image1.jpg"></a>
+								</div>
+								<div class="photo_img">
+									<a href="#"><img src="/resources/img/image1.jpg"></a>
+								</div>
+								<div class="photo_img">
+									<a href="#"><img src="/resources/img/image1.jpg"></a>
+								</div>
+								<div class="photo_img">
+									<a href="#"><img src="/resources/img/image1.jpg"></a>
+								</div>
+								<div class="photo_img">
+									<a href="#"><img src="/resources/img/image1.jpg"></a>
+								</div>
+							</div>
+						</div>
+						<!-- 사진첩 미리 보기 끝 -->
+					</div>
+					<!-- 사진첩 영역을 감싸는 div 끝 -->
+				</div>
+				<!-- 사진첩 끝 -->
+
+				<!-- 자유게시판 -->
+				<div id="board" class="section panel2" data-section-name="게시판">
+					<div id="board_menu" class="center_menu">
+						<div id="left">
+							<div class="title">
+								<h2>
+									<a href="">자유게시판</a>
+								</h2>
+							</div>
+							<!-- 자유게시판 미리 보기 -->
+							<div class="tap">
+							<div class="board">
+								<div class="free_no">번호</div>
+								<div class="free_title">제목</div>
+								<div class="free_id">이름</div>
+								<div class="free_data">날짜</div>
+								<div class="free_cnt">조회수</div>
+								<div class="free_like">추천수</div>
+							</div>		
+							<div class="board">
+								<div class="free_no">번호</div>
+								<div class="free_title">제목</div>
+								<div class="free_id">이름</div>
+								<div class="free_data">날짜</div>
+								<div class="free_cnt">조회수</div>
+								<div class="free_like">추천수</div>
+							</div>					
+							</div>
+							<!-- 자유게시판 미리 보기 끝 -->
+						</div>
+						<!-- 건의게시판 -->
+						<div id="right">
+							<div class="title">
+								<h2>
+									<a href="">건의게시판</a>
+								</h2>
+							</div>
+							<!-- 건의게시판 미리 보기 -->
+							<div class="tap">
+							<div class="board">
+								<div class="no">번호</div>
+								<div class="board_title">제목</div>
+								<div class="board_id">이름</div>
+								<div class="board_data">날짜</div>
+								<div class="board_cnt">조회수</div>							
+							</div>
+							<div class="board">
+								<div class="no">번호</div>
+								<div class="board_title">제목</div>
+								<div class="board_id">이름</div>
+								<div class="board_data">날짜</div>
+								<div class="board_cnt">조회수</div>							
+							</div>
+							</div>
+							<!-- 건의 게시판 미리 보기 끝 -->
+						</div>
+					</div>
+				</div>
+				<!-- 건의게시판 끝 -->
 			</div>
 		</div>
+		<!-- 자유게시판 끝 -->
+	</div>
+
+	<!-- 바닥 영역 -->
+	<div id="footer">
+		<footer>
+			<div>&copy;2021</div>
+		</footer>
+	</div>
+	</div>
 	</div>
 </body>
 </html>
