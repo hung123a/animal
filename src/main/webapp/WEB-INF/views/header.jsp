@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!-- header 영역 -->
 <header id="head">
-	<div id="head_cont" class="wrap">
+	<div id="head_cont">
 		<div id="tap_menu">
 			<ul class="tap_list">
 				<li><a href="">동물 소개</a></li>

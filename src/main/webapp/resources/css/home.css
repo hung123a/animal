@@ -1,63 +1,59 @@
 @import
 	url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-* {
-	margin: 0;
-	padding: 0;
+* { /* 전체 선택자 */
+	padding: 0; /* 패딩값 지정 */
+	margin: 0; /* 마진값 지정 */
 }
 
-body {
-	width: 100%;
-	background: #333;
-	color: #ccc;
-	font-family: 'Roboto', sans-serif;
+body { /* 바디태그 */
+	font-family: 'Roboto', sans-serif; /* 글꼴 고딕체 지정 */
+	background: #fff1f1; /* 배경색 지정 */
+	width: 100%; /* 넓이 지정 */
 }
 
 body, ul, li {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+	list-style: none; /* li태그 요소 제거 */
+	margin: 0; /* 마진값 제거 */
 }
 
-.section {
-	width: 100%;
-	display: flex;
-	padding: 6rem 0 6rem 0;
-	box-sizing: border-box;
-	text-align: center;
+/* 메인화면 */
+.section { /* 메인 각 영역  */
+	box-sizing: border-box; /* 박스 사이즈 지정 */
+	padding: 6rem 0 6rem 0; /* 헤더와 메인을 따로하기위한 패딩값 */
+	text-align: center; /* 텍스트 중앙 정렬 */
+	display: flex; /* 가로 배치 */
+	width: 100%; /* 넓이 지정 */
 }
 
 .section:nth-child(even) {
-	background: #ccc;
-	color: #333;
+	background: #ccc; /* 배경색 지정 */
 }
 
-.pagination {
-	position: fixed;
-	right: 20px;
-	top: 50%;
-	transform: translateY(-50%);
-	z-index: 10;
+.pagination { /* 페이지 위치 확인 */
+	transform: translateY(-50%); /* 상하 위치 지정 */
+	position: fixed; /* 화면 보이게하기 위한 포지션 */
+	right: 20px; /* 오른쪽 배치를 위한 값 */
+	top: 50%; /* 상하 중안 배치 */
 }
 
-@media ( max-width :1000px ) {
+@media ( max-width :1000px ) { /* 반응형 미디어 쿼리 */
 	.pagination {
-		top: auto;
-		right: auto;
-		left: 50%;
-		bottom: 0;
-		transform: translateY(0) translateX(-50%);
+		transform: translateY(0) translateX(-50%); /* x축 -50%wlwjd */
+		right: auto; /* 오른쪽 폭 자동 */
+		top: auto; /* 높이 자동 */
+		left: 50%; /* 왼쪽 폭 50% */
+		bottom: 0; /* 바닥 0값 지정 */
 	}
 	.pagination>li {
-		float: left;
+		float: left; /* 왼쪽 배치 */
 	}
 }
 
 .pagination a {
-	display: block;
-	color: white;
-	position: relative;
-	padding: 20px;
+	position: relative; /* 요소를 나누기위한 포지션 */
+	display: block; /* 블록요소 지정 */
+	padding: 20px; /* 패딩값 지정 */
 }
 
 .pagination a.active:after {
@@ -76,92 +72,103 @@ body, ul, li {
 }
 
 .pagination a:hover .hover-text {
-	opacity: 1;
+	opacity: 1; /* 요소 투명도 적용 */
 }
 
-.pagination a:after {
-	content: "";
-	transition: box-shadow 0.5s ease;
-	width: 10px;
-	height: 10px;
-	display: block;
-	border: 1px solid;
-	border-radius: 50%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
+.pagination a:after { /* 내용 바로 뒤에 생성되는 요소 */
+	transform: translateX(-50%) translateY(-50%); /* 상하좌우 위치 지정 */
+	transition: box-shadow 0.5s ease; /* 메뉴 클릭 시 반응하는 css */
+	border-radius: 50%; /* 라운드 지정 */
+	position: absolute; /* 포지션 지정 */
+	border: 1px solid; /* 외곽선 지정 */
+	display: block; /* 블럭요소 지정 */
+	height: 10px; /* 높이 지정 */
+	content: ""; /* 해당 메뉴를 화면에 출력 */
+	width: 10px; /* 넓이 지정 */
+	left: 50%; /* 영역 안의 좌우 위치 지정 */
+	top: 50%; /* 영역 안의 상하 위치 지정 */
 }
 
 .title {
-	text-align: left;
-	padding: 30 0 30 30;
+	padding: 30 0 30 30; /* 패딩값 지정 */
+	text-align: left; /* 텍스트 왼쪽 배치 */
 }
 
 .animal_img {
-	float: left;
-	width: 30%;
+	float: left; /* 영역 왼쪽 배치 */
+	width: 30%; /* 넓이 지정 */
 }
 
 .animal_img img {
-	width: 100%;
-	height: 100%;
+	height: 100%; /* 이미지 높이 지정 */
+	width: 100%; /* 이미지 넓이 지정 */
 }
 
 .animal_small_title {
-	margin-bottom: 10px;
+	margin-bottom: 10px; /* 바닥마진 지정 */
+}
+
+.animal_conten {
+	font-size: 15px; /* 폰트 사이즈 지정 */
 }
 
 .conten {
-	float: left;
-	width: 65%;
-	text-align: left;
-	margin-left: 15px;
+	margin-left: 15px; /* 왼쪽 마진값 지정 */
+	text-align: left; /* 텍스트 왼쪽 배치 */
+	float: left; /* 영역 왼쪽 배치 */
+	width: 65%; /* 넓이 지정 */
 }
 
 .animal_img_tap {
-	height: 100%;
-	padding: 20 20 20 0;
+	padding: 20 20 20 0; /* 패딩값 지정 */
+	height: 100%; /* 높이 지정 */
 }
 
 #animal_tap {
-	display: flex;
+	display: flex; /* 가로 배치 */
 }
 
 .animal_tap {
-	width: 33%;
+	width: 33%; /* 넓이 지정 */
 }
 
 .center_menu {
-	width: 100%;
+	width: 100%; /* 넓이 지정 */
 }
 
 .photo_img {
-	padding: 0 0 50 0;
-	float: left;
-	width: 20%;
+	padding: 0 0 50 0; /* 패딩값 지정 */
+	float: left; /* 영역 왼쪽 배치 */
+	width: 20%; /* 넓이 지정 */
 }
 
 .photo_img img {
-	width: 200px;
+	width: 200px; /* 이미지 넓이 지정 */
 }
 
 #left {
-	padding: 15px;
-	height: 100%;
-	width: 47.8%;
-	float: left;
+	padding: 15px; /*패딩값 지정 */
+	height: 100%; /* 높이 지정 */
+	width: 46.8%; /* 넓이 지정 */
+	float: left; /* 영역 왼쪽 배치 */
 }
 
 #right {
-	padding: 15px;
-	height: 100%;
-	width: 47.8%;
-	float: right;
+	padding: 15px; /* 패딩값 지정 */
+	height: 100%; /* 높이 지정 */
+	width: 46.8%; /* 넓이 지정 */
+	float: right; /* 영역 오른쪽 배치 */
 }
 
-.board {
-	display: flex;
+.board { /* 게시판 타이틀 */
+	border-bottom: 4px solid gray; /* 바닥 외곽선 지정 */
+	display: flex; /* 가로 배치 */
+}
+
+.board_conten { /* 게시판 내용  */
+	border-bottom: 1px solid gray; /* 바닥 외곽선 지정 */
+	padding: 10 0 10 0; /* 상하 패딩 지정 */
+    display: flex; /* 가로 배치 */
 }
 
 .free_no {
@@ -195,12 +202,15 @@ body, ul, li {
 .board_title {
 	width: 50%;
 }
+
 .board_id {
 	width: 15%;
 }
+
 .board_data {
 	width: 15%;
 }
-.board_like {
+
+.board_cnt {
 	width: 10%;
 }

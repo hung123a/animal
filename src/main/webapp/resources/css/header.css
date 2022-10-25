@@ -5,34 +5,30 @@
 
 a {
 	text-decoration: none; /* a태그 밑줄 요소 제거 */
+	font-weight: bold; /* a태그 글자 굵기 주기 */
+	color: #7f3c3b;	 /* a태그 색상 변경 */
 }
 
-a:hover {
-	background: #444;
-	color: #ccc;
+a:hover { /* a태그에 마우스를 올렸을 경우 */
+	color: #53ab0e; /* 글자색 지정 */
 } 
 
-.wrap { /* 중복 클래스 */
-	max-width: 1500px; /* 중복되는 태그 넓이를 1200으로 */
-	margin: 0 auto; /* 중복되는 태그 중앙 정렬 */
-}
-
 /* 헤더 영역 */
-#head {
+#head { /* 헤더 전체 */
 	box-shadow: 0 -5px 20px rgb(0 0 0/ 50%); /* 헤더 바닥 선 밑 음영 주기 */
 	background-color: white; /* 배경색 */
-	position: absolute;
+	position: absolute; /* absolute부여 */
 	height: 6rem; /* 높이 지정 */
 	width: 100%; /* 넓이 화면만큼 */
-	top: 0; /* 스크롤 시 위치 고정을 위한 값 */
-    left: 0;
+	left: 0; /* 왼쪽 간격 */
+	top: 0; /* 스크롤 시 위치 고정을 위한 값 */    
 }
-#head.drop{
-  position: fixed;
-  animation: dropHeader 0.3s;
+#head.drop{ /* 헤더 */
+  position: fixed; /* 상단 헤더 고정을 위한 포지션 */
+  animation: dropHeader 0.3s; /* 헤더 애니메이션 부여 */
 }
 
-@keyframes dropHeader {
+@keyframes dropHeader { /* 헤더 에니메이션 효과를 위한 키프레임 */
   0% {
     top: -5rem;
   }
@@ -40,62 +36,62 @@ a:hover {
     top: 0;
   }
 }
-#head_cont {
-	height: 6rem; /* 영역 높이 지정 */
+
+#head_cont { /* 헤더 사용 영역 */
+	max-width: 1500px; /* 최대 넓이 지정 */
+	margin: 0 auto; /* 중앙 정렬  */
+	height: 6rem; /* 영역 높이 지정 */	
 }
 
-#tap_menu { /* 헤더 왼쪽 영역 */
-	float: left; /* 위치를 왼쪽 배열로 */
-	height: 100px; /* 높이를 100px로 지정 */
-	width: 30%; /* 넓이를 250px로 지정 */
+#tap_menu { /* 헤더 메뉴 전체 */
+    height: 100px; /* 높이 지정 */
+	float: left; /* 왼쪽 가로 배치 */	
+	width: 30%; /* 넓이 지정 */
 }
 
-.tap_list {
-	transform: translateY(70%); /* 높이 지정 */
+/* 메뉴 */
+.tap_list { /* 헤더 메뉴  */
+	transform: translateY(50%); /* y축 위치 지정 */
+	justify-content: center; /* 영역 중앙 비치 */
+    align-items: center; /* 세로 중앙 배치 */
 	list-style: none; /* ul태그 스타일 제거 */
-	padding-left: 0; /* 왼쪽 패딩값 지정 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	padding-left: 0; /* 왼쪽 패딩값 제거 */
+	font-size: 18px; /* 글자 크기 지정 */
+    display: flex; /* 가로배치 */
+    
 }
 
-.tap_list>li {
+.tap_list, li { /* 헤더 메뉴 리스트 */
 	text-align: center; /* 글자 중앙 정렬 */
-	padding: 13px; /* padding값  지정 */
 	cursor: pointer; /* 해당 영역 손모양 마우스 표시 */
+	padding: 10px; /* 패딩값  지정 */
 }
 
-.tap_list>li>a {
-	color: black;
-}
-
+/* 로고 */
 #logo { /* 헤더 중앙 영역 */
 	text-align: center; /* 글자를 가운데로 */
 	height: 100px; /* 영역 높이 지정 */
-	width: 40%; /* 넓이 로 지정 */
 	float: left; /* 위치를 왼쪽 배열로 */
+	width: 40%; /* 넓이  지정 */	
 }
 
 #logo_img { /* 로고 이미지 */
 	width: 350px; /* 넓이 지정 */
 }
 
-#menu {
+/* 회원관련 메뉴 */
+#menu { /* 회원 메뉴 전체 */
 	float: right; /* 위치를 오른쪽 배열로 */
 	width: 30%; /* 넓이 지정 */
 }
 
 #menu_list {
-	padding-left: 46%; /* padding값 45으로 */
+	padding-left: 40%; /* 왼쪽 패딩값 지정 */
 	list-style: none; /* ul태그 스타일 제거 */
-	font-size: 14px; /* 폰트 사이즈 지정 */
+	font-size: 16px; /* 폰트 사이즈 지정 */
 	display: flex; /* ul의 li를 가로배치 */
 }
 
-#menu_list>li {
+#menu_list, li {
 	margin-left: 14px; /* 가로배치된 li태그 간격주기 */
-}
-
-#menu_list>li>a {
-	color: black; /* a태그 글자색을 검은색으로 지정 */
 }

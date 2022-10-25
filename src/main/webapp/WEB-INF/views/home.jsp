@@ -48,20 +48,19 @@
 								</div>
 								<!-- 육지 동물 소제목 끝 -->
 								<!-- 육지 동물 내용 -->
+
 								<div class="animal_img_tap">
-									<!-- img 영역 -->
-									<div class="animal_img">
-										<a href=""><img src="/resources/img/st_1.png"></a>
-									</div>
-									<!-- img 영역 끝 -->
-									<!-- 설명 -->
-									<div class="conten">
-										<div class="animal_small_title">
-											<h3>치타</h3>
-										</div>
-										<div class="animal_conten">육지에서 가장 빠른동물</div>
-									</div>
-									<!-- 설명 끝 -->
+									<a href=""> <!-- img 영역 -->
+										<div class="animal_img">
+											<img src="/resources/img/st_1.png">
+										</div> <!-- img 영역 끝 --> <!-- 설명 -->
+										<div class="conten">
+											<div class="animal_small_title">
+												<h3>치타</h3>
+											</div>
+											<div class="animal_conten">육지에서 가장 빠른동물</div>
+										</div> <!-- 설명 끝 -->
+									</a>
 								</div>
 								<!-- 육지 동물 내용 끝 -->
 							</div>
@@ -78,19 +77,17 @@
 								<!-- 해상 동물 소제목 끝 -->
 								<!-- 해상 동물 내용 -->
 								<div class="animal_img_tap">
-									<!-- img 영역 -->
-									<div class="animal_img">
-										<a href=""><img src="/resources/img/st_2.png"></a>
-									</div>
-									<!-- img 영역 끝 -->
-									<!-- 설명 -->
-									<div class="conten">
-										<div class="animal_small_title">
-											<h3>흰수염고래</h3>
-										</div>
-										<div class="animal_conten">바다에서 가장 큰 동물</div>
-									</div>
-									<!-- 설명 끝 -->
+									<a href=""> <!-- img 영역 -->
+										<div class="animal_img">
+											<img src="/resources/img/st_2.png">
+										</div> <!-- img 영역 끝 --> <!-- 설명 -->
+										<div class="conten">
+											<div class="animal_small_title">
+												<h3>흰수염고래</h3>
+											</div>
+											<div class="animal_conten">바다에서 가장 큰 동물</div>
+										</div> <!-- 설명 끝 -->
+									</a>
 								</div>
 								<!-- 해양 동물 내용 끝 -->
 							</div>
@@ -107,19 +104,17 @@
 								<!-- 공중 동물 소제목 끝 -->
 								<!-- 공중 동물 내용-->
 								<div class="animal_img_tap">
-									<!-- img 영역 -->
-									<div class="animal_img">
-										<a href=""><img src="/resources/img/st_3.png"></a>
-									</div>
-									<!-- img 영역 끝 -->
-									<!-- 설명 -->
-									<div class="conten">
-										<div class="animal_small_title">
-											<h3>매</h3>
-										</div>
-										<div class="animal_conten">공중에서 가장 빠른 동물</div>
-									</div>
-									<!-- 설명 끝 -->
+									<a href=""> <!-- img 영역 -->
+										<div class="animal_img">
+											<img src="/resources/img/st_3.png">
+										</div> <!-- img 영역 끝 --> <!-- 설명 -->
+										<div class="conten">
+											<div class="animal_small_title">
+												<h3>매</h3>
+											</div>
+											<div class="animal_conten">공중에서 가장 빠른 동물</div>
+										</div> <!-- 설명 끝 -->
+									</a>
 								</div>
 								<!-- 공중 동물 내용 끝 -->
 							</div>
@@ -174,9 +169,11 @@
 				</div>
 				<!-- 사진첩 끝 -->
 
-				<!-- 자유게시판 -->
+				<!-- 게시판 -->
 				<div id="board" class="section panel2" data-section-name="게시판">
+					<!-- 게시판을 감싸는 div -->
 					<div id="board_menu" class="center_menu">
+						<!-- 자유게시판 -->
 						<div id="left">
 							<div class="title">
 								<h2>
@@ -185,25 +182,26 @@
 							</div>
 							<!-- 자유게시판 미리 보기 -->
 							<div class="tap">
-							<div class="board">
-								<div class="free_no">번호</div>
-								<div class="free_title">제목</div>
-								<div class="free_id">이름</div>
-								<div class="free_data">날짜</div>
-								<div class="free_cnt">조회수</div>
-								<div class="free_like">추천수</div>
-							</div>		
-							<div class="board">
-								<div class="free_no">번호</div>
-								<div class="free_title">제목</div>
-								<div class="free_id">이름</div>
-								<div class="free_data">날짜</div>
-								<div class="free_cnt">조회수</div>
-								<div class="free_like">추천수</div>
-							</div>					
+								<div class="board" id="free">
+									<div class="free_no">번호</div>
+									<div class="free_title">제목</div>
+									<div class="free_id">이름</div>
+									<div class="free_data">날짜</div>
+									<div class="free_cnt">조회수</div>
+									<div class="free_like">추천수</div>
+								</div>
+								<div class="board_conten">
+									<div class="free_no">1</div>
+									<div class="free_title">애완동물</div>
+									<div class="free_id">고양이</div>
+									<div class="free_data">2022-10-25</div>
+									<div class="free_cnt">1</div>
+									<div class="free_like">11</div>
+								</div>
 							</div>
 							<!-- 자유게시판 미리 보기 끝 -->
 						</div>
+						<!-- 자유게시판 끝 -->
 						<!-- 건의게시판 -->
 						<div id="right">
 							<div class="title">
@@ -213,26 +211,28 @@
 							</div>
 							<!-- 건의게시판 미리 보기 -->
 							<div class="tap">
-							<div class="board">
-								<div class="no">번호</div>
-								<div class="board_title">제목</div>
-								<div class="board_id">이름</div>
-								<div class="board_data">날짜</div>
-								<div class="board_cnt">조회수</div>							
-							</div>
-							<div class="board">
-								<div class="no">번호</div>
-								<div class="board_title">제목</div>
-								<div class="board_id">이름</div>
-								<div class="board_data">날짜</div>
-								<div class="board_cnt">조회수</div>							
-							</div>
+								<div class="board" id="board">
+									<div class="no">번호</div>
+									<div class="board_title">제목</div>
+									<div class="board_id">이름</div>
+									<div class="board_data">날짜</div>
+									<div class="board_cnt">조회수</div>
+								</div>
+								<div class="board_conten">
+									<div class="no">1</div>
+									<div class="board_title">재밌게 바꿔주세요</div>
+									<div class="board_id">한국</div>
+									<div class="board_data">2022-10-25</div>
+									<div class="board_cnt">5</div>
+								</div>
 							</div>
 							<!-- 건의 게시판 미리 보기 끝 -->
 						</div>
+						<!-- 건의게시판 끝 -->
 					</div>
+					<!-- 게시판을 감싸는 div끝 -->
 				</div>
-				<!-- 건의게시판 끝 -->
+				<!-- 게시판 끝 -->
 			</div>
 		</div>
 		<!-- 자유게시판 끝 -->
@@ -244,7 +244,6 @@
 			<div>&copy;2021</div>
 		</footer>
 	</div>
-	</div>
-	</div>
+
 </body>
 </html>
