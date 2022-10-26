@@ -89,78 +89,63 @@ body, ul, li {
 	top: 50%; /* 영역 안의 상하 위치 지정 */
 }
 
-.title {
+.title { /* 각 카테고리 제목 */
 	padding: 30 0 30 30; /* 패딩값 지정 */
 	text-align: left; /* 텍스트 왼쪽 배치 */
 }
 
-.animal_img {
+/* 동물 소개 */
+#animal_tap { /* 동물 소개 카테고리와 함께 전체로 감싸는 영역 */
+	display: flex; /* 가로 배치 */
+}
+
+.animal_tap { /* 카테고리 분류 */
+	width: 33%; /* 넓이 지정 */
+}
+
+.animal_img { /* 동물 소개  이미지 영역 */
 	float: left; /* 영역 왼쪽 배치 */
 	width: 30%; /* 넓이 지정 */
 }
 
-.animal_img img {
+.animal_img img { /* 동물 소개 이미지 */
 	height: 100%; /* 이미지 높이 지정 */
 	width: 100%; /* 이미지 넓이 지정 */
 }
 
-.animal_small_title {
-	margin-bottom: 10px; /* 바닥마진 지정 */
-}
-
-.animal_conten {
-	font-size: 15px; /* 폰트 사이즈 지정 */
-}
-
-.conten {
+.conten { /* 동물 이름,소개 내용을 감싸는 영역 */
 	margin-left: 15px; /* 왼쪽 마진값 지정 */
 	text-align: left; /* 텍스트 왼쪽 배치 */
 	float: left; /* 영역 왼쪽 배치 */
 	width: 65%; /* 넓이 지정 */
 }
 
-.animal_img_tap {
+.animal_small_title { /* 동물  이름 */
+	margin-bottom: 10px; /* 바닥마진 지정 */
+}
+
+.animal_conten { /* 동물 소개 내용 */
+	font-size: 15px; /* 폰트 사이즈 지정 */
+}
+
+.animal_img_tap { /* 동물 이름,소개내용, 이미지를 감싸는 영역 */
 	padding: 20 20 20 0; /* 패딩값 지정 */
 	height: 100%; /* 높이 지정 */
 }
 
-#animal_tap {
-	display: flex; /* 가로 배치 */
-}
-
-.animal_tap {
-	width: 33%; /* 넓이 지정 */
-}
-
-.center_menu {
+/* 사진첩 */
+.center_menu { /* 사진첩 전체를 감싸는 영역 */
 	width: 100%; /* 넓이 지정 */
 }
 
-.photo_img {
+.photo_img { /* 이미지를 감싸는 영역 */
 	padding: 0 0 50 0; /* 패딩값 지정 */
 	float: left; /* 영역 왼쪽 배치 */
 	width: 20%; /* 넓이 지정 */
 }
 
-.photo_img img {
-	width: 200px; /* 이미지 넓이 지정 */
-}
-
-#left {
-	padding: 15px; /*패딩값 지정 */
-	height: 100%; /* 높이 지정 */
-	width: 46.8%; /* 넓이 지정 */
-	float: left; /* 영역 왼쪽 배치 */
-}
-
-#right {
-	padding: 15px; /* 패딩값 지정 */
-	height: 100%; /* 높이 지정 */
-	width: 46.8%; /* 넓이 지정 */
-	float: right; /* 영역 오른쪽 배치 */
-}
-
-.board { /* 게시판 타이틀 */
+/* 게시판 타이틀 */
+.board {
 	border-bottom: 4px solid gray; /* 바닥 외곽선 지정 */
 	display: flex; /* 가로 배치 */
 }
@@ -168,49 +153,65 @@ body, ul, li {
 .board_conten { /* 게시판 내용  */
 	border-bottom: 1px solid gray; /* 바닥 외곽선 지정 */
 	padding: 10 0 10 0; /* 상하 패딩 지정 */
-    display: flex; /* 가로 배치 */
+	display: flex; /* 가로 배치 */
 }
 
-.free_no {
-	width: 7%;
+/* 자유 게시판 */
+#left {
+	padding: 15px; /*패딩값 지정 */
+	height: 100%; /* 높이 지정 */
+	width: 46.8%; /* 넓이 지정 */
+	float: left; /* 영역 왼쪽 배치 */
 }
 
-.free_title {
-	width: 45%;
+.free_no { /* 자유게시판 번호  */
+	width: 7%; /* 넓이 지정 */
 }
 
-.free_id {
-	width: 15%;
+.free_title { /* 자유게시판 제목 */
+	width: 45%; /* 넓이 지정 */
 }
 
-.free_data {
-	width: 13%;
+.free_id { /* 자유게시판 이름 */
+	width: 15%; /* 넓이 지정 */
 }
 
-.free_cnt {
-	width: 10%;
+.free_data { /* 자유게시판 등록 날짜 */
+	width: 13%; /* 넓이 지정 */
 }
 
-.free_like {
-	width: 10%;
+.free_cnt { /* 자유게시판 조회수 */
+	width: 10%; /* 넓이 지정 */
 }
 
-.no {
-	width: 10%;
+.free_like { /* 자유게시판 추천수 */
+	width: 10%; /* 넓이 지정 */
 }
 
-.board_title {
-	width: 50%;
+/* 건의게시판 */
+#right {
+	padding: 15px; /* 패딩값 지정 */
+	height: 100%; /* 높이 지정 */
+	width: 46.8%; /* 넓이 지정 */
+	float: right; /* 영역 오른쪽 배치 */
 }
 
-.board_id {
-	width: 15%;
+.no { /* 건의게시판 번호 */
+	width: 10%; /* 넓이 지정 */
 }
 
-.board_data {
-	width: 15%;
+.board_title { /* 건의게시판 제목 */
+	width: 50%; /* 넓이 지정 */
 }
 
-.board_cnt {
-	width: 10%;
+.board_id { /* 건의게시판 이름 */
+	width: 15%; /* 넓이 지정 */
+}
+
+.board_data { /* 건의게시판 등록 날짜 */
+	width: 15%; /* 넓이 지정 */
+}
+
+.board_cnt { /* 건의게시판 조회수 */
+	width: 10%; /* 넓이 지정 */
 }

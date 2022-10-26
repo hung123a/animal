@@ -36,10 +36,11 @@ a:hover { /* a태그에 마우스를 올렸을 경우 */
     top: 0;
   }
 }
-
-#head_cont { /* 헤더 사용 영역 */
+.wrap{
 	max-width: 1500px; /* 최대 넓이 지정 */
 	margin: 0 auto; /* 중앙 정렬  */
+}
+#head_cont { /* 헤더 사용 영역 */
 	height: 6rem; /* 영역 높이 지정 */	
 }
 
@@ -51,7 +52,7 @@ a:hover { /* a태그에 마우스를 올렸을 경우 */
 
 /* 메뉴 */
 .tap_list { /* 헤더 메뉴  */
-	transform: translateY(50%); /* y축 위치 지정 */
+	transform: translateY(100%); /* y축 위치 지정 */
 	justify-content: center; /* 영역 중앙 비치 */
     align-items: center; /* 세로 중앙 배치 */
 	list-style: none; /* ul태그 스타일 제거 */
@@ -61,10 +62,10 @@ a:hover { /* a태그에 마우스를 올렸을 경우 */
     
 }
 
-.tap_list, li { /* 헤더 메뉴 리스트 */
+.tap_list> li { /* 헤더 메뉴 리스트 */
 	text-align: center; /* 글자 중앙 정렬 */
 	cursor: pointer; /* 해당 영역 손모양 마우스 표시 */
-	padding: 10px; /* 패딩값  지정 */
+	padding: 9px; /* 패딩값  지정 */
 }
 
 /* 로고 */
@@ -92,6 +93,6 @@ a:hover { /* a태그에 마우스를 올렸을 경우 */
 	display: flex; /* ul의 li를 가로배치 */
 }
 
-#menu_list, li {
+#menu_list> li {
 	margin-left: 14px; /* 가로배치된 li태그 간격주기 */
 }

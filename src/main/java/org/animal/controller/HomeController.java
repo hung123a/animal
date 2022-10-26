@@ -32,12 +32,11 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 
 		model.addAttribute("serverTime", formattedDate);
-
-		return "home";
+		return "AnimalCommunity";
 	}
 
-	@RequestMapping(value = "/shop", method = RequestMethod.GET)
+	@RequestMapping(value = "/page", method = RequestMethod.GET)
 	public String shop() {
-	return "shop";
+		return "page";
 	}
 }

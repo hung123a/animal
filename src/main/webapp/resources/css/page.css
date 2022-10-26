@@ -1,0 +1,22 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* { /* 전체 선택자 */
+	padding: 0; /* 패딩값 지정 */
+	margin: 0; /* 마진값 지정 */
+}
+
+body { /* 바디태그 */
+	font-family: 'Roboto', sans-serif; /* 글꼴 고딕체 지정 */
+	background: #fff1f1; /* 배경색 지정 */
+	width: 100%; /* 넓이 지정 */
+}
+
+body, ul, li {
+	list-style: none; /* li태그 요소 제거 */
+	margin: 0; /* 마진값 제거 */
+}
+
+#center {
+	height: 100%;
+}
