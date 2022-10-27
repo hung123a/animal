@@ -17,6 +17,80 @@ body, ul, li {
 	margin: 0; /* 마진값 제거 */
 }
 
-#center {
-	height: 100%;
+#main {
+	padding: 6rem 0 0 0; /* 헤더와 메인을 따로하기위한 패딩값 */
+}
+
+#animal_tap {
+	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
+	/* display: none; 페이지 이동시 나올 수 있게 */
+}
+
+#seach {
+	border-bottom: 3px solid gray; /* 영역을 나눠놓은 선 */
+	padding: 20 0 20 0; /* 위아래 간격을 두기위한 패딩 */
+}
+
+/* 동물 소개 내용 */
+#animal_contents {
+	height: 100%; /* 높이 지정 */
+}
+
+.animal_smail_tap {
+	padding: 0 20 50 0; /* 다른 영역과 간격을 두기위한 패딩 */
+	height: 225px; /* 높이 고정을 위한 값 */
+	width: 730px; /* 가로배치를 둘로 나눌려는 넓이 값 */
+	float: left; /* 가로배치를 위한 float */
+}
+
+.animal_img {
+	float: left; /* 제목과 내용을 가로배치라기 위한 float */
+	width: 225px; /* 이미지 영역 넓이 고정 */
+}
+
+.animal_img1 {
+	width: 100%; /* 사진 크기 고정 */
+}
+
+.contents {
+	padding-left: 15px; /* 이미지와 간격을 두기위한 패딩 */
+	height: 225px; /* 영역 높이값 고정 */
+	width: 66.9%; /* 내용 넓이 지정 */
+	float: left; /* 이미지영역과 분리 시킬려는 float */
+}
+
+.small_title {
+	padding-bottom: 10; /* 내용과 간격을 두기위한 패딩 */
+	height: 45px; /* 제목 높이값 고정 */
+}
+
+.small_contents {
+	height: 170px; /* 내용란 높이 고정 */
+}
+
+/* 사진첩 */
+#photo_title {
+	padding: 30 0 20 0; /* 헤더와 사진 내용 띄우는 패딩 */
+}
+
+#ranking {
+	border-bottom: 3px solid gray; /* 영역을 나눠놓은 선 */
+}
+
+#ranking>ul {
+	display: flex; /* 가로배치 */
+}
+
+#ranking>ul>li {
+	padding: 10; /* 패딩값 지정 */
+}
+
+#photo_contents {
+	height: 100%; /* 내용칸 높이 고정 */
+}
+
+.photo_img {
+	padding: 0 20 20 20; /* 이미지간 간격 두기 */ 
+    float: left; /* 이미지 가로 배치 */
+    width: 17.3%; /* 이미지가 영역 넓이  */
 }

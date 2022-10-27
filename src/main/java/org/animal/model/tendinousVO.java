@@ -8,7 +8,7 @@ public class tendinousVO {
 	private String  tendinous_img; // 건의 게시판 이미지
 	private String  tendinous_data; // 건의게시판 등록 일자
 	private String  id; // 회원테이블과 조인을 위한 아이디
-	private String  type;
+	private int  type;
 	public int getTno() {
 		return tno;
 	}
@@ -51,10 +51,10 @@ public class tendinousVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getType() {
+	public int getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 	@Override

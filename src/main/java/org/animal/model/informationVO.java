@@ -27,7 +27,7 @@ public class informationVO {
 	private String  animal_data;  // 동물 정보 등록 일자
 	private String  i_type; // 육해공 분류
 	private String  id; // 회원테이블과 조인을 위한 아이디 (관리자)
-	private String  type; // 페이지 분류
+	private int  type; // 페이지 분류
 	public int getIno() {
 		return ino;
 	}
@@ -184,10 +184,10 @@ public class informationVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getType() {
+	public int getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 	@Override

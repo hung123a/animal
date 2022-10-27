@@ -5,7 +5,7 @@ public class photoVO {
 	private String photo_img; // 사진첩 이미지
 	private String photo_data; // 사진첩 등록 일자
 	private String id; // 회원테이블과 조인을 위한 아이디(관리자)
-	private String type; // 페이지 분류를 위한 컬럼
+	private int type; // 페이지 분류를 위한 컬럼
 	public int getPno() {
 		return pno;
 	}
@@ -30,10 +30,10 @@ public class photoVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getType() {
+	public int getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 	@Override

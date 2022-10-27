@@ -190,6 +190,7 @@
 									<div class="free_cnt">조회수</div>
 									<div class="free_like">추천수</div>
 								</div>
+								<a href="#">
 								<div class="board_conten">
 									<div class="free_no">1</div>
 									<div class="free_title">애완동물</div>
@@ -198,6 +199,7 @@
 									<div class="free_cnt">1</div>
 									<div class="free_like">11</div>
 								</div>
+								</a>
 							</div>
 							<!-- 자유게시판 미리 보기 끝 -->
 						</div>
@@ -218,13 +220,15 @@
 									<div class="board_data">날짜</div>
 									<div class="board_cnt">조회수</div>
 								</div>
-								<div class="board_conten">
-									<div class="no">1</div>
-									<div class="board_title">재밌게 바꿔주세요</div>
-									<div class="board_id">한국</div>
-									<div class="board_data">2022-10-25</div>
-									<div class="board_cnt">5</div>
-								</div>
+								<a href="#">
+									<div class="board_conten">
+										<div class="no">1</div>
+										<div class="board_title">재밌게 바꿔주세요</div>
+										<div class="board_id">한국</div>
+										<div class="board_data">2022-10-25</div>
+										<div class="board_cnt">5</div>
+									</div>
+								</a>
 							</div>
 							<!-- 건의 게시판 미리 보기 끝 -->
 						</div>

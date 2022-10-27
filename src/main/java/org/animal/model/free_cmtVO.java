@@ -7,7 +7,7 @@ public class free_cmtVO {
 	private String cmt_data; // 자유게시판 댓글 등록 일자
 	private int fno; // 자유게시판과 조인을 위한 번호
 	private String id; // 회원테이블과 조인을 위한 아이디
-	private String type; // 페이지 분류를 위한 컬럼
+	private int type; // 페이지 분류를 위한 컬럼
 	public int getCno() {
 		return cno;
 	}
@@ -44,10 +44,10 @@ public class free_cmtVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getType() {
+	public int getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 	@Override
