@@ -12,7 +12,7 @@
 			</ul>
 		</div>
 		<div id="logo">
-			<a href="/AnimalCommunity"><img src="/resources/img/animal community.png"
+			<a href="/"><img src="/resources/img/animal community.png"
 				id="logo_img"></a>
 		</div>
 		<div id="menu">

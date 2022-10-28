@@ -106,7 +106,7 @@
 							<a href="#">사진첩</a>
 						</h1>
 					</div>
-					<div id="ranking">
+					<div id="photo_ranking">
 						<ul>
 							<li><a href="#">최신순</a></li>
 							<li><a href="#">조회수</a></li>
@@ -134,11 +134,86 @@
 				<!-- 사진첩 끝 -->
 
 				<!-- 자유게시판 -->
-				<div class="wrap" id="free_tap"></div>
+				<div class="wrap" id="free_tap">
+					<div class="free_title">
+						<h2>
+							<a href="">자유게시판</a>
+						</h2>
+					</div>
+					<div id="free_ranking">
+						<ul>
+							<li><a href="#">최신순</a></li>
+							<li><a href="#">조회수</a></li>
+							<li><a href="#">오래된순</a></li>
+						</ul>
+					</div>
+					<!-- 검색영역 -->
+					<div id="seach">
+						<form id="seachForm" method="get">
+							<select name="menu">
+								<optgroup label="CATEGORY"></optgroup>
+								<option value="LBS">전체 글 보기</option>
+								<option value="L">육지 동물</option>
+								<option value="B">조류</option>
+								<option value="S">해상 동물</option>
+							</select> <input type="text" name="keyword"> <input type="hidden"
+								name="pageNum" value="#"> <input type="hidden"
+								name="amount" value="#"> <input type="button" value="검색">
+						</form>
+					</div>
+					<!-- 자유게시판 미리 보기 -->
+					<div id="free_contents">
+						<div id="free_board">
+							<div class="free_no">번호</div>
+							<div class="free_title">제목</div>
+							<div class="free_id">이름</div>
+							<div class="free_data">날짜</div>
+							<div class="free_cnt">조회수</div>
+							<div class="free_like">추천수</div>
+						</div>
+						<a href="#">
+							<div id="free_board_conten">
+								<div class="free_no">1</div>
+								<div class="free_title">애완동물</div>
+								<div class="free_id">고양이</div>
+								<div class="free_data">2022-10-25</div>
+								<div class="free_cnt">1</div>
+								<div class="free_like">11</div>
+							</div>
+						</a>
+					</div>
+					<!-- 자유게시판 미리 보기 끝 -->
+				</div>
 				<!-- 자유게시판 끝 -->
 
 				<!-- 건의게시판 -->
-				<div class="wrap" id="tendinous_tap"></div>
+				<div class="wrap" id="tendinous_tap">
+						<div id="tendinous_title">
+							<h2>
+								<a href="">건의게시판</a>
+							</h2>
+						</div>
+						<!-- 건의게시판 미리 보기 -->
+						<div id="tendinous_contents">
+							<div id="tendinous_board">
+								<div class="no">번호</div>
+								<div class="board_title">제목</div>
+								<div class="board_id">이름</div>
+								<div class="board_data">날짜</div>
+								<div class="board_cnt">조회수</div>
+							</div>
+							<a href="#">
+								<div id="tendinous_board_conten">
+									<div class="no">1</div>
+									<div class="board_title">재밌게 바꿔주세요</div>
+									<div class="board_id">한국</div>
+									<div class="board_data">2022-10-25</div>
+									<div class="board_cnt">5</div>
+								</div>
+							</a>
+						</div>
+						<!-- 건의 게시판 미리 보기 끝 -->					
+				</div>
 				<!-- 건의게시판 끝 -->
 			</div>
 		</div>

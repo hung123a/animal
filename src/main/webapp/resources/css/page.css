@@ -73,15 +73,15 @@ body, ul, li {
 	padding: 30 0 20 0; /* 헤더와 사진 내용 띄우는 패딩 */
 }
 
-#ranking {
+#photo_ranking {
 	border-bottom: 3px solid gray; /* 영역을 나눠놓은 선 */
 }
 
-#ranking>ul {
+#photo_ranking>ul {
 	display: flex; /* 가로배치 */
 }
 
-#ranking>ul>li {
+#photo_ranking>ul>li {
 	padding: 10; /* 패딩값 지정 */
 }
 
@@ -90,7 +90,17 @@ body, ul, li {
 }
 
 .photo_img {
-	padding: 0 20 20 20; /* 이미지간 간격 두기 */ 
-    float: left; /* 이미지 가로 배치 */
-    width: 17.3%; /* 이미지가 영역 넓이  */
+	padding: 0 20 20 20; /* 이미지간 간격 두기 */
+	float: left; /* 이미지 가로 배치 */
+	width: 17.3%; /* 이미지가 영역 넓이  */
+}
+
+/* 자유게시판 */
+#free_title {
+	padding: 30 0 20 0;
+}
+
+/* 건의게시판 */
+#tendinous_title {
+	    padding: 30 0 20 0;	
 }
