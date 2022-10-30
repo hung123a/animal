@@ -25,24 +25,27 @@
 				<!-- 동물 소개 -->
 				<div class="wrap" id="animal_tap">
 					<!-- 동물 소개 제목 -->
-					<div id="animal_title">
-						<h1>
-							<a href="#">동물 소개</a>
-						</h1>
-					</div>
-					<!-- 검색영역 -->
-					<div id="seach">
-						<form id="seachForm" method="get">
-							<select name="menu">
-								<optgroup label="CATEGORY"></optgroup>
-								<option value="LBS">전체 글 보기</option>
-								<option value="L">육지 동물</option>
-								<option value="B">조류</option>
-								<option value="S">해상 동물</option>
-							</select> <input type="text" name="keyword"> <input type="hidden"
-								name="pageNum" value="#"> <input type="hidden"
-								name="amount" value="#"> <input type="button" value="검색">
-						</form>
+					<div id="animal_menu">
+						<div id="animal_title">
+							<h1>
+								<a href="#">동물 소개</a>
+							</h1>
+						</div>
+						<!-- 검색영역 -->
+						<div id="seach">
+							<form id="seachForm" method="get">
+								<select name="menu">
+									<optgroup label="CATEGORY"></optgroup>
+									<option value="LBS">전체 글 보기</option>
+									<option value="L">육지 동물</option>
+									<option value="B">조류</option>
+									<option value="S">해상 동물</option>
+								</select> <input type="text" name="keyword"> <input type="hidden"
+									name="pageNum" value="#"> <input type="hidden"
+									name="amount" value="#"> <input type="button"
+									value="검색">
+							</form>
+						</div>
 					</div>
 					<!-- 내용을 감싸는 div -->
 					<div id="animal_contents">
@@ -140,26 +143,29 @@
 							<a href="">자유게시판</a>
 						</h2>
 					</div>
-					<div id="free_ranking">
-						<ul>
-							<li><a href="#">최신순</a></li>
-							<li><a href="#">조회수</a></li>
-							<li><a href="#">오래된순</a></li>
-						</ul>
-					</div>
-					<!-- 검색영역 -->
-					<div id="seach">
-						<form id="seachForm" method="get">
-							<select name="menu">
-								<optgroup label="CATEGORY"></optgroup>
-								<option value="LBS">전체 글 보기</option>
-								<option value="L">육지 동물</option>
-								<option value="B">조류</option>
-								<option value="S">해상 동물</option>
-							</select> <input type="text" name="keyword"> <input type="hidden"
-								name="pageNum" value="#"> <input type="hidden"
-								name="amount" value="#"> <input type="button" value="검색">
-						</form>
+					<div id="free_menu">
+						<div id="free_ranking">
+							<ul>
+								<li><a href="#">최신순</a></li>
+								<li><a href="#">조회수</a></li>
+								<li><a href="#">오래된순</a></li>
+							</ul>
+						</div>
+						<!-- 검색영역 -->
+						<div id="free_seach">
+							<form id="seachForm" method="get">
+								<select name="menu">
+									<optgroup label="CATEGORY"></optgroup>
+									<option value="LBS">전체 글 보기</option>
+									<option value="L">육지 동물</option>
+									<option value="B">조류</option>
+									<option value="S">해상 동물</option>
+								</select> <input type="text" name="keyword"> <input type="hidden"
+									name="pageNum" value="#"> <input type="hidden"
+									name="amount" value="#"> <input type="button"
+									value="검색">
+							</form>
+						</div>
 					</div>
 					<!-- 자유게시판 미리 보기 -->
 					<div id="free_contents">
@@ -188,31 +194,31 @@
 
 				<!-- 건의게시판 -->
 				<div class="wrap" id="tendinous_tap">
-						<div id="tendinous_title">
-							<h2>
-								<a href="">건의게시판</a>
-							</h2>
+					<div id="tendinous_title">
+						<h2>
+							<a href="">건의게시판</a>
+						</h2>
+					</div>
+					<!-- 건의게시판 미리 보기 -->
+					<div id="tendinous_contents">
+						<div id="tendinous_board">
+							<div class="no">번호</div>
+							<div class="board_title">제목</div>
+							<div class="board_id">이름</div>
+							<div class="board_data">날짜</div>
+							<div class="board_cnt">조회수</div>
 						</div>
-						<!-- 건의게시판 미리 보기 -->
-						<div id="tendinous_contents">
-							<div id="tendinous_board">
-								<div class="no">번호</div>
-								<div class="board_title">제목</div>
-								<div class="board_id">이름</div>
-								<div class="board_data">날짜</div>
-								<div class="board_cnt">조회수</div>
+						<a href="#">
+							<div id="tendinous_board_conten">
+								<div class="no">1</div>
+								<div class="board_title">재밌게 바꿔주세요</div>
+								<div class="board_id">한국</div>
+								<div class="board_data">2022-10-25</div>
+								<div class="board_cnt">5</div>
 							</div>
-							<a href="#">
-								<div id="tendinous_board_conten">
-									<div class="no">1</div>
-									<div class="board_title">재밌게 바꿔주세요</div>
-									<div class="board_id">한국</div>
-									<div class="board_data">2022-10-25</div>
-									<div class="board_cnt">5</div>
-								</div>
-							</a>
-						</div>
-						<!-- 건의 게시판 미리 보기 끝 -->					
+						</a>
+					</div>
+					<!-- 건의 게시판 미리 보기 끝 -->
 				</div>
 				<!-- 건의게시판 끝 -->
 			</div>

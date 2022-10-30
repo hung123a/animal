@@ -27,11 +27,23 @@ body, ul, li {
 }
 
 #seach {
-	border-bottom: 3px solid gray; /* 영역을 나눠놓은 선 */
-	padding: 20 0 20 0; /* 위아래 간격을 두기위한 패딩 */
+	padding-top: 20px;
+	float: right;
 }
 
 /* 동물 소개 내용 */
+#animal_menu {
+	border-bottom: 3px solid gray;
+	padding: 20 0 20 0;
+	height: 50px;
+}
+
+#animal_title {
+	float: left;
+}
+
+
+
 #animal_contents {
 	height: 100%; /* 높이 지정 */
 }
@@ -100,7 +112,64 @@ body, ul, li {
 	padding: 30 0 20 0;
 }
 
+#free_menu {
+	height: 50px;
+}
+
+#free_ranking {
+	float: left;
+}
+
+#free_seach {
+	float: right;
+}
+
+#free_ranking>ul {
+	display: flex;
+}
+
+#free_ranking>ul>li {
+	padding: 10;
+}
+
+#free_board {
+	border-bottom: 4px solid gray;
+	text-align: center;
+	display: flex;
+}
+
+.free_no {
+	width: 10%;
+}
+
+.free_title {
+	width: 35%;
+}
+
+.free_id {
+	width: 15%;
+}
+
+.free_data {
+	width: 20%;
+}
+
+.free_cnt {
+	width: 10%;
+}
+
+.free_like {
+	width: 10%;
+}
+
+#free_board_conten {
+	border-bottom: 1px solid gray;
+	padding: 10 0 10 0;
+	text-align: center;
+	display: flex;
+}
+
 /* 건의게시판 */
 #tendinous_title {
-	    padding: 30 0 20 0;	
+	padding: 30 0 20 0;
 }
