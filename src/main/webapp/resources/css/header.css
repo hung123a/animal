@@ -40,6 +40,10 @@ a:hover { /* a태그에 마우스를 올렸을 경우 */
 	max-width: 1500px; /* 최대 넓이 지정 */
 	margin: 0 auto; /* 중앙 정렬  */
 }
+
+.wrap.current {
+	display: inherit;
+}
 #head_cont { /* 헤더 사용 영역 */
 	height: 6rem; /* 영역 높이 지정 */	
 }

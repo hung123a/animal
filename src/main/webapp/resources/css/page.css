@@ -13,7 +13,6 @@ body { /* 바디태그 */
 }
 
 body, ul, li {
-	list-style: none; /* li태그 요소 제거 */
 	margin: 0; /* 마진값 제거 */
 }
 
@@ -21,8 +20,29 @@ body, ul, li {
 	padding: 6rem 0 0 0; /* 헤더와 메인을 따로하기위한 패딩값 */
 }
 
+.select_menu {
+	border: 1px solid #ddd;
+	height: 35px;
+}
+
+.keyword {
+	border: 1px solid #ddd;
+	width: 250px;
+	height: 35px;
+}
+
+.button {
+	border-color: #707070;
+	background: #707070;
+	margin-left: -5px;
+	width: 100px;
+	height: 35px;
+	color: #fff;
+}
+
 #animal_tap {
 	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
+	height: 100%; /* 높이 지정 */
 	/* display: none; 페이지 이동시 나올 수 있게 */
 }
 
@@ -40,12 +60,6 @@ body, ul, li {
 
 #animal_title {
 	float: left;
-}
-
-
-
-#animal_contents {
-	height: 100%; /* 높이 지정 */
 }
 
 .animal_smail_tap {
@@ -81,6 +95,12 @@ body, ul, li {
 }
 
 /* 사진첩 */
+#photo_tap {
+	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
+	height: 100%; /* 높이 지정 */
+	/* display: none; 페이지 이동시 나올 수 있게 */
+}
+
 #photo_title {
 	padding: 30 0 20 0; /* 헤더와 사진 내용 띄우는 패딩 */
 }
@@ -94,6 +114,7 @@ body, ul, li {
 }
 
 #photo_ranking>ul>li {
+	list-style: none; /* li태그 요소 제거 */
 	padding: 10; /* 패딩값 지정 */
 }
 
@@ -107,12 +128,32 @@ body, ul, li {
 	width: 17.3%; /* 이미지가 영역 넓이  */
 }
 
+img.photo_img1 {
+	width: 100%;
+}
+
 /* 자유게시판 */
-#free_title {
-	padding: 30 0 20 0;
+#free_tap {
+	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
+	height: 100%; /* 높이 지정 */
+	/* display: none; 페이지 이동시 나올 수 있게 */
+}
+
+.free_title {
+	padding-bottom: 30px;
+}
+
+#free_caution {
+	border: 1px solid #ccc;
+	padding: 10 10 10 50;
+}
+
+#free_caution>ol>li {
+	padding: 10 0 10 0;
 }
 
 #free_menu {
+	padding-top: 30px;
 	height: 50px;
 }
 
@@ -129,11 +170,13 @@ body, ul, li {
 }
 
 #free_ranking>ul>li {
+	list-style: none; /* li태그 요소 제거 */
 	padding: 10;
 }
 
 #free_board {
 	border-bottom: 4px solid gray;
+	border-top: 4px solid gray;
 	text-align: center;
 	display: flex;
 }
@@ -142,7 +185,7 @@ body, ul, li {
 	width: 10%;
 }
 
-.free_title {
+.free_small_title {
 	width: 35%;
 }
 
@@ -170,6 +213,57 @@ body, ul, li {
 }
 
 /* 건의게시판 */
+#tendinous_tap {
+	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
+	height: 100%; /* 높이 지정 */
+	/* display: none; 페이지 이동시 나올 수 있게 */
+}
+
+#tendinous_contents {
+	padding-bottom: 100px;
+}
+
 #tendinous_title {
 	padding: 30 0 20 0;
+}
+#tendinous_ranking>ul {
+	display: flex;
+}
+
+#tendinous_ranking>ul>li {
+	list-style: none; /* li태그 요소 제거 */
+	padding: 10;
+}
+#tendinous_board {
+	border-bottom: 4px solid gray;
+	border-top: 4px solid gray;
+	text-align: center;
+	display: flex;
+}
+
+#tendinous_board_conten {
+	border-bottom: 1px solid gray;
+	padding: 10 0 10 0;
+	text-align: center;
+	display: flex;
+}
+
+.no {
+	width: 10%;
+}
+
+.board_title {
+	width: 45%;
+}
+
+.board_id {
+	width: 15%;
+}
+
+.board_data {
+	width: 20%;
+}
+
+.board_cnt {
+	width: 10%;
 }
