@@ -17,7 +17,7 @@
 		</div>
 		<div id="menu">
 			<ul id="menu_list">
-				<li><a href="/page">로그인</a></li>
+				<li><a href="/login">로그인</a></li>
 				<li><a href="/signup">회원가입</a></li>
 				<li><a href="/mypage">마이페이지</a></li>
 			</ul>

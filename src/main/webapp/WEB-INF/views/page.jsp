@@ -74,7 +74,7 @@
 									<div class="small_contents">내용</div>
 								</div>
 							</div>
-						</a> </a> <a href="#">
+						</a> <a href="#">
 							<div class="animal_smail_tap">
 								<div class="animal_img">
 									<img class="animal_img1" src="/resources/img/image1.jpg">
@@ -86,7 +86,7 @@
 									<div class="small_contents">내용</div>
 								</div>
 							</div>
-						</a> </a> <a href="#">
+						</a> <a href="#">
 							<div class="animal_smail_tap">
 								<div class="animal_img">
 									<img class="animal_img1" src="/resources/img/image1.jpg">
@@ -99,6 +99,9 @@
 								</div>
 							</div>
 						</a>
+					</div>
+					<div id="animal_bth">
+						<a href=""><input type="button" value="글쓰기" class="bth"></a>
 					</div>
 				</div>
 				<!-- 동물 소개 끝 -->
@@ -133,6 +136,9 @@
 						<div class="photo_img">
 							<img class="photo_img1" src="/resources/img/image1.jpg">
 						</div>
+					</div>
+					<div id="photo_bth">
+						<a href=""><input type="button" value="글쓰기" class="bth"></a>
 					</div>
 				</div>
 				<!-- 사진첩 끝 -->
@@ -194,6 +200,9 @@
 								<div class="free_like">11</div>
 							</div>
 						</a>
+						<div id="free_bth">
+							<a href=""><input type="button" value="글쓰기" class="bth"></a>
+						</div>
 					</div>
 					<!-- 자유게시판 미리 보기 끝 -->
 				</div>
@@ -231,6 +240,9 @@
 								<div class="board_cnt">5</div>
 							</div>
 						</a>
+						<div id="tendinous_bth">
+							<a href=""><input type="button" value="글쓰기" class="bth"></a>
+						</div>
 					</div>
 					<!-- 건의 게시판 미리 보기 끝 -->
 				</div>

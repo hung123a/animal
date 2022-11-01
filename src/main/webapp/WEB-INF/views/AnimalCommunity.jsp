@@ -32,7 +32,7 @@
 						<!-- 동물 소개 제목 -->
 						<div id="animal_title" class="title">
 							<h1>
-								<a href="">동물 소개</a>
+								<a href="/page?type=information">동물 소개</a>
 							</h1>
 						</div>
 						<!-- 동물 소개 제목 끝 -->
@@ -133,7 +133,7 @@
 						<!-- 사진첩 제목 -->
 						<div class="title">
 							<h1>
-								<a href="">사진첩</a>
+								<a href="/page?type=photo">사진첩</a>
 							</h1>
 						</div>
 						<!-- 사진첩 제목 끝 -->
@@ -177,7 +177,7 @@
 						<div id="left">
 							<div class="title">
 								<h2>
-									<a href="">자유게시판</a>
+									<a href="/page?type=free_board">자유게시판</a>
 								</h2>
 							</div>
 							<!-- 자유게시판 미리 보기 -->
@@ -208,7 +208,7 @@
 						<div id="right">
 							<div class="title">
 								<h2>
-									<a href="">건의게시판</a>
+									<a href="/page?type=tendinous">건의게시판</a>
 								</h2>
 							</div>
 							<!-- 건의게시판 미리 보기 -->

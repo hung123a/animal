@@ -22,6 +22,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+	/* 메인 페이지 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -35,8 +36,22 @@ public class HomeController {
 		return "AnimalCommunity";
 	}
 
+	/* 서브 페이지 */
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
 	public String shop() {
 		return "page";
 	}
+
+	/* 로그인 페이지 */
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login() {
+		return "login";
+	}
+	
+	/* 회원가입 페이지 */
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public String signup() {
+		return "signup";
+	}
+
 }

@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	box-sizing: border-box;
+}
+
+body { /* 웹페이지 여백제거 */
+    background: turquoise;
+	padding: 0;
+	margin: 0;
+}
+
+.img {
+	padding-bottom: 40px;
+	width: 100%;
+}
+
+#main_frame {
+	transform: translate(-50%, -50%);
+	padding: 20px 20px 20px 20px;
+	background-color: #EEEFF1;
+	position: absolute;
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	height: 600px;
+	width: 600px;
+	left: 50%;    
+	top: 50%;	
+}
+
+.text_field {
+	margin-bottom: 30px;
+	border-radius: 5px;
+	margin-right: auto;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 14px;
+	padding: 20px;
+	border: none;
+	width: 90%;
+}
+
+.login_bth {
+	background-color: #1BBC9B;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	font-size: 14px;
+	padding: 15px;
+	color: white;
+	border: none;
+	width: 90%;
+}
+
+.links {
+	text-align: center;
+}
+
+.links a {
+	font-size: 12px;
+	color: #9B9B9B;
+}
