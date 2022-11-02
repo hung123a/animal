@@ -10,19 +10,7 @@
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="/resources/css/login.css">
-<style rel="stylesheet">
-table {
-	            border: 3px solid skyblue        
-}
-
-                td {
-	            border: 1px solid skyblue        
-}
-
-                #title {
-	            background-color: skyblue        
-}
-</style>
+<link rel="stylesheet" href="/resources/css/signup.css">
 </head>
 <body>
 	<div id="main_frame">
@@ -31,57 +19,63 @@ table {
 				class="img"></a>
 		</div>
 		<form>
-			<table border="1">
-				<tr>
-					<td class="title">아이디</td>
-					<td><input type="text" name="id" maxlength="15"
-						placeholder="아이디"> <input type="button" value="중복확인"></td>
-				</tr>
-				<tr>
-					<td class="title">비밀번호</td>
-					<td><input type="password" name="pwd" maxlength="15"
-						placeholder="비밀번호"></td>
-				</tr>
-				<tr>
-					<td class="title">비밀번호 확인</td>
-					<td><input type="password" name="pwd" maxlength="15"
-						placeholder="비밀번호 확인"></td>
-				</tr>
-				<tr>
-					<td class="title">이름</td>
-					<td><input type="text" name="name" maxlength="10"
-						placeholder="이름"></td>
-				</tr>
-				<tr>
-					<td class="title">전화번호</td>
-					<td><input type="text" name="phone"></td>
-				</tr>
-				<tr>
-					<td class="title">생년월일</td>
-					<td><input type="text" name="bth" maxlength="4"
-						placeholder="년도(4자)" size="6"> <select name="bth">
-							<option value="">월</option>
-							<option value="01">1</option>
-							<option value="02">2</option>
-							<option value="03">3</option>
-							<option value="04">4</option>
-							<option value="05">5</option>
-							<option value="06">6</option>
-							<option value="07">7</option>
-							<option value="08">8</option>
-							<option value="09">9</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-							<option value="12">12</option>
-					</select> <input type="text" name="bth" maxlength="2" placeholder="일"
-						size="4"></td>
-				</tr>
-				<tr>
-					<td class="title">성별</td>
-					<td><input type="radio" name="gender" value="남" checked>남
-						<input type="radio" name="gender" value="여" checked>여</td>
-				</tr>
-			</table>
+			<div id="signup">
+				<div class="area">
+					<div class="title_content">				
+						<div class="title">Name</div>
+					</div>
+					<div class="conten">
+					<div class="box"><img class="svg" src="/resources/img/person_icon.svg"></div>
+						<input type="text" id="id" name="name" placeholder="이름"
+							maxlength="10">
+					</div>
+				</div>
+				<div class="area">
+					<div class="title_content">
+						<div class="title">id</div>
+					</div>
+					<div class="conten">
+						<input type="text" id="id" name="id" placeholder="아이디"
+							maxlength="15">
+					</div>
+				</div>
+				<div class="area">
+					<div class="title_content">
+						<div class="title">Password</div>
+					</div>
+					<div class="conten">
+						<input type="password" id="pwd" name="pwd" placeholder="비밀번호"
+							>
+					</div>
+				</div>
+				<div class="area">
+					<div class="title_content">
+						<div class="title">Confirm Password</div>
+					</div>
+					<div class="conten">
+						<input type="password" id="pwd" name="pwd" placeholder="비밀번호 확인"
+							>
+					</div>
+				</div>
+				<div class="area">
+					<div class="title_content">
+						<div class="title">E-mail</div>
+					</div>
+					<div class="conten">
+						<input type="text" id="email" name="email" placeholder="이메일"
+							maxlength="20">
+					</div>
+				</div>
+				<div class="area">
+					<div class="title_content">
+						<div class="title">phone</div>
+					</div>
+					<div class="conten">
+						<input type="text" id="phone" name="phone" placeholder="전화번호"
+							maxlength="20">
+					</div>
+				</div>
+			</div>
 		</form>
 		<div class="links">
 			<a href="#">아이디/비밀번호 찾기</a>
