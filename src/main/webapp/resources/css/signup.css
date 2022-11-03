@@ -3,7 +3,6 @@
 .area {
 	margin-bottom: 20px; /* 입력란 아래 칸 간격 지정  */
 	overflow: hidden; /* float으로 없어진 높이 속성 지정 */
-	height: 40px; /* 높이값 지정 */
 }
 
 .title {
@@ -11,23 +10,49 @@
 	color: #7f3c3b; /* 글자 색상 지정 */
 	height: 40px; /* 해당 영역 높이 지정 */
 	float: left; /* 왼쪽 배치 */
-	width: 25%; /* 넓이 지정 */
+	width: 30%; /* 넓이 지정 */
 }
 
 .title_content {
 	text-align: right; /* 글자 오른쪽 정렬 */
-	line-height: 30px; /* 글자 수직 위치 지정 */
+	line-height: 40px; /* 글자 수직 위치 지정 */
 }
 
 .conten {
 	height: 40px; /* 입력 영역 높이 지정 */
 	float: right; /* 오른쪽 배치 */
-	width: 75%; /* 영역 넓이 지정 */
+	width: 70%; /* 영역 넓이 지정 */
 }
 
-.conten>input {
-	border-radius: 5px; /* 입력란 라운드값 지정 */
-	border: none; /* 박스 css속성 제거  */
-	height: 35px; /* 입력란 높이 지정  */
-	width: 75%; /* 입력란 넓이 지지정 */
+.box {
+	width: 40px;
+	border: 1px solid #ff201c;
+	border-radius: 7px 0px 0px 7px;
+	background: antiquewhite;
+	float: left;
+	height: 40px;
+	border-right: none;
+}
+
+.Information {
+	height: 40px;
+	padding-left: 20px;
+}
+
+.svg {
+	width: 30px;
+	padding-top: 4px;
+}
+
+.text {
+	float: left;
+	height: 40px;
+	width: 280px;
+	border: 1px solid #ff201c;
+	padding-left: 15px;
+}
+
+.alert {
+    float: left;
+    font-size: 12px;
 }

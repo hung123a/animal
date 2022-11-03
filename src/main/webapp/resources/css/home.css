@@ -125,11 +125,13 @@ body, ul, li {
 }
 
 .animal_conten { /* 동물 소개 내용 */
-	font-size: 15px; /* 폰트 사이즈 지정 */
+	font-size: 13px; /* 폰트 사이즈 지정 */
 }
 
 .animal_img_tap { /* 동물 이름,소개내용, 이미지를 감싸는 영역 */
+	border-bottom: 1px solid #ddd; /* 각 내용을 분류 시켜줄 바닥선 */
 	padding: 20 20 20 0; /* 패딩값 지정 */
+	margin: 20 20 20 0; /* 마진값 지정 */
 	height: 100%; /* 높이 지정 */
 }
 
