@@ -11,7 +11,8 @@
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- 회원가입 관련 js -->
 <script type="text/javascript" src="/resources/js/Signup.js"></script>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <link rel="stylesheet" href="/resources/css/login.css">
 <link rel="stylesheet" href="/resources/css/signup.css">
 </head>
@@ -21,7 +22,7 @@
 			<a href="/"><img src="/resources/img/animal community(login).png"
 				class="img"></a>
 		</div>
-		<form>
+		<form action="/signup" method="post">
 			<div id="signup">
 				<div class="area" id="name_box">
 					<div class="title_content">
@@ -74,7 +75,7 @@
 							<div class="box">
 								<img class="svg" src="/resources/img/person_icon.svg">
 							</div>
-							<input type="password" id="pwd2" class="text" name="pwd"
+							<input type="password" id="pwd2" class="text" name="pwd2"
 								placeholder="비밀번호 확인">
 						</div>
 					</div>
@@ -86,7 +87,7 @@
 					<div class="conten">
 						<div class="Information">
 							<div class="box">
-								<img class="svg" src="/resources/img/person_icon.svg">
+								<img class="email_svg" src="/resources/img/email.svg">
 							</div>
 							<input type="text" id="email" class="text" name="email"
 								placeholder="이메일" maxlength="20">
@@ -100,7 +101,7 @@
 					<div class="conten">
 						<div class="Information">
 							<div class="box">
-								<img class="svg" src="/resources/img/person_icon.svg">
+								<img class="phone_svg" src="/resources/img/phone.svg">
 							</div>
 							<input type="text" id="phone" class="text" name="phone"
 								placeholder="전화번호" maxlength="20">
@@ -108,10 +109,10 @@
 					</div>
 				</div>
 			</div>
+			<div>
+				<input type="submit" id="signup_btn" value="가입하기">
+			</div>
 		</form>
-		<div class="links">
-			<a href="#">아이디/비밀번호 찾기</a>
-		</div>
 	</div>
 </body>
 </html>

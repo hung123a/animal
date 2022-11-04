@@ -6,7 +6,7 @@
 }
 
 body { /* 웹페이지 여백제거 */
-    background: turquoise;
+	background: turquoise;
 	padding: 0;
 	margin: 0;
 }
@@ -17,6 +17,7 @@ body { /* 웹페이지 여백제거 */
 }
 
 #main_frame {
+	box-shadow: 15px 15px 15px 15px rgb(0 0 0/ 30%);
 	transform: translate(-50%, -50%);
 	padding: 20px 20px 20px 20px;
 	background-color: #EEEFF1;
@@ -25,10 +26,9 @@ body { /* 웹페이지 여백제거 */
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	
 	width: 600px;
-	left: 50%;    
-	top: 50%;	
+	left: 50%;
+	top: 50%;
 }
 
 .text_field {

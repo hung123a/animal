@@ -54,7 +54,7 @@ $(document).ready(function() {
 	// 비밀번호 길이 체크
 	$("#pwd").blur(function() {
 		
-		var pwreg =/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,20}$/;
+		var pwreg =/^(?=.*?[a-z]+[a-zA-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,13}$/;
 		
 		if (pwreg.test(($("#pwd").val()))) {
 			$("#pwd_alert").remove();
@@ -64,7 +64,7 @@ $(document).ready(function() {
 			passwordresult = true;
 		} else {
 			$("#pwd_alert").remove();
-				str = "<div id='pwd_alert' class='alert'>비밀번호는 대.소문자,숫자로 8자~20자이하로 써주세요. </div>"
+				str = "<div id='pwd_alert' class='alert'>비밀번호는 특수문자를 포함한 영문자,숫자로 7자 이상~13자이하로 써주세요. </div>"
 				$("#pwd_box").append(str);
 				$("#pwd_alert").css("color", "red").css("margin-left", "230px");
 			passwordresult=false;

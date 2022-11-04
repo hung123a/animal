@@ -26,7 +26,7 @@
 				value="회원가입" class="login_bth" formaction="/signup">
 		</form>
 		<div class="links">
-			<a href="#">아이디/비밀번호 찾기</a>
+			<a href="/find">아이디/비밀번호 찾기</a>
 		</div>
 	</div>
 </body>
