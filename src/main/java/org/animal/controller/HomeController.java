@@ -47,19 +47,25 @@ public class HomeController {
 	/* 서브 페이지 */
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
 	public String shop() {
-		return "page";
+		return "/tap/page";
+	}
+
+	/* 동물소개 글쓰기 페이지 */
+	@RequestMapping(value = "/information/information_writing", method = RequestMethod.GET)
+	public String information_page() {
+		return "/information/information_writing";
 	}
 
 	/* 로그인 페이지 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
-		return "login";
+		return "/login/login";
 	}
 
 	/* 회원가입 페이지 */
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String getsignup() {
-		return "signup";
+		return "/login/signup";
 	}
 
 	/* 회원 등록 */
@@ -75,18 +81,18 @@ public class HomeController {
 		System.out.println(id);
 		return new ResponseEntity<>(as.idcheck(id), HttpStatus.OK);
 	}
-	
+
 	/* 이메일 중복 체크 */
 	@RequestMapping(value = "/Signup/emailcheck/{email}", method = RequestMethod.GET)
 	public ResponseEntity<memberVO> emailcheck(@PathVariable("email") String email) {
 		System.out.println(email);
 		return new ResponseEntity<>(as.emailcheck(email), HttpStatus.OK);
 	}
-	
+
 	/* 아이디/비밀번호 찾기 페이지 */
 	@RequestMapping(value = "/find", method = RequestMethod.GET)
 	public String getfind() {
-		return "/find";
+		return "redirect:/login/find";
 	}
 
 }

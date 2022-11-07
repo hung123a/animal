@@ -39,7 +39,7 @@ body { /* 웹페이지 여백제거 */
 
 .login_bth {
 	background-color: #1BBC9B;
-	margin-bottom: 30px;
+	margin: 30px;
 	border-radius: 5px;
 	font-size: 14px;
 	padding: 15px;
@@ -84,7 +84,7 @@ body { /* 웹페이지 여백제거 */
 	color: #7f3c3b; /* 글자 색상 지정 */
 	height: 40px; /* 해당 영역 높이 지정 */
 	float: left; /* 왼쪽 배치 */
-	width: 30%; /* 넓이 지정 */
+	width: 20%; /* 넓이 지정 */
 }
 
 .title_content {
@@ -95,7 +95,7 @@ body { /* 웹페이지 여백제거 */
 .conten {
 	height: 40px; /* 입력 영역 높이 지정 */
 	float: right; /* 오른쪽 배치 */
-	width: 70%; /* 영역 넓이 지정 */
+	width: 73%; /* 영역 넓이 지정 */
 }
 
 .box {

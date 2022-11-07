@@ -1,0 +1,298 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* { /* 전체 선택자 */
+	padding: 0; /* 패딩값 지정 */
+	margin: 0; /* 마진값 지정 */
+}
+
+body { /* 바디태그 */
+	font-family: 'Roboto', sans-serif; /* 글꼴 고딕체 지정 */
+	background: #fff1f1; /* 배경색 지정 */
+	width: 100%; /* 넓이 지정 */
+}
+
+body, ul, li {
+	margin: 0; /* 마진값 제거 */
+}
+
+#main {
+	padding: 6rem 0 0 0; /* 헤더와 메인을 따로하기위한 패딩값 */
+}
+
+.select_menu {
+	border: 1px solid #ddd;
+	height: 35px;
+}
+
+.keyword {
+	border: 1px solid #ddd;
+	width: 250px;
+	height: 35px;
+}
+
+.button {
+	border-color: #707070;
+	background: #707070;
+	margin-left: -5px;
+	width: 100px;
+	height: 35px;
+	color: #fff;
+}
+
+#animal_tap {
+	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
+	height: 100%; /* 높이 지정 */
+	/* display: none; 페이지 이동시 나올 수 있게 */
+}
+
+#seach {
+	padding-top: 20px;
+	float: right;
+}
+
+/* 동물 소개 내용 */
+#animal_menu {
+	border-bottom: 3px solid gray;
+	padding: 20 0 20 0;
+	height: 50px;
+}
+
+#animal_title {
+	float: left;
+}
+
+#animal_contents {
+	border-bottom: 3px solid #ddd;
+	overflow: hidden;
+}
+
+.animal_smail_tap {
+	padding: 0 20 50 0; /* 다른 영역과 간격을 두기위한 패딩 */
+	height: 225px; /* 높이 고정을 위한 값 */
+	width: 730px; /* 가로배치를 둘로 나눌려는 넓이 값 */
+	float: left; /* 가로배치를 위한 float */
+}
+
+.animal_img {
+	float: left; /* 제목과 내용을 가로배치라기 위한 float */
+	width: 225px; /* 이미지 영역 넓이 고정 */
+}
+
+.animal_img1 {
+	width: 100%; /* 사진 크기 고정 */
+}
+
+.contents {
+	padding-left: 15px; /* 이미지와 간격을 두기위한 패딩 */
+	height: 225px; /* 영역 높이값 고정 */
+	width: 66.9%; /* 내용 넓이 지정 */
+	float: left; /* 이미지영역과 분리 시킬려는 float */
+}
+
+.small_title {
+	padding-bottom: 10; /* 내용과 간격을 두기위한 패딩 */
+	height: 45px; /* 제목 높이값 고정 */
+}
+
+.small_contents {
+	height: 170px; /* 내용란 높이 고정 */
+}
+
+#animal_bth {
+	padding-top: 10px;
+	float: right;
+}
+
+/* 사진첩 */
+#photo_tap {
+	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
+	height: 100%; /* 높이 지정 */
+	/* display: none; 페이지 이동시 나올 수 있게 */
+}
+
+#photo_title {
+	padding: 30 0 20 0; /* 헤더와 사진 내용 띄우는 패딩 */
+}
+
+#photo_ranking {
+	border-bottom: 3px solid gray; /* 영역을 나눠놓은 선 */
+}
+
+#photo_ranking>ul {
+	display: flex; /* 가로배치 */
+}
+
+#photo_ranking>ul>li {
+	list-style: none; /* li태그 요소 제거 */
+	padding: 10; /* 패딩값 지정 */
+}
+
+#photo_contents {
+	border-bottom: 3px solid #ddd;
+	overflow: hidden;
+}
+
+.photo_img {
+	padding: 0 20 20 20; /* 이미지간 간격 두기 */
+	float: left; /* 이미지 가로 배치 */
+	width: 17.3%; /* 이미지가 영역 넓이  */
+}
+
+img.photo_img1 {
+	width: 100%;
+}
+
+#photo_bth {
+	padding-top: 10px;
+	float: right;
+}
+
+/* 자유게시판 */
+#free_tap {
+	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
+	height: 100%; /* 높이 지정 */
+	/* display: none; 페이지 이동시 나올 수 있게 */
+}
+
+.free_title {
+	padding-bottom: 30px;
+}
+
+#free_caution {
+	border: 1px solid #ccc;
+	padding: 10 10 10 50;
+}
+
+#free_caution>ol>li {
+	padding: 10 0 10 0;
+}
+
+#free_menu {
+	padding-top: 30px;
+	height: 50px;
+}
+
+#free_ranking {
+	float: left;
+}
+
+#free_seach {
+	float: right;
+}
+
+#free_ranking>ul {
+	display: flex;
+}
+
+#free_ranking>ul>li {
+	list-style: none; /* li태그 요소 제거 */
+	padding: 10;
+}
+
+#free_board {
+	border-bottom: 4px solid gray;
+	border-top: 4px solid gray;
+	text-align: center;
+	display: flex;
+}
+
+.free_no {
+	width: 10%;
+}
+
+.free_small_title {
+	width: 35%;
+}
+
+.free_id {
+	width: 15%;
+}
+
+.free_data {
+	width: 20%;
+}
+
+.free_cnt {
+	width: 10%;
+}
+
+.free_like {
+	width: 10%;
+}
+
+#free_board_conten {
+	border-bottom: 1px solid gray;
+	padding: 10 0 10 0;
+	text-align: center;
+	display: flex;
+}
+
+#free_bth {
+	padding-top: 10px;
+	float: right;
+}
+
+.bth {
+	height: 30px;
+	width: 80px;
+}
+
+/* 건의게시판 */
+#tendinous_tap {
+	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
+	height: 100%; /* 높이 지정 */
+	/* display: none; 페이지 이동시 나올 수 있게 */
+}
+
+#tendinous_title {
+	padding: 30 0 20 0;
+}
+
+#tendinous_ranking>ul {
+	display: flex;
+}
+
+#tendinous_ranking>ul>li {
+	list-style: none; /* li태그 요소 제거 */
+	padding: 10;
+}
+
+#tendinous_board {
+	border-bottom: 4px solid gray;
+	border-top: 4px solid gray;
+	text-align: center;
+	display: flex;
+}
+
+#tendinous_board_conten {
+	border-bottom: 1px solid gray;
+	padding: 10 0 10 0;
+	text-align: center;
+	display: flex;
+}
+
+.no {
+	width: 10%;
+}
+
+.board_title {
+	width: 45%;
+}
+
+.board_id {
+	width: 15%;
+}
+
+.board_data {
+	width: 20%;
+}
+
+.board_cnt {
+	width: 10%;
+}
+
+#tendinous_bth {
+	padding-top: 10px;
+	float: right;
+}

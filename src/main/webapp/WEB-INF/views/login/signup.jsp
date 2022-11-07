@@ -10,7 +10,7 @@
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- 회원가입 관련 js -->
-<script type="text/javascript" src="/resources/js/Signup.js"></script>
+<script type="text/javascript" src="/resources/js/login/Signup.js"></script>
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <link rel="stylesheet" href="/resources/css/login.css">

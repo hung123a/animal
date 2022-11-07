@@ -25,7 +25,6 @@ a:hover { /* a태그에 마우스를 올렸을 경우 */
 }
 #head.drop{ /* 헤더 */
   position: fixed; /* 상단 헤더 고정을 위한 포지션 */
-  animation: dropHeader 0.3s; /* 헤더 애니메이션 부여 */
 }
 
 @keyframes dropHeader { /* 헤더 에니메이션 효과를 위한 키프레임 */

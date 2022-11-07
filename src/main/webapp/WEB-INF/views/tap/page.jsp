@@ -11,15 +11,16 @@
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
-<script type="text/javascript" src="/resources/js/page.js"></script>
-<link rel="stylesheet" href="/resources/css/header.css">
-<link rel="stylesheet" href="/resources/css/page.css">
+<!-- 페이지 이동 관련 JS -->
+<script type="text/javascript" src="/resources/js/tap/page.js"></script>
+<link rel="stylesheet" href="/resources/css/include/header.css">
+<link rel="stylesheet" href="/resources/css/tap/page.css">
 
 </head>
 <body>
 	<div id="cont">
 		<!-- header 영역 -->
-		<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="../include/header.jsp"></jsp:include>
 		<!-- header 영역 끝 -->
 		<div id="center">
 			<div class="wrap" id="main">
@@ -101,7 +102,7 @@
 						</a>
 					</div>
 					<div id="animal_bth">
-						<a href=""><input type="button" value="글쓰기" class="bth"></a>
+						<a href="/information/information_writing"><input type="button" value="글쓰기" class="bth"></a>
 					</div>
 				</div>
 				<!-- 동물 소개 끝 -->
