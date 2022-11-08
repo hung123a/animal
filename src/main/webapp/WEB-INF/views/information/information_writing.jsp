@@ -15,6 +15,7 @@
 <script type="text/javascript" src="/resources/js/tap/page.js"></script>
 <link rel="stylesheet" href="/resources/css/include/header.css">
 <link rel="stylesheet" href="/resources/css/tap/page.css">
+<link rel="stylesheet" href="/resources/css/information/writing.css">
 
 </head>
 <body>
@@ -41,115 +42,84 @@
 						<!-- 내용 전체 -->
 						<div>
 							<!-- 왼쪽 -->
-							<div>
+							<div id="left">
 								<div>
-									<div></div>
+									<div>동물 이름</div>
 									<div></div>
 								</div>
 								<div>
-									<div></div>
-									<div></div>
-								</div>
-								<div>
-									<div></div>
+									<div>어원</div>
 									<div></div>
 								</div>
 								<div>
+									<div>설명</div>
 									<div></div>
+								</div>								
+								<div>
+									<div>서식지</div>
 									<div></div>
 								</div>
 								<div>
-									<div></div>
-									<div></div>
-								</div>
-								<div>
-									<div></div>
+									<div>서식지 내용</div>
 									<div></div>
 								</div>
 								<div>
-									<div></div>
-									<div></div>
-								</div>
-								<div>
-									<div></div>
+									<div>생김새와 특징</div>
 									<div></div>
 								</div>
 								<div>
-									<div></div>
-									<div></div>
-								</div>
-								<div>
-									<div></div>
+									<div>생김새와 특징 내용</div>
 									<div></div>
 								</div>
 								<div>
-									<div></div>
+									<div>수명</div>
 									<div></div>
 								</div>
 								<div>
-									<div></div>
+									<div>수명 내용</div>
 									<div></div>
 								</div>
 							</div>
+							
 							<!-- 오른쪽 -->
-							<div>
+							<div id="right">
 								<div>
-									<div></div>
+									<div>몸</div>
 									<div></div>
 								</div>
 								<div>
-									<div></div>
-									<div></div>
-								</div>
-								<div>
-									<div></div>
+									<div>먹이</div>
 									<div></div>
 								</div>
 								<div>
-									<div></div>
-									<div></div>
-								</div>
-								<div>
-									<div></div>
+									<div>먹이 내용</div>
 									<div></div>
 								</div>
 								<div>
-									<div></div>
-									<div></div>
-								</div>
-								<div>
-									<div></div>
+									<div>천적</div>
 									<div></div>
 								</div>
 								<div>
-									<div></div>
-									<div></div>
-								</div>
-								<div>
-									<div></div>
+									<div>천적 내용</div>
 									<div></div>
 								</div>
 								<div>
-									<div></div>
-									<div></div>
-								</div>
-								<div>
-									<div></div>
+									<div>섬네일 이미지</div>
 									<div></div>
 								</div>
 								<div>
+									<div>서브 이미지</div>
 									<div></div>
-									<div></div>
-								</div>								
+								</div>													
 							</div>
 						</div>
 					</div>
 					<div id="animal_bth">
-						<a href=""><input type="button" value="목록으로" class="bth"></a>
+						<a href=""><input type="button" value="등록하기" class="bth"></a>
 					</div>
 					<div id="animal_bth">
-						<a href=""><input type="button" value="글쓰기" class="bth"></a>
-					</div>
+						<a href="/page?type=information"><input type="button" value="목록으로" class="bth"></a>
+					</div>					
 				</div>
 				<!-- 동물 소개 끝 -->
 			</div>

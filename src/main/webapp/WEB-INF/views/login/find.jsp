@@ -9,7 +9,7 @@
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- 아이디 비밀번초 찾기 클릭 이벤트 -->
 <script type="text/javascript" src="/resources/js/login/find.js"></script>
-<link rel="stylesheet" href="/resources/css/find.css">
+<link rel="stylesheet" href="/resources/css/login/find.css">
 </head>
 <body>
 

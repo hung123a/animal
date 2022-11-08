@@ -11,10 +11,12 @@
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- 회원가입 관련 js -->
 <script type="text/javascript" src="/resources/js/login/Signup.js"></script>
+<!-- 이메일 인증 -->
+<!-- <script type="text/javascript" src="/resources/js/login/email.js"></script> -->
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<link rel="stylesheet" href="/resources/css/login.css">
-<link rel="stylesheet" href="/resources/css/signup.css">
+<link rel="stylesheet" href="/resources/css/login/login.css">
+<link rel="stylesheet" href="/resources/css/login/signup.css">
 </head>
 <body>
 	<div id="main_frame">
@@ -103,12 +105,13 @@
 							<div class="box">
 								<img class="phone_svg" src="/resources/img/phone.svg">
 							</div>
-							<input type="text" id="phone" class="text" name="phone"
-								placeholder="전화번호" maxlength="20">
+							<input type="text" id="phone" name="phone" class=" text"
+								placeholder="전화번호" oninput="autophone(this)" maxlength="13">
 						</div>
 					</div>
 				</div>
 			</div>
+
 			<div>
 				<input type="submit" id="signup_btn" value="가입하기">
 			</div>

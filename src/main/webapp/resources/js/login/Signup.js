@@ -1,5 +1,5 @@
 /**
- *  회원가입 관련 js
+ * 회원가입 관련 js
  */
 $(document).ready(function() {
 	var str = "";
@@ -18,7 +18,7 @@ $(document).ready(function() {
 		var id=$("#id").val();
 		// 아이디를 서버로전송 > DB 유효성검사 >결과반환
 		// 아이디 중복 체크
-		$.getJSON("/Signup/idcheck/"+id+".json",function(data){
+		$.getJSON("/signup/idcheck/"+id+".json",function(data){
 			// select된 결과가 있으면 success로 인식
 			console.log(data)
 			$("#id_alert").remove();
@@ -119,7 +119,7 @@ $(document).ready(function() {
 		var emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 		var email=$("#email").val();
 		
-		$.getJSON("/Signup/emailcheck/"+email+".json",function(data){
+		$.getJSON("/signup/emailcheck/"+email+".json",function(data){
 			// select된 결과가 있으면 success로 인식
 			console.log(data)
 			$("#email_alert").remove();
@@ -193,4 +193,11 @@ $(document).ready(function() {
 	
 	})
 
+	
 });
+/*휴대폰 하이픈*/
+const autophone = (target) => {
+target.value = target.value
+  .replace(/[^0-9]/g, "")
+ .replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/,"$1-$2-$3").replace("--", "-");
+};

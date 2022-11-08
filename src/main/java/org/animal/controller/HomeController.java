@@ -76,14 +76,14 @@ public class HomeController {
 	}
 
 	/* 아이디 중복 체크 */
-	@RequestMapping(value = "/Signup/idcheck/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/signup/idcheck/{id}", method = RequestMethod.GET)
 	public ResponseEntity<memberVO> idcheck(@PathVariable("id") String id) {
 		System.out.println(id);
 		return new ResponseEntity<>(as.idcheck(id), HttpStatus.OK);
 	}
 
 	/* 이메일 중복 체크 */
-	@RequestMapping(value = "/Signup/emailcheck/{email}", method = RequestMethod.GET)
+	@RequestMapping(value = "/signup/emailcheck/{email}", method = RequestMethod.GET)
 	public ResponseEntity<memberVO> emailcheck(@PathVariable("email") String email) {
 		System.out.println(email);
 		return new ResponseEntity<>(as.emailcheck(email), HttpStatus.OK);
@@ -92,7 +92,7 @@ public class HomeController {
 	/* 아이디/비밀번호 찾기 페이지 */
 	@RequestMapping(value = "/find", method = RequestMethod.GET)
 	public String getfind() {
-		return "redirect:/login/find";
+		return "/login/find";
 	}
 
 }

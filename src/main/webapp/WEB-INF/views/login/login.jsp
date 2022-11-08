@@ -9,7 +9,7 @@
 <title>로그인</title>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="/resources/css/login.css">
+<link rel="stylesheet" href="/resources/css/login/login.css">
 </head>
 <body>
 
@@ -22,8 +22,8 @@
 			<input type="text" name="id" class="text_field" placeholder="아이디"><br>
 			<input type="text" name="password" class="text_field"
 				placeholder="비밀번호"><br> <input type="submit"
-				value="로그인" class="login_bth"><br> <input type="submit"
-				value="회원가입" class="login_bth" formaction="/signup">
+				value="로그인" class="login_bth" formmethod="post"><br> <input type="submit"
+				value="회원가입" class="login_bth" formaction="/signup" formmethod="get">
 		</form>
 		<div class="links">
 			<a href="/find">아이디/비밀번호 찾기</a>
