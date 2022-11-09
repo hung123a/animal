@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class memberController {
 	@Autowired
-	memberService as;
+	memberService ms;
 	
 	/* 로그인 페이지 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -29,7 +29,7 @@ public class memberController {
 	/* 회원 등록 */
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String signup(memberVO member) {
-		as.signup(member);
+		ms.signup(member);
 		return "redirect:/login";
 	}
 
@@ -37,20 +37,20 @@ public class memberController {
 	@RequestMapping(value = "/signup/idcheck/{id}", method = RequestMethod.GET)
 	public ResponseEntity<memberVO> idcheck(@PathVariable("id") String id) {
 		System.out.println(id);
-		return new ResponseEntity<>(as.idcheck(id), HttpStatus.OK);
+		return new ResponseEntity<>(ms.idcheck(id), HttpStatus.OK);
 	}
 
 	/* 이메일 중복 체크 */
 	@RequestMapping(value = "/signup/emailcheck/{email}", method = RequestMethod.GET)
 	public ResponseEntity<memberVO> emailcheck(@PathVariable("email") String email) {
 		System.out.println(email);
-		return new ResponseEntity<>(as.emailcheck(email), HttpStatus.OK);
+		return new ResponseEntity<>(ms.emailcheck(email), HttpStatus.OK);
 	}
 	/* 전화번호 중복 체크 */
 	@RequestMapping(value = "/signup/phonecheck/{phone}", method = RequestMethod.GET)
 	public ResponseEntity<memberVO> phonecheck(@PathVariable("phone") String phone) {
 		System.out.println(phone);
-		return new ResponseEntity<>(as.phonecheck(phone), HttpStatus.OK);
+		return new ResponseEntity<>(ms.phonecheck(phone), HttpStatus.OK);
 	}
 
 	/* 아이디/비밀번호 찾기 페이지 */

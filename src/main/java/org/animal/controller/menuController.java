@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class menuController {
 	@Autowired
-	memberService as;
+	memberService ms;
 
 	/* 서브 페이지 */
 	@RequestMapping(value = "/page", method = RequestMethod.GET)

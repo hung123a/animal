@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 	@Autowired
-	memberService as;
+	memberService ms;
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
