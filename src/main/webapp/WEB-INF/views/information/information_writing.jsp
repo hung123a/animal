@@ -28,7 +28,7 @@
 				<!-- 동물 소개 -->
 				<div class="wrap" id="animal_tap">
 					<!-- 동물 소개 분류 -->
-					<div id="animal_menu">
+					<div id="animal_type">
 						<div id="animal_title">
 							<select id="i_type" name="i_type">
 								<option>동물</option>
@@ -38,79 +38,76 @@
 						</div>
 					</div>
 					<!-- 내용을 감싸는 div -->
-					<div id="animal_contents">
+					<div id="animal_main">
 						<!-- 내용 전체 -->
-						<div>
+						<div id="animal_border">
 							<!-- 왼쪽 -->
 							<div id="left">
-								<div>
-									<div>동물 이름</div>
-									<div></div>
+								<div class="left_all">
+									<div class="animal_title">동물 이름</div>
+									<div class="animal_contents">
+										<input type="text" id="animal_name">
+									</div>
 								</div>
-								<div>
-									<div>어원</div>
-									<div></div>
+								<div class="left_all">
+									<div class="animal_title">어원</div>
+									<div class="animal_contents">
+										<textarea rows="" cols=""></textarea>
+									</div>
 								</div>
-								<div>
-									<div>설명</div>
-									<div></div>
-								</div>								
-								<div>
-									<div>서식지</div>
-									<div></div>
+								<div class="left_all">
+									<div class="animal_title">서식지</div>
+									<div class="animal_contents">
+										<textarea rows="" cols=""></textarea>
+									</div>
 								</div>
-								<div>
-									<div>서식지 내용</div>
-									<div></div>
+								<div class="left_all">
+									<div class="animal_title">생김새와 특징</div>
+									<div class="animal_contents">
+										<textarea rows="" cols=""></textarea>
+									</div>
 								</div>
-								<div>
-									<div>생김새와 특징</div>
-									<div></div>
+								<div class="left_all">
+									<div class="animal_title">수명</div>
+									<div class="animal_contents">
+										<textarea rows="" cols=""></textarea>
+									</div>
 								</div>
-								<div>
-									<div>생김새와 특징 내용</div>
-									<div></div>
-								</div>
-								<div>
-									<div>수명</div>
-									<div></div>
-								</div>
-								<div>
-									<div>수명 내용</div>
-									<div></div>
-								</div>
+
 							</div>
-							
+
 							<!-- 오른쪽 -->
 							<div id="right">
-								<div>
-									<div>몸</div>
-									<div></div>
+								<div class="right_all">
+									<div class="animal_title">몸체</div>
+									<div class="animal_contents">
+										<textarea rows="" cols=""></textarea>
+									</div>
 								</div>
-								<div>
-									<div>먹이</div>
-									<div></div>
+								<div class="right_all">
+									<div class="animal_title">먹이</div>
+									<div class="animal_contents">
+										<textarea rows="" cols=""></textarea>
+									</div>
 								</div>
-								<div>
-									<div>먹이 내용</div>
-									<div></div>
+								<div class="right_all">
+									<div class="animal_title">천적</div>
+									<div class="animal_contents">
+										<textarea rows="" cols=""></textarea>
+									</div>
 								</div>
-								<div>
-									<div>천적</div>
-									<div></div>
+								<div class="right_all">
+									<div class="animal_title">섬네일 이미지</div>
+									<div class="animal_contents">
+										<input type="file">
+									</div>
 								</div>
-								<div>
-									<div>천적 내용</div>
-									<div></div>
+								<div class="right_all">
+									<div class="animal_title">서브 이미지</div>
+									<div class="animal_contents">
+										<input type="file" multiple>
+									</div>
 								</div>
-								<div>
-									<div>섬네일 이미지</div>
-									<div></div>
-								</div>
-								<div>
-									<div>서브 이미지</div>
-									<div></div>
-								</div>													
 							</div>
 						</div>
 					</div>
@@ -118,8 +115,9 @@
 						<a href=""><input type="button" value="등록하기" class="bth"></a>
 					</div>
 					<div id="animal_bth">
-						<a href="/page?type=information"><input type="button" value="목록으로" class="bth"></a>
-					</div>					
+						<a href="/page?type=information"><input type="button"
+							value="목록으로" class="bth"></a>
+					</div>
 				</div>
 				<!-- 동물 소개 끝 -->
 			</div>

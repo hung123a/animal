@@ -1,9 +1,68 @@
 @charset "UTF-8";
 
 #i_type {
-    width: 100px;
-    height: 35px;
-    font-size: 15px;
-    margin-left: 20px;
-    border: none;
+	width: 100px;
+	height: 35px;
+	font-size: 15px;
+	margin-left: 20px;
+	border: none;
+}
+
+#animal_type {
+	border-bottom: 5px solid gray;
+	padding: 10px 0 10px 0;
+	height: 35px;
+}
+
+#animal_main {
+	border-bottom: 3px solid #ddd;
+}
+
+#animal_border {
+	padding: 20 0 20 0;
+	overflow: hidden;
+}
+
+.animal_title {
+	padding-right: 15px;
+	text-align: center;
+	width: 17%;
+}
+
+.animal_contents {
+	width: 83%;
+}
+
+#animal_name {
+	height: 100%;
+	width: 90%;
+}
+
+.animal_contents>textarea {
+	height: 100%;
+	width: 90%;
+}
+
+#left {
+	padding: 0 20 0 20;
+	width: 710px;
+	float: left;
+}
+
+.left_all {
+	padding: 10 0 10 0;
+	display: flex;
+	height: 10%;
+}
+
+#right {
+	padding: 0 20 0 20;
+	width: 710px;
+	float: left;
+}
+
+.right_all {
+	padding: 10 0 10 0;
+	display: flex;
+	height: 10%;
 }

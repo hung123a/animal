@@ -153,13 +153,26 @@ $(document).ready(function() {
 		}
 		})
 	})
-	
-	// 전화번호
-	$("#phone").blur(function(){
-		
-		
+
+    // 전화번호
+	$("#phone").blur(function(){		
 		var numberRegex =  /^[0-9]{3}-[0-9]{3,4}-[0-9]{4}$/;
-		
+		var phone=$("#phone").val();
+		// 전화번호를 서버로전송 > DB 유효성검사 >결과반환
+		// 전화번호 중복 체크
+		$.getJSON("/signup/phonecheck/"+phone+".json",function(data){
+			// select된 결과가 있으면 success로 인식
+			console.log(data)
+			$("#phone_alert").remove();
+			
+			str = "<div id='phone_alert' class='alert'> 사용중입니다 </div>"
+			
+			$("#phone_box").append(str);
+			
+			$("#phone_alert").css("color", "red").css("margin-left", "230px");
+			idcheckresult= false;
+		}).fail(function(data){
+			// select된 결과가 없으면 fail로 인식
 		if(numberRegex.test($("#phone").val())){
 			$("#phone_alert").remove();
 			str="<div id='phone_alert' class='alert'>사용가능합니다.</div>"
@@ -173,6 +186,7 @@ $(document).ready(function() {
 			$("#phone_alert").css("color", "red").css("margin-left", "230px");
 			numberresult=false;
 		}
+		})
 	})
 	
 	// 필요한 데이터가 전부 입력되었다면 submit을 진행한다//
@@ -195,7 +209,7 @@ $(document).ready(function() {
 
 	
 });
-/*휴대폰 하이픈*/
+/* 휴대폰 하이픈 */
 const autophone = (target) => {
 target.value = target.value
   .replace(/[^0-9]/g, "")

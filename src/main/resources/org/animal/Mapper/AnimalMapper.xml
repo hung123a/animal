@@ -17,4 +17,8 @@
 	<select id="emailcheck" resultType="org.animal.model.memberVO">
 		select * from member where email=#{email}
 	</select>
+		<!-- 전화번호 중복 체크 -->
+	<select id="phonecheck" resultType="org.animal.model.memberVO">
+		select * from member where phone=#{phone}
+	</select>
 </mapper>
