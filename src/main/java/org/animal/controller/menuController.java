@@ -1,6 +1,6 @@
 package org.animal.controller;
 
-import org.animal.service.AnimalService;
+import org.animal.service.memberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class menuController {
 	@Autowired
-	AnimalService as;
+	memberService as;
 
 	/* 서브 페이지 */
 	@RequestMapping(value = "/page", method = RequestMethod.GET)

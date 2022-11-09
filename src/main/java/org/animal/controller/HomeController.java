@@ -4,7 +4,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import org.animal.service.AnimalService;
+import org.animal.service.memberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 	@Autowired
-	AnimalService as;
+	memberService as;
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
