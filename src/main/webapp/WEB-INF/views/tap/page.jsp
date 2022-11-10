@@ -101,7 +101,7 @@
 							</div>
 						</a>
 					</div>
-					<div id="animal_bth">
+					<div class="btn">
 						<a href="/information/information_writing"><input type="button" value="글쓰기" class="bth"></a>
 					</div>
 				</div>
@@ -138,8 +138,8 @@
 							<img class="photo_img1" src="/resources/img/image1.jpg">
 						</div>
 					</div>
-					<div id="photo_bth">
-						<a href=""><input type="button" value="글쓰기" class="bth"></a>
+					<div class="btn">
+						<a href="/photo/photo_writing"><input type="button" value="글쓰기" class="bth"></a>
 					</div>
 				</div>
 				<!-- 사진첩 끝 -->
@@ -201,7 +201,7 @@
 								<div class="free_like">11</div>
 							</div>
 						</a>
-						<div id="free_bth">
+						<div class="btn">
 							<a href=""><input type="button" value="글쓰기" class="bth"></a>
 						</div>
 					</div>
@@ -241,7 +241,7 @@
 								<div class="board_cnt">5</div>
 							</div>
 						</a>
-						<div id="tendinous_bth">
+						<div class="btn">
 							<a href=""><input type="button" value="글쓰기" class="bth"></a>
 						</div>
 					</div>

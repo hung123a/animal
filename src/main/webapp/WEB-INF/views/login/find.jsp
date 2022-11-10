@@ -15,7 +15,7 @@
 
 	<div id="frame">
 		<div id="tap">
-			<div id="id_search" class="menu_tap" onclick="id()">아이디 찾기</div>
+			<div id="id_search" class="menu_tap" onclick="ids()">아이디 찾기</div>
 			<div id="pwd_search" class="menu_tap" onclick="pwd()">비밀번호 찾기</div>
 		</div>
 		<div id="main_frame">

@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.animal.mapper.mamberMapper">
+<mapper namespace="org.animal.mapper.memberMapper">
 	<!-- 회원가입 -->
 	<insert id="signup">
 		insert into member(id, pwd, name, phone, email)

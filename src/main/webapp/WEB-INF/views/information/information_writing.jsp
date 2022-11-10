@@ -111,10 +111,10 @@
 							</div>
 						</div>
 					</div>
-					<div id="animal_bth">
+					<div class="btn">
 						<a href=""><input type="button" value="등록하기" class="bth"></a>
 					</div>
-					<div id="animal_bth">
+					<div class="btn">
 						<a href="/page?type=information"><input type="button"
 							value="목록으로" class="bth"></a>
 					</div>

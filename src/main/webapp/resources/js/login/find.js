@@ -2,7 +2,7 @@
  * 회원가입 관련 js
  */
 
-function id() {
+function ids() {
 	if ($("#find_id").css('display') == 'block') {
 		$("#find_id").css('display', 'none');
 	} else {

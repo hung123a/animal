@@ -99,7 +99,7 @@ body, ul, li {
 	height: 170px; /* 내용란 높이 고정 */
 }
 
-#animal_bth {
+.btn {
 	padding-top: 10px;
 	float: right;
 }
