@@ -9,13 +9,13 @@
 <!-- 제이쿼리 -->
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
-<!-- 페이지 이동 관련 JS -->
-<script type="text/javascript" src="/resources/js/tap/page.js"></script>
+
+<!-- 동물 소개 글쓰기 css -->
+<link rel="stylesheet" href="/resources/css/information/writing.css">
+<!-- 겹치는 css -->
 <link rel="stylesheet" href="/resources/css/include/header.css">
 <link rel="stylesheet" href="/resources/css/tap/page.css">
-<link rel="stylesheet" href="/resources/css/information/writing.css">
+
 
 </head>
 <body>
@@ -27,6 +27,11 @@
 			<div class="wrap" id="main">
 				<!-- 동물 소개 -->
 				<div class="wrap" id="animal_tap">
+					<div id="animal_title">
+						<h1>
+							<a href="#">동물 소개</a>
+						</h1>
+					</div>
 					<!-- 동물 소개 분류 -->
 					<div id="animal_type">
 						<div id="animal_title">

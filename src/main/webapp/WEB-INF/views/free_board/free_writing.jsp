@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>사진첩 글쓰기</title>
+<title>자유게시판 글쓰기</title>
 <!-- 제이쿼리 -->
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
