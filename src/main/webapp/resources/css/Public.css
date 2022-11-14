@@ -22,12 +22,6 @@ body { /* 바디태그 */
 	/* display: none; 페이지 이동시 나올 수 있게 */
 }
 
-.title {
-	border-bottom: 5px solid gray; /* 하단 테두리 및 선 색상 지정 */
-	padding-bottom: 10px; /* 하단 패딩값 10지정 */
-	
-}
-
 .btn { /* 버튼 영역 */
 	padding-left: 10px; /* 좌측 패딩값 10지정 */
 	padding-top: 10px; /* 상단 패딩값 10지정 */

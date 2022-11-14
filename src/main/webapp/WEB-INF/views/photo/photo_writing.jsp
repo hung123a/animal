@@ -24,7 +24,7 @@
 		<div id="photo_center">
 			<div class="wrap" id="main">
 				<div class="wrap" id="photo_tap">
-					<div class="title">
+					<div id="photo_title">
 						<h1>
 							<a href="#">사진첩 글쓰기</a>
 						</h1>

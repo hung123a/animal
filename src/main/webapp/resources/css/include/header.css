@@ -29,7 +29,7 @@ a:hover { /* a태그에 마우스를 올렸을 경우 */
 
 @keyframes dropHeader { /* 헤더 에니메이션 효과를 위한 키프레임 */
   0% {
-    top: -5rem;
+    top: 0rem;
   }
   100% {
     top: 0;

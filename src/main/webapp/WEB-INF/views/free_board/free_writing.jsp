@@ -22,7 +22,7 @@
 		<div id="photo_center">
 			<div class="wrap" id="main">
 				<div class="wrap tap">
-					<div class="title">
+					<div id="free_title">
 						<h1>
 							<a href="#">자유게시판 글쓰기</a>
 						</h1>
@@ -30,13 +30,19 @@
 					<!-- 자유게시판 글쓰기 내용 -->
 					<div id="free_writing_board">
 						<div id="middle">
-						
-							<div class="free_title">제목</div>
-							<div class="">
-								<textarea cols="" rows=""></textarea>
+							<div class="main_content">
+								<div class="main_title">제목</div>
+								<div id="main_Contents">내용</div>
+							</div>
+							<div class="sub_content">
+								<div class="sub_title">
+									<input type="text">
+								</div>
+								<div id="sub_Contents">
+									<textarea cols="" rows=""></textarea>
+								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
