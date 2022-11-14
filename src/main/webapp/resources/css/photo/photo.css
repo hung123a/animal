@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
 #photo_tap {
-	padding-top: 30px;
-	height: 100%;
+	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
+	height: 100%; /* 높이 지정 */
+	/* display: none; 페이지 이동시 나올 수 있게 */
 }
 
 #photo_border {
 	border-bottom: 3px solid #ddd;
-	border-top: 5px solid gray;
 	padding: 20 0 20 0;
 	text-align: center;
 }

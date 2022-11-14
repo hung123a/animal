@@ -13,8 +13,8 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
 <!-- 페이지 이동 관련 JS -->
 <script type="text/javascript" src="/resources/js/tap/page.js"></script>
-<link rel="stylesheet" href="/resources/css/include/header.css">
 <link rel="stylesheet" href="/resources/css/tap/page.css">
+<link rel="stylesheet" href="/resources/css/Public.css">
 
 </head>
 <body>
@@ -25,16 +25,25 @@
 		<div id="center">
 			<div class="wrap" id="main">
 				<!-- 동물 소개 -->
-				<div class="wrap" id="animal_tap" style="display: none;">
+				<div class="wrap tap" id="animal_tap" style="display: none;">
 					<!-- 동물 소개 제목 -->
-					<div id="animal_menu">
+					<div class="title">
 						<div id="animal_title">
 							<h1>
 								<a href="#">동물 소개</a>
 							</h1>
 						</div>
+					</div>
+					<div class="page_menu">
+						<div class="ranking">
+							<ul>
+								<li><a href="#">최신순</a></li>
+								<li><a href="#">조회수</a></li>
+								<li><a href="#">오래된순</a></li>
+							</ul>
+						</div>
 						<!-- 검색영역 -->
-						<div id="seach">
+						<div class="seach" id="animal_seach">
 							<form id="seachForm" method="get">
 								<select name="menu" class="select_menu">
 									<optgroup label="CATEGORY" class="CATEGORY"></optgroup>
@@ -50,13 +59,13 @@
 						</div>
 					</div>
 					<!-- 내용을 감싸는 div -->
-					<div id="animal_contents">
+					<div class="contents">
 						<a href="#">
 							<div class="animal_smail_tap">
 								<div class="animal_img">
 									<img class="animal_img1" src="/resources/img/image1.jpg">
 								</div>
-								<div class="contents">
+								<div class="main_contents">
 									<div class="small_title">
 										<h2>소제목</h2>
 									</div>
@@ -68,7 +77,7 @@
 								<div class="animal_img">
 									<img class="animal_img1" src="/resources/img/image1.jpg">
 								</div>
-								<div class="contents">
+								<div class="main_contents">
 									<div class="small_title">
 										<h2>소제목</h2>
 									</div>
@@ -80,7 +89,7 @@
 								<div class="animal_img">
 									<img class="animal_img1" src="/resources/img/image1.jpg">
 								</div>
-								<div class="contents">
+								<div class="main_contents">
 									<div class="small_title">
 										<h2>소제목</h2>
 									</div>
@@ -92,7 +101,7 @@
 								<div class="animal_img">
 									<img class="animal_img1" src="/resources/img/image1.jpg">
 								</div>
-								<div class="contents">
+								<div class="main_contents">
 									<div class="small_title">
 										<h2>소제목</h2>
 									</div>
@@ -102,26 +111,29 @@
 						</a>
 					</div>
 					<div class="btn">
-						<a href="/information/information_writing"><input type="button" value="글쓰기" class="bth"></a>
+						<a href="/information_writing"><input type="button"
+							value="글쓰기" class="bth"></a>
 					</div>
 				</div>
 				<!-- 동물 소개 끝 -->
 
 				<!-- 사진첩 -->
-				<div class="wrap" id="photo_tap" style="display: none;">
-					<div id="photo_title">
+				<div class="wrap tap" id="photo_tap" style="display: none;">
+					<div class="title">
 						<h1>
 							<a href="#">사진첩</a>
 						</h1>
 					</div>
-					<div id="photo_ranking">
-						<ul>
-							<li><a href="#">최신순</a></li>
-							<li><a href="#">조회수</a></li>
-							<li><a href="#">오래된순</a></li>
-						</ul>
+					<div class="page_menu">
+						<div class="ranking">
+							<ul>
+								<li><a href="#">최신순</a></li>
+								<li><a href="#">조회수</a></li>
+								<li><a href="#">오래된순</a></li>
+							</ul>
+						</div>
 					</div>
-					<div id="photo_contents">
+					<div class="contents">
 						<div class="photo_img">
 							<img class="photo_img1" src="/resources/img/image1.jpg">
 						</div>
@@ -139,17 +151,18 @@
 						</div>
 					</div>
 					<div class="btn">
-						<a href="/photo/photo_writing"><input type="button" value="글쓰기" class="bth"></a>
+						<a href="/photo_writing"><input type="button" value="글쓰기"
+							class="bth"></a>
 					</div>
 				</div>
 				<!-- 사진첩 끝 -->
 
 				<!-- 자유게시판 -->
-				<div class="wrap" id="free_tap" style="display: none;">
-					<div class="free_title">
-						<h2>
+				<div class="wrap tap" id="free_tap" style="display: none;">
+					<div class="title">
+						<h1>
 							<a href="">자유게시판</a>
-						</h2>
+						</h1>
 					</div>
 					<div id="free_caution">
 						<ol>
@@ -160,7 +173,7 @@
 						</ol>
 					</div>
 					<div id="free_menu">
-						<div id="free_ranking">
+						<div class="ranking">
 							<ul>
 								<li><a href="#">최신순</a></li>
 								<li><a href="#">조회수</a></li>
@@ -168,7 +181,7 @@
 							</ul>
 						</div>
 						<!-- 검색영역 -->
-						<div id="free_seach">
+						<div class="seach" id="free_seach">
 							<form id="seachForm" method="get">
 								<select name="menu" class="select_menu">
 									<optgroup label="CATEGORY" class="CATEGORY"></optgroup>
@@ -182,7 +195,7 @@
 						</div>
 					</div>
 					<!-- 자유게시판 미리 보기 -->
-					<div id="free_contents">
+					<div class="free_contents">
 						<div id="free_board">
 							<div class="free_no">번호</div>
 							<div class="free_small_title">제목</div>
@@ -201,27 +214,30 @@
 								<div class="free_like">11</div>
 							</div>
 						</a>
-						<div class="btn">
-							<a href=""><input type="button" value="글쓰기" class="bth"></a>
-						</div>
+					</div>
+					<div class="btn">
+						<a href="/free_writing"><input type="button" value="글쓰기"
+							class="bth"></a>
 					</div>
 					<!-- 자유게시판 미리 보기 끝 -->
 				</div>
 				<!-- 자유게시판 끝 -->
 
 				<!-- 건의게시판 -->
-				<div class="wrap" id="tendinous_tap" style="display: none;">
-					<div id="tendinous_title">
-						<h2>
+				<div class="wrap tap" id="tendinous_tap" style="display: none;">
+					<div class="title">
+						<h1>
 							<a href="">건의게시판</a>
-						</h2>
+						</h1>
 					</div>
-					<div id="tendinous_ranking">
-						<ul>
-							<li><a href="#">최신순</a></li>
-							<li><a href="#">조회수</a></li>
-							<li><a href="#">오래된순</a></li>
-						</ul>
+					<div class="page_menu">
+						<div class="ranking">
+							<ul>
+								<li><a href="#">최신순</a></li>
+								<li><a href="#">조회수</a></li>
+								<li><a href="#">오래된순</a></li>
+							</ul>
+						</div>
 					</div>
 					<!-- 건의게시판 미리 보기 -->
 					<div id="tendinous_contents">
@@ -240,11 +256,11 @@
 								<div class="board_data">2022-10-25</div>
 								<div class="board_cnt">5</div>
 							</div>
-						</a>
-						<div class="btn">
+						</a>						
+					</div>
+					<div class="btn">
 							<a href=""><input type="button" value="글쓰기" class="bth"></a>
 						</div>
-					</div>
 					<!-- 건의 게시판 미리 보기 끝 -->
 				</div>
 				<!-- 건의게시판 끝 -->

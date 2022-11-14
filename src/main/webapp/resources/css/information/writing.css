@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+#animal_title {
+	float: left;
+}
+
 #i_type {
 	width: 100px;
 	height: 35px;
@@ -12,6 +16,10 @@
 	border-bottom: 5px solid gray;
 	padding: 10px 0 10px 0;
 	height: 35px;
+}
+
+#animal_i_type {
+	float: right;
 }
 
 #animal_main {

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="/resources/css/include/header.css">
 <!-- header 영역 -->
 <header id="head">
 	<div id="head_cont" class="wrap">

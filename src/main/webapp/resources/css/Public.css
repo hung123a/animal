@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/* 공용으로 사용될 css */
+* { /* 전체 선택자 */
+	padding: 0; /* 패딩값 지정 */
+	margin: 0; /* 마진값 지정 */
+}
+
+body { /* 바디태그 */
+	font-family: 'Roboto', sans-serif; /* 글꼴 고딕체 지정 */
+	background: #fff1f1; /* 배경색 지정 */
+	width: 100%; /* 넓이 지정 */
+}
+
+#main {
+	padding: 6rem 0 0 0; /* 헤더와 메인을 따로하기위한 패딩값 */
+}
+
+.tap {
+	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
+	height: 100%; /* 높이 지정 */
+	/* display: none; 페이지 이동시 나올 수 있게 */
+}
+
+.title {
+	border-bottom: 5px solid gray; /* 하단 테두리 및 선 색상 지정 */
+	padding-bottom: 10px; /* 하단 패딩값 10지정 */
+	
+}
+
+.btn { /* 버튼 영역 */
+	padding-left: 10px; /* 좌측 패딩값 10지정 */
+	padding-top: 10px; /* 상단 패딩값 10지정 */
+	float: right; /* 오른쪽 배치 */
+}
+
+.bth { /* 버튼 */
+	height: 30px; /* 높이 30 지정 */
+	width: 80px; /* 넓이 80 지정 */
+}

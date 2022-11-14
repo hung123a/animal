@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+#free_writing_board { /* 자유게시판 글쓰기 내용 전체  */
+	width: 100% /* 넓이 지정 */
+}
+
+#middle { /* 자유게시판 글쓰기 내용을 감싸는 영여 */
+	margin: 0 auto; /* 해당 영역을 가운데로 배치하기 위한 마진값 */
+	width: 1000px; /* 넓이 1000지정 */
+}
+
+.free_title {
+	display: flex;
+	width: 30%
+}

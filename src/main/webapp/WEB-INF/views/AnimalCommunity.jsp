@@ -12,7 +12,6 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
 <script type="text/javascript" src="/resources/js/main.js"></script>
-<link rel="stylesheet" href="/resources/css/include/header.css">
 <link rel="stylesheet" href="/resources/css/home.css">
 
 </head>

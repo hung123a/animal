@@ -19,7 +19,7 @@ public class menuController {
 	}
 
 	/* 동물소개 글쓰기 페이지 */
-	@RequestMapping(value = "/information/information_writing", method = RequestMethod.GET)
+	@RequestMapping(value = "/information_writing", method = RequestMethod.GET)
 	public String information_page() {
 		return "/information/information_writing";
 	}
@@ -32,8 +32,14 @@ public class menuController {
 	}
 	
 	/* 사진첩 글쓰기 페이지 */
-	@RequestMapping(value = "/photo/photo_writing", method = RequestMethod.GET)
+	@RequestMapping(value = "/photo_writing", method = RequestMethod.GET)
 	public String photo_page() {
 		return "/photo/photo_writing";
+	}
+	
+	/* 자유게시판 글쓰기 페이지 */
+	@RequestMapping(value = "/free_writing", method = RequestMethod.GET)
+	public String free_page() {
+		return "/free_board/free_writing";
 	}
 }
