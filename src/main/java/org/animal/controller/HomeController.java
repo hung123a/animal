@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import org.animal.service.boardService;
 import org.animal.service.memberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	@Autowired
 	memberService ms;
-
+	@Autowired
+	boardService bs;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	/**

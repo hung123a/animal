@@ -35,6 +35,7 @@
 							<div id="animal_title" class="title">
 								<h1>
 									<a href="/page?type=information">동물 소개</a>
+									<input type="text" value="${tend.tno}">
 								</h1>
 								<!-- 동물 소개 제목 끝 -->
 							</div>

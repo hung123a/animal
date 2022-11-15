@@ -19,14 +19,14 @@
 		<!-- header 영역 -->
 		<jsp:include page="../include/header.jsp"></jsp:include>
 		<!-- header 영역 끝 -->
+		<form>
+			<div id="tendinous_center">
+				<div class="wrap" id="main">
+					<div class="wrap tap" id="tap">
+						<div id="tendinous_title">
+							<h1>건의게시판 글쓰기</h1>
+						</div>
 
-		<div id="tendinous_center">
-			<div class="wrap" id="main">
-				<div class="wrap tap" id="tap">
-					<div id="tendinous_title">
-						<h1>건의게시판 글쓰기</h1>
-					</div>
-					
 						<!-- 자유게시판 글쓰기 내용 -->
 						<div id="tendinous_writing_board">
 							<div id="middle">
@@ -45,17 +45,17 @@
 							</div>
 						</div>
 						<div class="btn">
-							<input type="submit" value="등록하기" class="bth">
+							<input type="submit" value="등록하기" class="bth" formaction="/tendinous_writing" formmethod="post">
 						</div>
-					
-					<div class="btn">
-						<a href="/page?type=tendinous"><input type="button"
-							value="목록으로" class="bth"></a>
+
+						<div class="btn">
+							<a href="/page?type=tendinous"><input type="button"
+								value="목록으로" class="bth"></a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-
+		</form>
 		<!-- 센터 영역 끝-->
 	</div>
 </body>

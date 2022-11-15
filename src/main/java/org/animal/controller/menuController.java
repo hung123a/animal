@@ -6,6 +6,7 @@ import org.animal.service.boardService;
 import org.animal.service.memberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -13,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class menuController {
 	@Autowired
 	memberService ms;
+	@Autowired
 	boardService bs;
 
 	/* 서브 페이지 */
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
-	public String shop() {
+	public String page(Model model) {
+		System.out.println("건의게시판 리스트=");
+		model.addAttribute("tend",bs.tend_list());
 		return "/tap/page";
 	}
 
@@ -28,11 +32,12 @@ public class menuController {
 	}
 
 	/* 동물소개 글쓰기 등록 */
-	/*@RequestMapping(value = "/information/information_writing", method = RequestMethod.POST)
-	public String information_writing(informationVO info) {
-
-		return "redirect:/page?type=information";
-	}*/
+	/*
+	 * @RequestMapping(value = "/information/information_writing", method =
+	 * RequestMethod.POST) public String information_writing(informationVO info) {
+	 * 
+	 * return "redirect:/page?type=information"; }
+	 */
 
 	/* 사진첩 글쓰기 페이지 */
 	@RequestMapping(value = "/photo_writing", method = RequestMethod.GET)

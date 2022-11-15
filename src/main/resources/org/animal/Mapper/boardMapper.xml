@@ -6,18 +6,26 @@
 
 <mapper namespace="org.animal.mapper.boardMapper">
 	<!-- 건의게시판 글쓰기 등록 -->
-	<!-- <insert id="information_writing">
-		<selectKey keyProperty="tno" order="BEFORE" resultType="int">
-			select 값을 keyProperty="bno"에 추가BEFORE로 먼저
-			select ifnull(MAX(ino)+1,1)from
-			information
-		</selectKey>
-		insert into information(ino, animal_name, habitat, look, life, habit, food, enemy, i_type, main_img, sub_img)
-		values(#{ino, #{animal_name}, #{habitat}, #{look}, #{life}, #{habit}, #{food}, #{enemy}, #{i_type}, #{main_img}, #{sub_img})
-	</insert> -->
+	<!-- <insert id="information_writing"> <selectKey keyProperty="tno" order="BEFORE" 
+		resultType="int"> select 값을 keyProperty="bno"에 추가BEFORE로 먼저 select ifnull(MAX(ino)+1,1)from 
+		information </selectKey> insert into information(ino, animal_name, habitat, 
+		look, life, habit, food, enemy, i_type, main_img, sub_img) values(#{ino, 
+		#{animal_name}, #{habitat}, #{look}, #{life}, #{habit}, #{food}, #{enemy}, 
+		#{i_type}, #{main_img}, #{sub_img}) </insert> -->
+
 	<!-- 건의게시판 글쓰기 등록 -->
-	<insert id="tend_writing">		
+	<insert id="tend_writing">
+		<selectKey keyProperty="tno" order="BEFORE" resultType="int">
+			<!-- select 값을 keyProperty="bno"에 추가BEFORE로 먼저 -->
+			select ifnull(MAX(tno)+1,1)from
+			tendinous
+		</selectKey>
 		insert ignore into tendinous(tno, tendinous_title, tendinous_cont)
-		values(#{tno], #{tendinous_title}, #{tendinous_cont})
+		values(#{tno}, #{tendinous_title}, #{tendinous_cont})
 	</insert>
+
+	<!-- 건의게시판 리스트 -->
+	<select id="tend_list" resultType="org.animal.model.tendinousVO">
+		select * from tendinous;
+	</select>
 </mapper>

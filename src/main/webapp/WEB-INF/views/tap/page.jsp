@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
+<%-- <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%> --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
 <html>
 <head>
@@ -240,15 +241,17 @@
 							<div class="board_data">날짜</div>
 							<div class="board_cnt">조회수</div>
 						</div>
+						<c:forEach items="${tend}" var="tend">						
 						<a href="#">
 							<div id="tendinous_board_conten">
-								<div class="no">1</div>
-								<div class="board_title">재밌게 바꿔주세요</div>
-								<div class="board_id">한국</div>
-								<div class="board_data">2022-10-25</div>
-								<div class="board_cnt">5</div>
+								<div class="no">${tend.tno}</div>
+								<div class="board_title">${tend.tendinous_title}</div>
+								<div class="board_id">${tend.id}</div> 
+								<div class="board_data">${tend.tendinous_data}</div>
+								<div class="board_cnt">${tend.tendinous_cnt}</div>
 							</div>
 						</a>
+						</c:forEach>
 					</div>
 					<div class="btn">
 						<a href="/tendinous"><input type="button" value="글쓰기"
