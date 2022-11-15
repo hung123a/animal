@@ -51,16 +51,6 @@
 	border-bottom: 3px solid #ddd; /* 바닥선 색싱 및 두께 변경 */
 	overflow: hidden; /* float인한 오버플로우 */
 }
-/* 컨텐츠별 버튼 */
-.btn { /* 버튼 영역 */
-	padding-top: 10px; /* 상단 패딩값 10지정 */
-	float: right; /* 오른쪽 배치 */
-}
-
-.bth { /* 버튼 */
-	height: 30px; /* 높이 30 지정 */
-	width: 80px; /* 넓이 80 지정 */
-}
 
 /* 동물 소개  */
 .animal_smail_tap { /* 동물별 소개를 담은 영역 */

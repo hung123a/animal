@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.animal.mapper.boardMapper">
+	<!-- 건의게시판 글쓰기 등록 -->
+	<!-- <insert id="information_writing">
+		<selectKey keyProperty="tno" order="BEFORE" resultType="int">
+			select 값을 keyProperty="bno"에 추가BEFORE로 먼저
+			select ifnull(MAX(ino)+1,1)from
+			information
+		</selectKey>
+		insert into information(ino, animal_name, habitat, look, life, habit, food, enemy, i_type, main_img, sub_img)
+		values(#{ino, #{animal_name}, #{habitat}, #{look}, #{life}, #{habit}, #{food}, #{enemy}, #{i_type}, #{main_img}, #{sub_img})
+	</insert> -->
+	<!-- 건의게시판 글쓰기 등록 -->
+	<insert id="tend_writing">		
+		insert ignore into tendinous(tno, tendinous_title, tendinous_cont)
+		values(#{tno], #{tendinous_title}, #{tendinous_cont})
+	</insert>
+</mapper>

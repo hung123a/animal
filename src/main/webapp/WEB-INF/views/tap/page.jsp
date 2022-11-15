@@ -29,9 +29,7 @@
 					<!-- 동물 소개 제목 -->
 					<div class="title">
 						<div id="animal_title">
-							<h1>
-								<a href="#">동물 소개</a>
-							</h1>
+							<h1>동물 소개</h1>
 						</div>
 					</div>
 					<div class="page_menu">
@@ -120,9 +118,7 @@
 				<!-- 사진첩 -->
 				<div class="wrap tap" id="photo_tap" style="display: none;">
 					<div class="title">
-						<h1>
-							<a href="#">사진첩</a>
-						</h1>
+						<h1>사진첩</h1>
 					</div>
 					<div class="page_menu">
 						<div class="ranking">
@@ -160,9 +156,7 @@
 				<!-- 자유게시판 -->
 				<div class="wrap tap" id="free_tap" style="display: none;">
 					<div class="title">
-						<h1>
-							<a href="">자유게시판</a>
-						</h1>
+						<h1>자유게시판</h1>
 					</div>
 					<div id="free_caution">
 						<ol>
@@ -226,9 +220,7 @@
 				<!-- 건의게시판 -->
 				<div class="wrap tap" id="tendinous_tap" style="display: none;">
 					<div class="title">
-						<h1>
-							<a href="">건의게시판</a>
-						</h1>
+						<h1>건의게시판</h1>
 					</div>
 					<div class="page_menu">
 						<div class="ranking">
@@ -256,11 +248,12 @@
 								<div class="board_data">2022-10-25</div>
 								<div class="board_cnt">5</div>
 							</div>
-						</a>						
+						</a>
 					</div>
 					<div class="btn">
-							<a href=""><input type="button" value="글쓰기" class="bth"></a>
-						</div>
+						<a href="/tendinous"><input type="button" value="글쓰기"
+							class="bth"></a>
+					</div>
 					<!-- 건의 게시판 미리 보기 끝 -->
 				</div>
 				<!-- 건의게시판 끝 -->

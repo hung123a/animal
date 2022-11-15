@@ -25,9 +25,7 @@
 			<div class="wrap" id="main">
 				<div class="wrap" id="photo_tap">
 					<div id="photo_title">
-						<h1>
-							<a href="#">사진첩 글쓰기</a>
-						</h1>
+						<h1>사진첩 글쓰기</h1>
 					</div>
 					<!-- 내용 전체 -->
 					<div id="photo_border">

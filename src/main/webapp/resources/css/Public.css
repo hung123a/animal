@@ -32,3 +32,12 @@ body { /* 바디태그 */
 	height: 30px; /* 높이 30 지정 */
 	width: 80px; /* 넓이 80 지정 */
 }
+
+h1 {
+	color: #7f3c3b; /* 글자 색상 지정 */
+}
+
+textarea {
+	font-size: 15px; /* 글자 크기 지정 */
+	padding: 10px; /* 패딩값 10지정 */
+}

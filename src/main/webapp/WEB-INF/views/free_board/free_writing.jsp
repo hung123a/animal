@@ -19,30 +19,39 @@
 		<!-- header 영역 -->
 		<jsp:include page="../include/header.jsp"></jsp:include>
 		<!-- header 영역 끝 -->
-		<div id="photo_center">
+		<div id="free_center">
 			<div class="wrap" id="main">
-				<div class="wrap tap">
+				<div class="wrap tap" id="tap">
 					<div id="free_title">
-						<h1>
-							<a href="#">자유게시판 글쓰기</a>
-						</h1>
+						<h1>자유게시판 글쓰기</h1>
 					</div>
 					<!-- 자유게시판 글쓰기 내용 -->
 					<div id="free_writing_board">
 						<div id="middle">
 							<div class="main_content">
-								<div class="main_title">제목</div>
-								<div id="main_Contents">내용</div>
+								<div class="content_title" id="main_title">제목</div>
+								<div class="Contents" id="main_Contents">내용</div>
+								<div class="img">이미지</div>
 							</div>
 							<div class="sub_content">
-								<div class="sub_title">
+								<div class="content_title" id="sub_title">
 									<input type="text">
 								</div>
-								<div id="sub_Contents">
-									<textarea cols="" rows=""></textarea>
+								<div class="Contents" id="sub_Contents">
+									<textarea cols="91" rows="26"></textarea>
+								</div>
+								<div class="img">
+									<input type="file">
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="btn">
+						<a href=""><input type="button" value="등록하기" class="bth"></a>
+					</div>
+					<div class="btn">
+						<a href="/page?type=free_board"><input type="button"
+							value="목록으로" class="bth"></a>
 					</div>
 				</div>
 			</div>

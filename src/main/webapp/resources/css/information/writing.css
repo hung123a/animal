@@ -41,6 +41,11 @@
 	width: 83%;
 }
 
+.animal_contents>input {
+	font-size: 15px; /* 글자 크기 지정 */
+	padding: 10px;
+}
+
 #animal_name {
 	height: 100%;
 	width: 90%;
