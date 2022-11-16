@@ -6,6 +6,7 @@ public class tendinousVO {
 	private String tendinous_cont; // 건의게시판 내용
 	private int tendinous_cnt; // 건의게시판 조회수
 	private String tendinous_data; // 건의게시판 등록 일자
+	private String tendinous_date; // 건의게시판 등록 일자
 	private String id; // 회원테이블과 조인을 위한 아이디
 	private int type;
 
@@ -49,6 +50,14 @@ public class tendinousVO {
 		this.tendinous_data = tendinous_data;
 	}
 
+	public String getTendinous_date() {
+		return tendinous_date;
+	}
+
+	public void setTendinous_date(String tendinous_date) {
+		this.tendinous_date = tendinous_date;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -68,8 +77,8 @@ public class tendinousVO {
 	@Override
 	public String toString() {
 		return "tendinousVO [tno=" + tno + ", tendinous_title=" + tendinous_title + ", tendinous_cont=" + tendinous_cont
-				+ ", tendinous_cnt=" + tendinous_cnt + ", tendinous_data=" + tendinous_data + ", id=" + id + ", type="
-				+ type + "]";
-	} // 페이지 분류를 위한 컬럼
+				+ ", tendinous_cnt=" + tendinous_cnt + ", tendinous_data=" + tendinous_data + ", tendinous_date="
+				+ tendinous_date + ", id=" + id + ", type=" + type + "]";
+	}
 
 }

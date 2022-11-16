@@ -22,6 +22,7 @@
 		<!-- header 영역 -->
 		<jsp:include page="../include/header.jsp"></jsp:include>
 		<!-- header 영역 끝 -->
+		<form>
 		<div id="center">
 			<div class="wrap" id="main">
 				<!-- 동물 소개 -->
@@ -50,31 +51,25 @@
 								<div class="left_all">
 									<div class="animal_title">동물 이름</div>
 									<div class="animal_contents">
-										<input type="text" id="animal_name">
-									</div>
-								</div>
-								<div class="left_all">
-									<div class="animal_title">어원</div>
-									<div class="animal_contents">
-										<textarea rows="" cols=""></textarea>
+										<input type="text" id="animal_name" name="animal_name">
 									</div>
 								</div>
 								<div class="left_all">
 									<div class="animal_title">서식지</div>
 									<div class="animal_contents">
-										<textarea rows="" cols=""></textarea>
+										<textarea name="habitat"></textarea>
 									</div>
 								</div>
 								<div class="left_all">
 									<div class="animal_title">생김새와 특징</div>
 									<div class="animal_contents">
-										<textarea rows="" cols=""></textarea>
+										<textarea name="look"></textarea>
 									</div>
 								</div>
 								<div class="left_all">
 									<div class="animal_title">수명</div>
 									<div class="animal_contents">
-										<textarea rows="" cols=""></textarea>
+										<textarea name="life"></textarea>
 									</div>
 								</div>
 
@@ -83,40 +78,34 @@
 							<!-- 오른쪽 -->
 							<div id="right">
 								<div class="right_all">
-									<div class="animal_title">몸체</div>
-									<div class="animal_contents">
-										<textarea rows="" cols=""></textarea>
-									</div>
-								</div>
-								<div class="right_all">
 									<div class="animal_title">먹이</div>
 									<div class="animal_contents">
-										<textarea rows="" cols=""></textarea>
+										<textarea name="food"></textarea>
 									</div>
 								</div>
 								<div class="right_all">
 									<div class="animal_title">천적</div>
 									<div class="animal_contents">
-										<textarea rows="" cols=""></textarea>
+										<textarea name="enemy"></textarea>
 									</div>
 								</div>
 								<div class="right_all">
 									<div class="animal_title">섬네일 이미지</div>
 									<div class="animal_contents">
-										<input type="file">
+										<input type="file" name="main_img">
 									</div>
 								</div>
 								<div class="right_all">
 									<div class="animal_title">서브 이미지</div>
 									<div class="animal_contents">
-										<input type="file" multiple>
+										<input type="file" multiple name="sub_img">
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="btn">
-						<a href=""><input type="button" value="등록하기" class="bth"></a>
+						<input type="submit" value="등록하기" class="bth" formaction="/information_writing" formmethod="post">
 					</div>
 					<div class="btn">
 						<a href="/page?type=information"><input type="button"
@@ -126,6 +115,7 @@
 				<!-- 동물 소개 끝 -->
 			</div>
 		</div>
+		</form>
 		<!-- 센터 영역 끝-->
 	</div>
 </body>

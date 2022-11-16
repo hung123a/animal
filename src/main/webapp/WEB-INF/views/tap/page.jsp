@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%-- <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%> --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
 <html>
@@ -59,59 +58,26 @@
 					</div>
 					<!-- 내용을 감싸는 div -->
 					<div class="contents">
-						<a href="#">
-							<div class="animal_smail_tap">
-								<div class="animal_img">
-									<img class="animal_img1" src="/resources/img/image1.jpg">
-								</div>
-								<div class="main_contents">
-									<div class="small_title">
-										<h2>소제목</h2>
+						<c:forEach items="${info}" var="info">
+							<a href="#">
+								<div class="animal_smail_tap">
+									<div class="animal_img">
+										<img class="animal_img1" src="/resources/img/image1.jpg">
 									</div>
-									<div class="small_contents">내용</div>
-								</div>
-							</div>
-						</a> <a href="#">
-							<div class="animal_smail_tap">
-								<div class="animal_img">
-									<img class="animal_img1" src="/resources/img/image1.jpg">
-								</div>
-								<div class="main_contents">
-									<div class="small_title">
-										<h2>소제목</h2>
+									<div class="main_contents">
+										<div class="small_title">
+											<h2>${info.animal_name}</h2>
+										</div>
+										<div class="small_contents">${info.look}</div>
+										<div id="date">${info.animal_date}</div>
 									</div>
-									<div class="small_contents">내용</div>
 								</div>
-							</div>
-						</a> <a href="#">
-							<div class="animal_smail_tap">
-								<div class="animal_img">
-									<img class="animal_img1" src="/resources/img/image1.jpg">
-								</div>
-								<div class="main_contents">
-									<div class="small_title">
-										<h2>소제목</h2>
-									</div>
-									<div class="small_contents">내용</div>
-								</div>
-							</div>
-						</a> <a href="#">
-							<div class="animal_smail_tap">
-								<div class="animal_img">
-									<img class="animal_img1" src="/resources/img/image1.jpg">
-								</div>
-								<div class="main_contents">
-									<div class="small_title">
-										<h2>소제목</h2>
-									</div>
-									<div class="small_contents">내용</div>
-								</div>
-							</div>
-						</a>
+							</a>
+						</c:forEach>
 					</div>
 					<div class="btn">
-						<a href="/information_writing"><input type="button"
-							value="글쓰기" class="bth"></a>
+						<a href="/information"><input type="button" value="글쓰기"
+							class="bth"></a>
 					</div>
 				</div>
 				<!-- 동물 소개 끝 -->
@@ -199,19 +165,21 @@
 							<div class="free_cnt">조회수</div>
 							<div class="free_like">추천수</div>
 						</div>
-						<a href="#">
-							<div id="free_board_conten">
-								<div class="free_no">1</div>
-								<div class="free_small_title">애완동물</div>
-								<div class="free_id">고양이</div>
-								<div class="free_data">2022-10-25</div>
-								<div class="free_cnt">1</div>
-								<div class="free_like">11</div>
-							</div>
-						</a>
+						<c:forEach items="${free}" var="free">
+							<a href="#">
+								<div id="free_board_conten">
+									<div class="free_no">${free.fno}</div>
+									<div class="free_small_title">${free.title}</div>
+									<div class="free_id">${free.id}</div>
+									<div class="free_data">${free.free_date}</div>
+									<div class="free_cnt">${free.free_cnt}</div>
+									<div class="free_like">${free.free_like}</div>
+								</div>
+							</a>
+						</c:forEach>
 					</div>
 					<div class="btn">
-						<a href="/free_writing"><input type="button" value="글쓰기"
+						<a href="/free_board"><input type="button" value="글쓰기"
 							class="bth"></a>
 					</div>
 					<!-- 자유게시판 미리 보기 끝 -->
@@ -241,16 +209,16 @@
 							<div class="board_data">날짜</div>
 							<div class="board_cnt">조회수</div>
 						</div>
-						<c:forEach items="${tend}" var="tend">						
-						<a href="#">
-							<div id="tendinous_board_conten">
-								<div class="no">${tend.tno}</div>
-								<div class="board_title">${tend.tendinous_title}</div>
-								<div class="board_id">${tend.id}</div> 
-								<div class="board_data">${tend.tendinous_data}</div>
-								<div class="board_cnt">${tend.tendinous_cnt}</div>
-							</div>
-						</a>
+						<c:forEach items="${tend}" var="tend">
+							<a href="#">
+								<div id="tendinous_board_conten">
+									<div class="no">${tend.tno}</div>
+									<div class="board_title">${tend.tendinous_title}</div>
+									<div class="board_id">${tend.id}</div>
+									<div class="board_data">${tend.tendinous_date}</div>
+									<div class="board_cnt">${tend.tendinous_cnt}</div>
+								</div>
+							</a>
 						</c:forEach>
 					</div>
 					<div class="btn">

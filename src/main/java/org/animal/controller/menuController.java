@@ -1,5 +1,6 @@
 package org.animal.controller;
 
+import org.animal.model.free_boardVO;
 import org.animal.model.informationVO;
 import org.animal.model.tendinousVO;
 import org.animal.service.boardService;
@@ -20,24 +21,25 @@ public class menuController {
 	/* 서브 페이지 */
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
 	public String page(Model model) {
-		System.out.println("건의게시판 리스트=");
-		model.addAttribute("tend",bs.tend_list());
+		model.addAttribute("tend", bs.tend_list());
+		model.addAttribute("free", bs.free_list());
+		model.addAttribute("info", bs.info_list());
 		return "/tap/page";
 	}
 
 	/* 동물소개 글쓰기 페이지 */
-	@RequestMapping(value = "/information_writing", method = RequestMethod.GET)
-	public String information_page() {
+	@RequestMapping(value = "/information", method = RequestMethod.GET)
+	public String info_get() {
 		return "/information/information_writing";
 	}
 
 	/* 동물소개 글쓰기 등록 */
-	/*
-	 * @RequestMapping(value = "/information/information_writing", method =
-	 * RequestMethod.POST) public String information_writing(informationVO info) {
-	 * 
-	 * return "redirect:/page?type=information"; }
-	 */
+	@RequestMapping(value = "/information_writing", method = RequestMethod.POST)
+	public String info_post(informationVO info) {
+		System.out.println("동물소개 ="+info);
+		bs.info_writing(info);
+		return "redirect:/page?type=information";
+	}
 
 	/* 사진첩 글쓰기 페이지 */
 	@RequestMapping(value = "/photo_writing", method = RequestMethod.GET)
@@ -46,9 +48,16 @@ public class menuController {
 	}
 
 	/* 자유게시판 글쓰기 페이지 */
-	@RequestMapping(value = "/free_writing", method = RequestMethod.GET)
-	public String free_page() {
+	@RequestMapping(value = "/free_board", method = RequestMethod.GET)
+	public String free_get() {
 		return "/free_board/free_writing";
+	}
+
+	/* 자유게시판 글쓰기 등록 */
+	@RequestMapping(value = "/free_writing", method = RequestMethod.POST)
+	public String free_post(free_boardVO free) {
+		bs.free_writing(free);
+		return "redirect:/page?type=free_board";
 	}
 
 	/* 건의게시판 글쓰기 페이지 */

@@ -19,43 +19,45 @@
 		<!-- header 영역 -->
 		<jsp:include page="../include/header.jsp"></jsp:include>
 		<!-- header 영역 끝 -->
-		<div id="free_center">
-			<div class="wrap" id="main">
-				<div class="wrap tap" id="tap">
-					<div id="free_title">
-						<h1>자유게시판 글쓰기</h1>
-					</div>
-					<!-- 자유게시판 글쓰기 내용 -->
-					<div id="free_writing_board">
-						<div id="middle">
-							<div class="main_content">
-								<div class="content_title" id="main_title">제목</div>
-								<div class="Contents" id="main_Contents">내용</div>
-								<div class="img">이미지</div>
-							</div>
-							<div class="sub_content">
-								<div class="content_title" id="sub_title">
-									<input type="text">
+		<form>
+			<div id="free_center">
+				<div class="wrap" id="main">
+					<div class="wrap tap" id="tap">
+						<div id="free_title">
+							<h1>자유게시판 글쓰기</h1>
+						</div>
+						<!-- 자유게시판 글쓰기 내용 -->
+						<div id="free_writing_board">
+							<div id="middle">
+								<div class="main_content">
+									<div class="content_title" id="main_title">제목</div>
+									<div class="Contents" id="main_Contents">내용</div>
+									<div class="img">이미지</div>
 								</div>
-								<div class="Contents" id="sub_Contents">
-									<textarea cols="91" rows="26"></textarea>
-								</div>
-								<div class="img">
-									<input type="file">
+								<div class="sub_content">
+									<div class="content_title" id="sub_title">
+										<input type="text" name="title">
+									</div>
+									<div class="Contents" id="sub_Contents">
+										<textarea cols="91" rows="26" name="contents"></textarea>
+									</div>
+									<div class="img">
+										<input type="file">
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="btn">
-						<a href=""><input type="button" value="등록하기" class="bth"></a>
-					</div>
-					<div class="btn">
-						<a href="/page?type=free_board"><input type="button"
-							value="목록으로" class="bth"></a>
+						<div class="btn">
+							<input type="submit" value="등록하기" class="bth" formaction="/free_writing" formmethod="post">
+						</div>
+						<div class="btn">
+							<a href="/page?type=free_board"><input type="button"
+								value="목록으로" class="bth"></a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</form>
 		<!-- 센터 영역 끝-->
 	</div>
 </body>

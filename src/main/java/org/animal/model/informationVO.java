@@ -13,6 +13,7 @@ public class informationVO {
 	private String animal_data; // 동물 정보 등록 일자
 	private String i_type; // 육해공 분류
 	private String id; // 회원테이블과 조인을 위한 아이디 (관리자)
+	private String animal_date; // 동물 정보 등록 날짜
 	public int getIno() {
 		return ino;
 	}
@@ -79,6 +80,13 @@ public class informationVO {
 	public void setI_type(String i_type) {
 		this.i_type = i_type;
 	}
+	
+	public String getAnimal_date() {
+		return animal_date;
+	}
+	public void setAnimal_date(String animal_date) {
+		this.animal_date = animal_date;
+	}
 	public String getId() {
 		return id;
 	}
@@ -89,7 +97,8 @@ public class informationVO {
 	public String toString() {
 		return "informationVO [ino=" + ino + ", main_img=" + main_img + ", sub_img=" + sub_img + ", animal_name="
 				+ animal_name + ", habitat=" + habitat + ", look=" + look + ", life=" + life + ", food=" + food
-				+ ", enemy=" + enemy + ", animal_data=" + animal_data + ", i_type=" + i_type + ", id=" + id + "]";
+				+ ", enemy=" + enemy + ", animal_data=" + animal_data + ", i_type=" + i_type + ", id=" + id
+				+ ", animal_date=" + animal_date + "]";
 	}
 
 }

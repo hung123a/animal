@@ -5,8 +5,10 @@ public class free_boardVO {
 	private String title; // 자유게시판 제목
 	private String contents; // 자유게시판 내용
 	private int free_cnt; // 자유게시판 조회수
+	private int free_like; // 자유게시판 추천수
 	private String free_img; // 자유게시판 이미지  
 	private String free_data; // 자유게시판 등록 일자
+	private String free_date; // 자유게시판 등록 날짜
 	private String id; // 회원테이블과 조인을 위한 아이디
 	private int type; // 페이지 분류를 위한 컬럼
 	public int getFno() {
@@ -36,6 +38,13 @@ public class free_boardVO {
 	public String getFree_img() {
 		return free_img;
 	}
+	
+	public int getFree_like() {
+		return free_like;
+	}
+	public void setFree_like(int free_like) {
+		this.free_like = free_like;
+	}
 	public void setFree_img(String free_img) {
 		this.free_img = free_img;
 	}
@@ -44,6 +53,12 @@ public class free_boardVO {
 	}
 	public void setFree_data(String free_data) {
 		this.free_data = free_data;
+	}
+	public String getFree_date() {
+		return free_date;
+	}
+	public void setFree_date(String free_date) {
+		this.free_date = free_date;
 	}
 	public String getId() {
 		return id;
@@ -60,7 +75,9 @@ public class free_boardVO {
 	@Override
 	public String toString() {
 		return "free_boardVO [fno=" + fno + ", title=" + title + ", contents=" + contents + ", free_cnt=" + free_cnt
-				+ ", free_img=" + free_img + ", free_data=" + free_data + ", id=" + id + ", type=" + type + "]";
+				+ ", free_like=" + free_like + ", free_img=" + free_img + ", free_data=" + free_data + ", free_date="
+				+ free_date + ", id=" + id + ", type=" + type + "]";
 	}
+	
 	
 }

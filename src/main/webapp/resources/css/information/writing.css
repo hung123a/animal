@@ -63,7 +63,7 @@
 }
 
 .left_all {
-	padding: 10 0 10 0;
+	padding: 10 0 40 0;
 	display: flex;
 	height: 10%;
 }
@@ -75,7 +75,7 @@
 }
 
 .right_all {
-	padding: 10 0 10 0;
+	padding: 10 0 40 0;
 	display: flex;
 	height: 10%;
 }

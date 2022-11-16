@@ -6,12 +6,40 @@
 
 <mapper namespace="org.animal.mapper.boardMapper">
 	<!-- 건의게시판 글쓰기 등록 -->
-	<!-- <insert id="information_writing"> <selectKey keyProperty="tno" order="BEFORE" 
-		resultType="int"> select 값을 keyProperty="bno"에 추가BEFORE로 먼저 select ifnull(MAX(ino)+1,1)from 
-		information </selectKey> insert into information(ino, animal_name, habitat, 
-		look, life, habit, food, enemy, i_type, main_img, sub_img) values(#{ino, 
-		#{animal_name}, #{habitat}, #{look}, #{life}, #{habit}, #{food}, #{enemy}, 
-		#{i_type}, #{main_img}, #{sub_img}) </insert> -->
+	<insert id="info_writing">
+		<selectKey keyProperty="ino" order="BEFORE" resultType="int">
+			<!-- select 값을 keyProperty="bno"에 추가BEFORE로 먼저 select -->
+			select ifnull(MAX(ino)+1,1)from
+			information
+		</selectKey>
+		insert into information(ino, animal_name, habitat, look, life, food, enemy, i_type, main_img, sub_img) 
+		values(#{ino},#{animal_name},#{habitat}, #{look}, #{life}, #{food},#{enemy},#{i_type},#{main_img}, #{sub_img})
+	</insert>
+	
+	<!-- 동물 소개 리스트 -->
+	<select id="info_list"
+		resultType="org.animal.model.informationVO">
+		select *, date_format(animal_data, '%Y-%m-%d')animal_date from information;
+	</select>
+
+	<!-- 자유게시판 글쓰기 등록 -->
+	<insert id="free_writing">
+		<selectKey keyProperty="fno" order="BEFORE" resultType="int">
+			<!-- select 값을 keyProperty="bno"에 추가BEFORE로 먼저 -->
+			select ifnull(MAX(fno)+1,1)from
+			free_board
+		</selectKey>
+		insert ignore into free_board(fno, title, contents, free_cnt,
+		free_img)
+		values(#{fno}, #{title}, #{contents}, #{free_cnt},
+		#{free_img})
+	</insert>
+
+	<!-- 자유게시판 리스트 -->
+	<select id="free_list"
+		resultType="org.animal.model.free_boardVO">
+		select *, date_format(free_data, '%Y-%m-%d')free_date from free_board;
+	</select>
 
 	<!-- 건의게시판 글쓰기 등록 -->
 	<insert id="tend_writing">
@@ -20,12 +48,12 @@
 			select ifnull(MAX(tno)+1,1)from
 			tendinous
 		</selectKey>
-		insert ignore into tendinous(tno, tendinous_title, tendinous_cont)
-		values(#{tno}, #{tendinous_title}, #{tendinous_cont})
+		insert ignore into tendinous(tno, tendinous_title, tendinous_cont, id)
+		values(#{tno}, #{tendinous_title}, #{tendinous_cont}, #{id})
 	</insert>
 
 	<!-- 건의게시판 리스트 -->
 	<select id="tend_list" resultType="org.animal.model.tendinousVO">
-		select * from tendinous;
+		select *, date_format(tendinous_data, '%Y-%m-%d')tendinous_date from tendinous;
 	</select>
 </mapper>
