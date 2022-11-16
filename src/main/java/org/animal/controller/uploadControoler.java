@@ -8,11 +8,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
+import org.animal.model.free_uploadVO;
 import org.animal.model.info_uploadVO;
 import org.animal.model.photo_uploadVO;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -99,7 +104,7 @@ public class uploadControoler {
 
 	/* 동물 소개 이미지 서브 업로드 */
 	@RequestMapping(value = "/information_sub", method = RequestMethod.POST)
-	public ResponseEntity<ArrayList<info_uploadVO>> shop_boardsubPost(MultipartFile[] sub) {
+	public ResponseEntity<ArrayList<info_uploadVO>> info_img_post(MultipartFile[] sub) {
 		// SAttachFileVO
 		ArrayList<info_uploadVO> list = new ArrayList<>();
 		// 폴더 경로
@@ -153,11 +158,11 @@ public class uploadControoler {
 	
 	/* 사진첩 이미지 업로드 */
 	@RequestMapping(value = "/photo_img", method = RequestMethod.POST)
-	public ResponseEntity<photo_uploadVO> photo_imgPost(MultipartFile img) {
+	public ResponseEntity<photo_uploadVO> photo_img_Post(MultipartFile img) {
 		// SAttachFileVO클래스 포함
 		photo_uploadVO photovo = new photo_uploadVO();
 		// 폴더 경로
-		String uploadFolder = "D:\\upload\\information\\main";
+		String uploadFolder = "D:\\upload\\photo";
 		// 서버 업로드 경로와 getFolder메서드의 날짜문자열을 이어서 하나의 폴더 생성
 		File uploadPath = new File(uploadFolder, getFolder());
 
@@ -196,5 +201,96 @@ public class uploadControoler {
 			System.out.println(e.getMessage());
 		}
 		return new ResponseEntity<>(photovo, HttpStatus.OK);// new ResponseEntity<>(list, HttpStatus.OK);
+	}
+	
+	/* 자유게시판 이미지  업로드 */
+	@RequestMapping(value = "/free_img", method = RequestMethod.POST)
+	public ResponseEntity<ArrayList<free_uploadVO>> free_img_post(MultipartFile[] img) {
+		// SAttachFileVO
+		ArrayList<free_uploadVO> list = new ArrayList<>();
+		// 폴더 경로
+		String uploadFolder = "D:\\upload\\free_board";
+		// 서버 업로드 경로와 getFolder메서드의 날짜문자열을 이어서 하나의 폴더 생성
+		File uploadPath = new File(uploadFolder, getFolder());
+		// 폴더 생성
+		if (uploadPath.exists() == false) {// uploadPath가 존재하지 않으면,
+			uploadPath.mkdirs(); // 만들어라
+		}
+		// for(변수명:배열명)
+		for (MultipartFile multipartFile : img) {
+			// SAttachFileVO클래스으의 새로운 주소를 반복적으로 생성하여
+			// ArrayList에 저장
+			free_uploadVO freevo = new free_uploadVO();
+
+			System.out.println("getOriginalFilename=" + multipartFile.getOriginalFilename());
+			System.out.println("getSize=" + multipartFile.getSize());
+			// 파일저장
+			// 실제 파일명(multiparFile.getOriginalFilename())
+			// UUID 적용(UUID_multiparFile.getOriginalFilename())
+			UUID uuid = UUID.randomUUID();
+			System.out.println("UUID= " + uuid.toString());
+
+			// SAttachFileVO의 uploadPath 변수에 저장()
+			freevo.setFree_upload(getFolder());
+			// SAttachFileVO의 fileName 변수에 저장()
+			freevo.setFree_name(multipartFile.getOriginalFilename());
+			// SAttachFileVO의 uuid 변수에 저장()
+			freevo.setFree_uid(uuid.toString());			
+
+			// 어느폴더에(D:\\upload\\현재날짜), 어떤파일이름으로(mainlogo_new.png)
+			File saveFile = new File(uploadPath+"\\"+uuid.toString() + "_" + multipartFile.getOriginalFilename());
+			// D:\\upload\\mainlogo_new.png에 파일을 전송(transferTo)
+			try {// transferTo() 메소드에 예외가 있으면
+				multipartFile.transferTo(saveFile); // 서버 원본파일 전송
+				// 내가 서버에 올리고자 하는 파일이 이미지 이면,
+				if (checkImageType(saveFile)) {
+					// AttachFileVO의 image 변수에 저장()
+					freevo.setFree_image(true);
+				} // checkImageType 메서드 끝
+
+				// SAttachFileVO에 저장된 데이터를 배열에 추가
+				list.add(freevo);
+			} catch (Exception e) {// 예외를 처리하라.
+				System.out.println(e.getMessage());
+			}
+		}
+		return new ResponseEntity<>(list,HttpStatus.OK);
+	}
+	
+	/*화면 이미지 불러오기*/
+	@RequestMapping(value = "/display", method = RequestMethod.GET)
+	public ResponseEntity<byte[]> getFile(String filename) {
+		System.out.println("fileName=" + filename);
+
+		File file = new File("D:\\upload\\" + filename); // 경로 숨기는 작업
+
+		ResponseEntity<byte[]> result = null;
+
+		HttpHeaders headers = new HttpHeaders();
+		try {
+			headers.add("Content-Type", Files.probeContentType(file.toPath()));
+			result = new ResponseEntity<>(FileCopyUtils.copyToByteArray(file), headers, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+	
+	
+	@RequestMapping(value = "/download", method = RequestMethod.GET)
+	public ResponseEntity<Resource> downloadFile(String filename) {
+		Resource resource = new FileSystemResource("D:\\upload\\" + filename);
+		// 다운로드 시 파일의 이름을 처리
+		String resourceName = resource.getFilename();
+		HttpHeaders headers = new HttpHeaders();
+		try {
+			// 다운로드 파일이름이 한글일 때, 깨지지 않게 하기 위한 설정
+			headers.add("Content-Disposition",
+					"attachment;filename=" + new String(resourceName.getBytes("utf-8"), "ISO-8859-1"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<>(resource, headers, HttpStatus.OK);
 	}
 }

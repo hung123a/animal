@@ -5,7 +5,7 @@ public class info_uploadVO {
 	private String info_name; // 파일 이름
 	private boolean info_image; // 파일 설명 사진
 	private String info_upload; // 파일 저장되어 있는 경로
-	private int info_no; // 사진 번호
+	private int ino; // 사진 번호
 	public String getInfo_uid() {
 		return info_uid;
 	}
@@ -30,15 +30,15 @@ public class info_uploadVO {
 	public void setInfo_upload(String info_upload) {
 		this.info_upload = info_upload;
 	}
-	public int getInfo_no() {
-		return info_no;
+	public int getIno() {
+		return ino;
 	}
-	public void setInfo_no(int info_no) {
-		this.info_no = info_no;
+	public void setIno(int ino) {
+		this.ino = ino;
 	}
 	@Override
 	public String toString() {
 		return "info_uploadVO [info_uid=" + info_uid + ", info_name=" + info_name + ", info_image=" + info_image
-				+ ", info_upload=" + info_upload + ", info_no=" + info_no + "]";
+				+ ", info_upload=" + info_upload + ", ino=" + ino + "]";
 	}	
 }

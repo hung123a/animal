@@ -9,7 +9,8 @@
 <!-- 제이쿼리 -->
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<!-- 동물 소개 등록을 위한 ajax -->
+<script type="text/javascript" src="/resources/js/information/information.js"></script>
 <!-- 동물 소개 글쓰기 css -->
 <link rel="stylesheet" href="/resources/css/information/writing.css">
 <!-- 겹치는 css -->
@@ -22,7 +23,7 @@
 		<!-- header 영역 -->
 		<jsp:include page="../include/header.jsp"></jsp:include>
 		<!-- header 영역 끝 -->
-		<form>
+		<form action="/information_writing" method="post" id="info_form">
 		<div id="center">
 			<div class="wrap" id="main">
 				<!-- 동물 소개 -->
@@ -57,19 +58,19 @@
 								<div class="left_all">
 									<div class="animal_title">서식지</div>
 									<div class="animal_contents">
-										<textarea name="habitat"></textarea>
+										<textarea name="habitat" id="habitat"></textarea>
 									</div>
 								</div>
 								<div class="left_all">
 									<div class="animal_title">생김새와 특징</div>
 									<div class="animal_contents">
-										<textarea name="look"></textarea>
+										<textarea name="look" id="look"></textarea>
 									</div>
 								</div>
 								<div class="left_all">
 									<div class="animal_title">수명</div>
 									<div class="animal_contents">
-										<textarea name="life"></textarea>
+										<textarea name="life" id="life"></textarea>
 									</div>
 								</div>
 
@@ -80,32 +81,32 @@
 								<div class="right_all">
 									<div class="animal_title">먹이</div>
 									<div class="animal_contents">
-										<textarea name="food"></textarea>
+										<textarea name="food" id="food"></textarea>
 									</div>
 								</div>
 								<div class="right_all">
 									<div class="animal_title">천적</div>
 									<div class="animal_contents">
-										<textarea name="enemy"></textarea>
+										<textarea name="enemy" id="enemy"></textarea>
 									</div>
 								</div>
 								<div class="right_all">
 									<div class="animal_title">섬네일 이미지</div>
 									<div class="animal_contents">
-										<input type="file" name="main_img">
+										<input type="file" name="main" id="main_img">
 									</div>
 								</div>
 								<div class="right_all">
 									<div class="animal_title">서브 이미지</div>
 									<div class="animal_contents">
-										<input type="file" multiple name="sub_img">
+										<input type="file" multiple name="sub" id="sub_img">
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="btn">
-						<input type="submit" value="등록하기" class="bth" formaction="/information_writing" formmethod="post">
+						<input type="button" value="등록하기" class="bth" id="uploadBtn">
 					</div>
 					<div class="btn">
 						<a href="/page?type=information"><input type="button"
