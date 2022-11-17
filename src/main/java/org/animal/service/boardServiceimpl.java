@@ -26,14 +26,14 @@ public class boardServiceimpl implements boardService {
 		animal_info.getInfo().forEach(info -> {
 			
 			// info_uploadVO의 info_no에 informationVO의 ino를 저장
-			info.setInfo_no(animal_info.getIno());;
+			info.setIno(animal_info.getIno());;
 			am.info_insert(info);
 		});
 	}
 
 	/* 동물 소개 리스트 구현 */
-	public ArrayList<informationVO> info_list() {
-		return bm.info_list();
+	public ArrayList<informationVO> info_list(informationVO animal_info) {
+		return bm.info_list(animal_info);
 	}
 
 	/* 동물 소개 메인 이미지 DB설계 */

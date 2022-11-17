@@ -20,10 +20,13 @@ public class menuController {
 
 	/* 서브 페이지 */
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
-	public String page(Model model) {
-		model.addAttribute("tend", bs.tend_list());
+	public String page(Model model,informationVO animal_info) {
+		/*건의 게시판 리스트*/
+		model.addAttribute("tend", bs.tend_list()); 
+		/*자유게시판 리스트*/
 		model.addAttribute("free", bs.free_list());
-		model.addAttribute("info", bs.info_list());
+		/* 동물 소개 리스트 */
+		model.addAttribute("info", bs.info_list(animal_info));
 		return "/tap/page";
 	}
 

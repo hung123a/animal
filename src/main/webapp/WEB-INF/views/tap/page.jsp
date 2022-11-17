@@ -62,7 +62,7 @@
 							<a href="#">
 								<div class="animal_smail_tap">
 									<div class="animal_img">
-										<img class="animal_img1" src="/resources/img/image1.jpg">
+										<img class="animal_img1" src="/display?filename=${info.main_img}">
 									</div>
 									<div class="main_contents">
 										<div class="small_title">

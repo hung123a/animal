@@ -12,14 +12,20 @@
 			select ifnull(MAX(ino)+1,1)from
 			information
 		</selectKey>
-		insert into information(ino, animal_name, habitat, look, life, food, enemy, i_type, main_img, sub_img) 
-		values(#{ino},#{animal_name},#{habitat}, #{look}, #{life}, #{food},#{enemy},#{i_type},#{main_img}, #{sub_img})
+		insert into information(ino, animal_name, habitat, look, life, food,
+		enemy, i_type, main_img, sub_img)
+		values(#{ino},#{animal_name},#{habitat}, #{look}, #{life},
+		#{food},#{enemy},#{i_type},#{main_img}, #{sub_img})
 	</insert>
-	
+
 	<!-- 동물 소개 리스트 -->
 	<select id="info_list"
 		resultType="org.animal.model.informationVO">
-		select *, date_format(animal_data, '%Y-%m-%d')animal_date from information;
+		select
+		i.ino,animal_name,habitat,look,life,food,enemy,animal_data,i_type,vision,Concat(Replace(info_upload,'\\','/'),'/',info_uid,'_'
+		,info_name)AS main_img
+		from information i join info_img f on i.ino = f.ino where info_image = 1 and
+		vision = 'm';
 	</select>
 
 	<!-- 자유게시판 글쓰기 등록 -->
@@ -38,7 +44,8 @@
 	<!-- 자유게시판 리스트 -->
 	<select id="free_list"
 		resultType="org.animal.model.free_boardVO">
-		select *, date_format(free_data, '%Y-%m-%d')free_date from free_board;
+		select *, date_format(free_data, '%Y-%m-%d')free_date from
+		free_board;
 	</select>
 
 	<!-- 건의게시판 글쓰기 등록 -->
@@ -54,6 +61,7 @@
 
 	<!-- 건의게시판 리스트 -->
 	<select id="tend_list" resultType="org.animal.model.tendinousVO">
-		select *, date_format(tendinous_data, '%Y-%m-%d')tendinous_date from tendinous;
+		select *,
+		date_format(tendinous_data, '%Y-%m-%d')tendinous_date from tendinous;
 	</select>
 </mapper>

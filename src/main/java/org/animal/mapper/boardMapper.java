@@ -11,7 +11,7 @@ public interface boardMapper {
 	public void info_writing(informationVO animal_info);
 	
 	/*동물 소개 리스트 DB설계*/
-	public ArrayList<informationVO> info_list();
+	public ArrayList<informationVO> info_list(informationVO animal_info);
 	
 	/*동물 소개 메인 이미지 DB설계*/
 	public informationVO main(informationVO animal_info);

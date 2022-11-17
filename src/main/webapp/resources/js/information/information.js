@@ -153,10 +153,10 @@ $(document).ready(function() {
 			success : function(result){
 				console.log("result1 = "+result)
 				
-				var str = "";				
+				var str = "";		
 				// $(result).each(function(i, obj){
 					 input += "<input type='text' name='info["+0+"].info_image' value ='" + result.info_image + "'><br>";					 					 
-					 input += "<input type='text' name='info["+0+"].info_upload' value ='" + result.info_upload + "'><br>";				 
+					 input += "<input type='text' name='info["+0+"].info_upload' value ='" + "\\information\\main\\" +result.info_upload + "'><br>";				 
 					 input += "<input type='text' name='info["+0+"].info_uid' value ='" + result.info_uid + "'><br>";
 					 input += "<input type='text' name='info["+0+"].info_name' value ='" + result.info_name + "'><br>";
 					 input += "<input type='text' name='info["+0+"].vision' value ='" + result.vision + "'><br>";
@@ -208,11 +208,12 @@ $(document).ready(function() {
 				console.log("서브이미지(result)="+result);
 				
 				var str="";
+				
 				$(result).each(function(i,obj){
 					console.log("obj2="+obj)
 					console.log("obj2.filename="+obj.filename)
 				  	 input += "<input type='text' name='info["+(i+1)+"].info_image' value ='" + obj.info_image + "'><br>";					 					 
-					 input += "<input type='text' name='info["+(i+1)+"].info_upload' value ='" + obj.info_upload + "'><br>";				 
+					 input += "<input type='text' name='info["+(i+1)+"].info_upload' value ='" + "\\information\\sub\\" + obj.info_upload + "'><br>";				 
 					 input += "<input type='text' name='info["+(i+1)+"].info_uid' value ='" + obj.info_uid + "'><br>";
 					 input += "<input type='text' name='info["+(i+1)+"].info_name' value ='" + obj.info_name + "'><br>";
 					 input += "<input type='text' name='info["+(i+1)+"].vision' value ='" + obj.vision + "'><br>";
