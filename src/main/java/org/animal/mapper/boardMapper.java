@@ -8,10 +8,16 @@ import org.animal.model.tendinousVO;
 
 public interface boardMapper {
 	/* 동물 소개 글 등록 DB설계 */
-	public void info_writing(informationVO info);
+	public void info_writing(informationVO animal_info);
 	
-	/*동물 소개 리스트*/
+	/*동물 소개 리스트 DB설계*/
 	public ArrayList<informationVO> info_list();
+	
+	/*동물 소개 메인 이미지 DB설계*/
+	public informationVO main(informationVO animal_info);
+	
+	/*동물 소개 서브 이미지 DB설계*/
+	public ArrayList<informationVO> sub(informationVO animal_info);
 
 	/* 자유게시판 글 등록 DB설계 */
 	public void free_writing(free_boardVO free);

@@ -77,14 +77,16 @@ public class uploadControoler {
 		// 실제 파일명(multiparFile.getOriginalFilename())
 		// UUID 적용(UUID_multiparFile.getOriginalFilename())
 		UUID uuid = UUID.randomUUID();
-		System.out.println("info_UUID= " + uuid.toString());
+		System.out.println("info_main.UUID= " + uuid.toString());
 
 		// SAttachFileVO의 uploadPath 변수에 저장()
 		infovo.setInfo_upload(getFolder());
 		// SAttachFileVO의 fileName 변수에 저장()
 		infovo.setInfo_name(main.getOriginalFilename());
 		// SAttachFileVO의 uuid 변수에 저장()
-		infovo.setInfo_uid(uuid.toString());		
+		infovo.setInfo_uid(uuid.toString());	
+		// SAttachFileVO의 vision 변수에 저장()
+		infovo.setVision("m");
 
 		// 어느폴더에(D:\\upload\\현재날짜), 어떤파일이름으로(mainlogo_new.png)
 		File saveFile = new File(uploadPath + "\\" + uuid.toString() + "_" + main.getOriginalFilename());
@@ -127,14 +129,16 @@ public class uploadControoler {
 			// 실제 파일명(multiparFile.getOriginalFilename())
 			// UUID 적용(UUID_multiparFile.getOriginalFilename())
 			UUID uuid = UUID.randomUUID();
-			System.out.println("UUID= " + uuid.toString());
+			System.out.println("info_sub.UUID= " + uuid.toString());
 
 			// SAttachFileVO의 uploadPath 변수에 저장()
 			infovo.setInfo_upload(getFolder());
 			// SAttachFileVO의 fileName 변수에 저장()
 			infovo.setInfo_name(multipartFile.getOriginalFilename());
 			// SAttachFileVO의 uuid 변수에 저장()
-			infovo.setInfo_uid(uuid.toString());			
+			infovo.setInfo_uid(uuid.toString());	
+			// SAttachFileVO의 vision 변수에 저장()
+			infovo.setVision("s");
 
 			// 어느폴더에(D:\\upload\\현재날짜), 어떤파일이름으로(mainlogo_new.png)
 			File saveFile = new File(uploadPath+"\\"+uuid.toString() + "_" + multipartFile.getOriginalFilename());

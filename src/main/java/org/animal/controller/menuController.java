@@ -35,9 +35,9 @@ public class menuController {
 
 	/* 동물소개 글쓰기 등록 */
 	@RequestMapping(value = "/information_writing", method = RequestMethod.POST)
-	public String info_post(informationVO info) {
-		System.out.println("동물소개 ="+info);
-		bs.info_writing(info);
+	public String info_post(informationVO animal_info) {
+		System.out.println("동물소개 ="+animal_info);		
+		bs.info_writing(animal_info);
 		return "redirect:/page?type=information";
 	}
 

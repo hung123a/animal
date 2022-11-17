@@ -5,7 +5,8 @@ public class info_uploadVO {
 	private String info_name; // 파일 이름
 	private boolean info_image; // 파일 설명 사진
 	private String info_upload; // 파일 저장되어 있는 경로
-	private int ino; // 사진 번호
+	private String vision; // 사진 타입 분류
+	private int info_no; // 사진 번호
 	public String getInfo_uid() {
 		return info_uid;
 	}
@@ -30,15 +31,21 @@ public class info_uploadVO {
 	public void setInfo_upload(String info_upload) {
 		this.info_upload = info_upload;
 	}
-	public int getIno() {
-		return ino;
+	public String getVision() {
+		return vision;
 	}
-	public void setIno(int ino) {
-		this.ino = ino;
+	public void setVision(String vision) {
+		this.vision = vision;
+	}
+	public int getInfo_no() {
+		return info_no;
+	}
+	public void setInfo_no(int info_no) {
+		this.info_no = info_no;
 	}
 	@Override
 	public String toString() {
 		return "info_uploadVO [info_uid=" + info_uid + ", info_name=" + info_name + ", info_image=" + info_image
-				+ ", info_upload=" + info_upload + ", ino=" + ino + "]";
+				+ ", info_upload=" + info_upload + ", vision=" + vision + ", info_no=" + info_no + "]";
 	}	
 }

@@ -22,12 +22,12 @@
 	<div id="cont">
 		<!-- header 영역 -->
 		<jsp:include page="../include/header.jsp"></jsp:include>
-		<!-- header 영역 끝 -->
-		<form action="/information_writing" method="post" id="info_form">
+		<!-- header 영역 끝 -->		
 		<div id="center">
 			<div class="wrap" id="main">
 				<!-- 동물 소개 -->
 				<div class="wrap tap">
+				<form action="/information_writing" method="post" id="info_form" name="info_form" enctype="multipart/form-data">
 					<div class="title" id="animal_title">
 						<h1>
 							<a href="#">동물 소개 글쓰기</a>
@@ -108,6 +108,7 @@
 					<div class="btn">
 						<input type="button" value="등록하기" class="bth" id="uploadBtn">
 					</div>
+					</form>
 					<div class="btn">
 						<a href="/page?type=information"><input type="button"
 							value="목록으로" class="bth"></a>
@@ -115,8 +116,7 @@
 				</div>
 				<!-- 동물 소개 끝 -->
 			</div>
-		</div>
-		</form>
+		</div>		
 		<!-- 센터 영역 끝-->
 	</div>
 </body>
