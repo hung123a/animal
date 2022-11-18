@@ -20,7 +20,7 @@ public interface boardMapper {
 	public ArrayList<informationVO> sub(informationVO animal_info);
 
 	/* 자유게시판 글 등록 DB설계 */
-	public void free_writing(free_boardVO free);
+	public void free_writing(free_boardVO board);
 
 	/* 자유게시판 리스트 DB설계 */
 	public ArrayList<free_boardVO> free_list();

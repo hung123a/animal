@@ -67,6 +67,7 @@
 
 .animal_img1 { /* 동물 사진 */
 	width: 100%; /* 사진 크기 고정 */
+	height: 100%; /* 사진 높이 고정 */
 }
 
 .main_contents { /* 소개 내용 */

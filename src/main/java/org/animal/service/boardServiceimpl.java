@@ -26,7 +26,7 @@ public class boardServiceimpl implements boardService {
 		animal_info.getInfo().forEach(info -> {
 			
 			// info_uploadVO의 info_no에 informationVO의 ino를 저장
-			info.setIno(animal_info.getIno());;
+			info.setIno(animal_info.getIno());
 			am.info_insert(info);
 		});
 	}
@@ -47,8 +47,13 @@ public class boardServiceimpl implements boardService {
 	}
 
 	/* 자유게시판 글 등록 구현 */
-	public void free_writing(free_boardVO free) {
-		bm.free_writing(free);
+	public void free_writing(free_boardVO board) {
+		bm.free_writing(board);
+		
+		board.getFree().forEach(free -> {
+			free.setFno(board.getFno());
+			am.free_insert(free);
+		});
 	}
 
 	/* 자유게시판 리스트 구현 */

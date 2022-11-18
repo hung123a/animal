@@ -162,7 +162,7 @@ public class uploadControoler {
 	
 	/* 사진첩 이미지 업로드 */
 	@RequestMapping(value = "/photo_img", method = RequestMethod.POST)
-	public ResponseEntity<photo_uploadVO> photo_img_Post(MultipartFile img) {
+	public ResponseEntity<photo_uploadVO> photo_img_Post(MultipartFile photo) {
 		// SAttachFileVO클래스 포함
 		photo_uploadVO photovo = new photo_uploadVO();
 		// 폴더 경로
@@ -175,8 +175,8 @@ public class uploadControoler {
 			uploadPath.mkdirs(); // 만들어라
 		}
 
-		System.out.println("getOriginalFilename=" + img.getOriginalFilename());
-		System.out.println("getSize=" + img.getSize());
+		System.out.println("getOriginalFilename=" + photo.getOriginalFilename());
+		System.out.println("getSize=" + photo.getSize());
 
 		// 파일저장
 		// 실제 파일명(multiparFile.getOriginalFilename())
@@ -187,15 +187,15 @@ public class uploadControoler {
 		// SAttachFileVO의 uploadPath 변수에 저장()
 		photovo.setPhoto_upload(getFolder());
 		// SAttachFileVO의 fileName 변수에 저장()
-		photovo.setPhoto_name(img.getOriginalFilename());
+		photovo.setPhoto_name(photo.getOriginalFilename());
 		// SAttachFileVO의 uuid 변수에 저장()
 		photovo.setPhoto_uid(uuid.toString());		
 
 		// 어느폴더에(D:\\upload\\현재날짜), 어떤파일이름으로(mainlogo_new.png)
-		File saveFile = new File(uploadPath + "\\" + uuid.toString() + "_" + img.getOriginalFilename());
+		File saveFile = new File(uploadPath + "\\" + uuid.toString() + "_" + photo.getOriginalFilename());
 		// D:\\upload\\mainlogo_new.png에 파일을 전송(transferTo)
 		try {// transferTo() 메소드에 예외가 있으면
-			img.transferTo(saveFile); // 서버 원본파일 전송
+			photo.transferTo(saveFile); // 서버 원본파일 전송
 			// 내가 서버에 올리고자 하는 파일이 이미지 이면,
 			if (checkImageType(saveFile)) {
 				// AttachFileVO의 image 변수에 저장()

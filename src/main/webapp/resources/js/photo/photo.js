@@ -6,7 +6,6 @@
     var btnUpload = sec9.querySelector('.btn-upload');
     var inputFile = sec9.querySelector('input[type="file"]');
     var uploadBox = sec9.querySelector('.photo_all');
-
     /* 박스 안에 Drag 들어왔을 때 */
     uploadBox.addEventListener('dragenter', function(e) {
         console.log('dragenter');
@@ -15,7 +14,7 @@
     /* 박스 안에 Drag를 하고 있을 때 */
     uploadBox.addEventListener('dragover', function(e) {
         e.preventDefault();
-        console.log('dragover');
+        
         var vaild = e.dataTransfer.types.indexOf('Files') >= 0;
 
         if(!vaild){

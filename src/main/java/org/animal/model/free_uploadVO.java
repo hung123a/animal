@@ -5,7 +5,7 @@ public class free_uploadVO {
 	private String free_name; // 파일 이름
 	private boolean free_image; // 파일 설명 사진
 	private String free_upload; // 파일 저장되어 있는 경로
-	private int free_no; // 사진 번호
+	private int fno; // 사진 번호
 	public String getFree_uid() {
 		return free_uid;
 	}
@@ -30,16 +30,16 @@ public class free_uploadVO {
 	public void setFree_upload(String free_upload) {
 		this.free_upload = free_upload;
 	}
-	public int getFree_no() {
-		return free_no;
+	public int getFno() {
+		return fno;
 	}
-	public void setFree_no(int free_no) {
-		this.free_no = free_no;
+	public void setFno(int fno) {
+		this.fno = fno;
 	}
 	@Override
 	public String toString() {
 		return "free_uploadVO [free_uid=" + free_uid + ", free_name=" + free_name + ", free_image=" + free_image
-				+ ", free_upload=" + free_upload + ", free_no=" + free_no + "]";
+				+ ", free_upload=" + free_upload + ", fno=" + fno + "]";
 	}
 	
 }

@@ -58,8 +58,9 @@ public class menuController {
 
 	/* 자유게시판 글쓰기 등록 */
 	@RequestMapping(value = "/free_writing", method = RequestMethod.POST)
-	public String free_post(free_boardVO free) {
-		bs.free_writing(free);
+	public String free_post(free_boardVO board) {
+		System.out.println("자유게시판="+board);
+		bs.free_writing(board);
 		return "redirect:/page?type=free_board";
 	}
 
