@@ -68,11 +68,11 @@ $(document).ready(function() {
 	}
 	
 	// 이미지
-	$("#img").on("change",function(e){
+	$("#image").on("change",function(e){
 		e.preventDefault()
 		// .jsp에 form태그를 대체 (FormData함수)
 		var formData = new FormData();
-		var inputFile = $("input[name='img']");
+		var inputFile = $("input[name='free_image']");
 		var files = inputFile[0].files;
 		console.log("서브이미지(inputFile)="+inputFile);
 		console.log("서브이미지(files)="+files);
@@ -83,7 +83,7 @@ $(document).ready(function() {
 				return false;
 			}
 			// .jsp 파일선택을 통해 선택한 파일들을 form태그에 추가
-			formData.append("img", files[i]);
+			formData.append("free_image", files[i]);
 		}
 		// ajax를 사용하여 서버를 전송
 		$.ajax({
@@ -99,12 +99,12 @@ $(document).ready(function() {
 				var str="";
 				
 				$(result).each(function(i,obj){
-					console.log("obj2="+obj)
-					console.log("obj2.filename="+obj.filename)
-				  	 input += "<input type='text' name='free["+(i+1)+"].free_image' value ='" + obj.free_image + "'><br>";					 					 
-					 input += "<input type='text' name='free["+(i+1)+"].free_upload' value ='" + "\\free_board\\" + obj.free_upload + "'><br>";				 
-					 input += "<input type='text' name='free["+(i+1)+"].free_uid' value ='" + obj.free_uid + "'><br>";
-					 input += "<input type='text' name='free["+(i+1)+"].free_name' value ='" + obj.free_name + "'><br>";					 
+					console.log("free_obj="+obj)
+					console.log("free_obj.filename="+obj.filename)
+				  	 input += "<input type='text' name='board_img["+(i+1)+"].free_image' value ='" + obj.free_image + "'><br>";					 					 
+					 input += "<input type='text' name='board_img["+(i+1)+"].free_upload' value ='" + "\\free_board\\" + obj.free_upload + "'><br>";				 
+					 input += "<input type='text' name='board_img["+(i+1)+"].free_uid' value ='" + obj.free_uid + "'><br>";
+					 input += "<input type='text' name='board_img["+(i+1)+"].free_name' value ='" + obj.free_name + "'><br>";					 
 					 // 만약 image 결과가 ture이면
 					 // obj.image == true or
 					 if(obj.free_image){

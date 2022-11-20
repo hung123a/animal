@@ -8,5 +8,5 @@ public interface AttachMapper {
 	public void info_insert(info_uploadVO info);
 
 	// 자유게시판 글쓰기할 당시에 첨부파일 DB작업 설계
-	public void free_insert(free_uploadVO free);
+	public void free_insert(free_uploadVO board_img);
 }

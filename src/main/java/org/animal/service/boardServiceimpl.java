@@ -50,9 +50,9 @@ public class boardServiceimpl implements boardService {
 	public void free_writing(free_boardVO board) {
 		bm.free_writing(board);
 		
-		board.getFree().forEach(free -> {
-			free.setFno(board.getFno());
-			am.free_insert(free);
+		board.getBoard_img().forEach(board_img -> {
+			board_img.setFno(board.getFno());
+			am.free_insert(board_img);
 		});
 	}
 

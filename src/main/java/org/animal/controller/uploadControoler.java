@@ -209,7 +209,8 @@ public class uploadControoler {
 	
 	/* 자유게시판 이미지  업로드 */
 	@RequestMapping(value = "/free_img", method = RequestMethod.POST)
-	public ResponseEntity<ArrayList<free_uploadVO>> free_img_post(MultipartFile[] img) {
+	public ResponseEntity<ArrayList<free_uploadVO>> free_img_post(MultipartFile[] free_image) {
+		System.out.println("사진 업로드="+free_image);
 		// SAttachFileVO
 		ArrayList<free_uploadVO> list = new ArrayList<>();
 		// 폴더 경로
@@ -221,7 +222,7 @@ public class uploadControoler {
 			uploadPath.mkdirs(); // 만들어라
 		}
 		// for(변수명:배열명)
-		for (MultipartFile multipartFile : img) {
+		for (MultipartFile multipartFile : free_image) {
 			// SAttachFileVO클래스으의 새로운 주소를 반복적으로 생성하여
 			// ArrayList에 저장
 			free_uploadVO freevo = new free_uploadVO();

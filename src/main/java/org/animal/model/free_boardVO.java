@@ -13,7 +13,7 @@ public class free_boardVO {
 	private String free_date; // 자유게시판 등록 날짜
 	private String id; // 회원테이블과 조인을 위한 아이디
 	private int type; // 페이지 분류를 위한 컬럼
-	private ArrayList<free_uploadVO> free; // 자유게시판 이미지 업로드 vo와 연결
+	private ArrayList<free_uploadVO> board_img; // 자유게시판 이미지 업로드 vo와 연결
 
 	public int getFno() {
 		return fno;
@@ -95,19 +95,19 @@ public class free_boardVO {
 		this.type = type;
 	}
 
-	public ArrayList<free_uploadVO> getFree() {
-		return free;
+	public ArrayList<free_uploadVO> getBoard_img() {
+		return board_img;
 	}
 
-	public void setFree(ArrayList<free_uploadVO> free) {
-		this.free = free;
+	public void setBoard_img(ArrayList<free_uploadVO> board_img) {
+		this.board_img = board_img;
 	}
 
 	@Override
 	public String toString() {
 		return "free_boardVO [fno=" + fno + ", title=" + title + ", contents=" + contents + ", free_cnt=" + free_cnt
 				+ ", free_like=" + free_like + ", free_img=" + free_img + ", free_data=" + free_data + ", free_date="
-				+ free_date + ", id=" + id + ", type=" + type + ", free=" + free + "]";
+				+ free_date + ", id=" + id + ", type=" + type + ", board_img=" + board_img + "]";
 	}
 
 }
