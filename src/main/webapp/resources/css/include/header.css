@@ -17,14 +17,11 @@ a:hover { /* a태그에 마우스를 올렸을 경우 */
 #head { /* 헤더 전체 */
 	box-shadow: 0 -5px 20px rgb(0 0 0/ 50%); /* 헤더 바닥 선 밑 음영 주기 */
 	background-color: white; /* 배경색 */
-	position: absolute; /* absolute부여 */
+	position: fixed; /* absolute부여 */
 	height: 6rem; /* 높이 지정 */
 	width: 100%; /* 넓이 화면만큼 */
 	left: 0; /* 왼쪽 간격 */
 	top: 0; /* 스크롤 시 위치 고정을 위한 값 */    
-}
-#head.drop{ /* 헤더 */
-  position: fixed; /* 상단 헤더 고정을 위한 포지션 */
 }
 
 @keyframes dropHeader { /* 헤더 에니메이션 효과를 위한 키프레임 */

@@ -10,12 +10,18 @@
 	<insert id="info_insert">
 		insert ignore into info_img(info_uid, info_name, info_image, info_upload,
 		vision, ino)
-		value(#{info_uid},#{info_name}, #{info_image}, #{info_upload}, #{vision}, #{ino})
+		values(#{info_uid},#{info_name}, #{info_image}, #{info_upload}, #{vision}, #{ino})
+	</insert>
+	
+	<!-- 자유게시판 이미지 -->
+	<insert id="photo_insert">
+		insert ignore into photo_img(photo_uid, photo_name, photo_image, photo_upload, pno)
+		values(#{photo_uid},#{photo_name}, #{photo_image}, #{photo_upload}, #{pno})
 	</insert>
 	
 	<!-- 자유게시판 이미지 -->
 	<insert id="free_insert">
 		insert ignore into free_img(free_uid, free_name, free_image, free_upload, fno)
-		value(#{free_uid},#{free_name}, #{free_image}, #{free_upload}, #{fno})
+		values(#{free_uid},#{free_name}, #{free_image}, #{free_upload}, #{fno})
 	</insert>
 </mapper>

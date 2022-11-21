@@ -20,10 +20,10 @@ public class menuController {
 
 	/* 서브 페이지 */
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
-	public String page(Model model,informationVO animal_info) {
-		/*건의 게시판 리스트*/
-		model.addAttribute("tend", bs.tend_list()); 
-		/*자유게시판 리스트*/
+	public String page(Model model, informationVO animal_info) {
+		/* 건의 게시판 리스트 */
+		model.addAttribute("tend", bs.tend_list());
+		/* 자유게시판 리스트 */
 		model.addAttribute("free", bs.free_list());
 		/* 동물 소개 리스트 */
 		model.addAttribute("info", bs.info_list(animal_info));
@@ -39,14 +39,20 @@ public class menuController {
 	/* 동물소개 글쓰기 등록 */
 	@RequestMapping(value = "/information_writing", method = RequestMethod.POST)
 	public String info_post(informationVO animal_info) {
-		System.out.println("동물소개 ="+animal_info);		
+		System.out.println("동물소개 =" + animal_info);
 		bs.info_writing(animal_info);
 		return "redirect:/page?type=information";
 	}
 
 	/* 사진첩 글쓰기 페이지 */
-	@RequestMapping(value = "/photo_writing", method = RequestMethod.GET)
+	@RequestMapping(value = "/photo", method = RequestMethod.GET)
 	public String photo_page() {
+		return "/photo/photo_writing";
+	}
+
+	/* 사진첩 글쓰기 등록 */
+	@RequestMapping(value = "/photo_writing", method = RequestMethod.POST)
+	public String photo_page_post() {
 		return "/photo/photo_writing";
 	}
 
@@ -59,7 +65,7 @@ public class menuController {
 	/* 자유게시판 글쓰기 등록 */
 	@RequestMapping(value = "/free_writing", method = RequestMethod.POST)
 	public String free_post(free_boardVO board) {
-		System.out.println("자유게시판="+board);
+		System.out.println("자유게시판=" + board);
 		bs.free_writing(board);
 		return "redirect:/page?type=free_board";
 	}

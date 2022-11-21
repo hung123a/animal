@@ -1,9 +1,9 @@
 /**
- * 상품 등록 js
+ * 동물소개 등록 js
  */
 $(document).ready(function() {
 	var input = "";
-	// 상품등록 체크
+	// 동물 소개 등록 체크
 	$("#uploadBtn").click(function(){
 		// 동물 이름
 		var animal_name_chk = false;
@@ -142,7 +142,7 @@ $(document).ready(function() {
 			// .jsp 파일선택을 통해 선택한 파일들을 form태그에 추가
 			formData.append("main", files[i]);
 		}		
-		// ajax를 통해서 shopController에 파일관련 데이터 전송
+		// ajax를 통해서 menuControll에 파일관련 데이터 전송
 		$.ajax({
 			type : "post",
 			url : "/information_main",

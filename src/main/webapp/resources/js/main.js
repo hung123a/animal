@@ -3,18 +3,6 @@
  */
 $(document).ready(
 		function() {
-			let header = document.querySelector("#head");
-			let headerHeight = header.offsetHeight;
-
-			window.onscroll = function() {
-				let windowTop = window.scrollY;
-				if (windowTop >= headerHeight) {
-					header.classList.add("drop");
-				} else {
-					header.classList.remove("drop");
-				}
-			};
-
 			/* 센터영역 js */
 			$(function() {
 				$.scrollify({

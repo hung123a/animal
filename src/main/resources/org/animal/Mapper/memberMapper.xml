@@ -4,6 +4,17 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.animal.mapper.memberMapper">
+    <!-- 로그인 -->
+    <select id="login" resultType="org.animal.model.memberVO">
+		select * from member
+		where id=#{id}
+		and pwd=#{pwd}
+	</select>
+	<!--로그인 체크  -->
+  	<select id="logincheck" resultType="int">
+  		select count(*) from member where id=#{id} and password=#{password}
+  	</select>
+  	
 	<!-- 회원가입 -->
 	<insert id="signup">
 		insert into member(id, pwd, name, phone, email)

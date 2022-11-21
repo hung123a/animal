@@ -114,7 +114,7 @@
 						</div>
 					</div>
 					<div class="btn">
-						<a href="/photo_writing"><input type="button" value="글쓰기"
+						<a href="/photo"><input type="button" value="글쓰기"
 							class="bth"></a>
 					</div>
 				</div>

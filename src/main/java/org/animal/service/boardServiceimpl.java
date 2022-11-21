@@ -6,6 +6,7 @@ import org.animal.mapper.AttachMapper;
 import org.animal.mapper.boardMapper;
 import org.animal.model.free_boardVO;
 import org.animal.model.informationVO;
+import org.animal.model.photo_uploadVO;
 import org.animal.model.tendinousVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,13 +19,12 @@ public class boardServiceimpl implements boardService {
 	@Autowired
 	AttachMapper am; // Sattach테이블 mapper
 
-
 	/* 동물 소개 글 등록 구현 */
 	public void info_writing(informationVO animal_info) {
 		bm.info_writing(animal_info);
-		
+
 		animal_info.getInfo().forEach(info -> {
-			
+
 			// info_uploadVO의 info_no에 informationVO의 ino를 저장
 			info.setIno(animal_info.getIno());
 			am.info_insert(info);
@@ -36,20 +36,25 @@ public class boardServiceimpl implements boardService {
 		return bm.info_list(animal_info);
 	}
 
-	/* 동물 소개 메인 이미지 DB설계 */
+	/* 동물 소개 메인 이미지 구현 */
 	public informationVO main(informationVO animal_info) {
 		return bm.main(animal_info);
 	}
 
-	/* 동물 소개 서브 이미지 DB설계 */
+	/* 동물 소개 서브 이미지 구현 */
 	public ArrayList<informationVO> sub(informationVO animal_info) {
 		return bm.sub(animal_info);
 	}
 
+	/* 사진첩 이미지 등록 구현 */
+	public void photo_insert(photo_uploadVO p_img) {
+		am.photo_insert(p_img);
+	}
+	
 	/* 자유게시판 글 등록 구현 */
 	public void free_writing(free_boardVO board) {
 		bm.free_writing(board);
-		
+
 		board.getBoard_img().forEach(board_img -> {
 			board_img.setFno(board.getFno());
 			am.free_insert(board_img);

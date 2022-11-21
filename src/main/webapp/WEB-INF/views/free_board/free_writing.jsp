@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="/resources/css/free_board/free_board.css">
 <!-- 자유게시판 글쓰기 ajax -->
 <script type="text/javascript" src="/resources/js/free_board/free_board.js"></script>
+<!-- <script type="text/javascript" src="/resources/js/free_board/free-2.js"></script> -->
 <!-- 겹치는 css -->
 <link rel="stylesheet" href="/resources/css/Public.css">
 </head>
@@ -46,7 +47,7 @@
 										<textarea cols="91" rows="26" name="contents" id="contents"></textarea>
 									</div>
 									<div class="img">
-										<input type="file" id="image" name="free_image" multiple>
+										<input type="file" id="image" name="free_board_img" multiple>
 									</div>
 								</div>
 							</div>

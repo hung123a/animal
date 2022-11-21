@@ -1,10 +1,10 @@
 /**
- * 상품 등록 js
+ * 자유게시판 등록 js
  */
 $(document).ready(function() {
-	var input = "";
-	// 상품등록 체크
-	$("#uploadBtn").click(function(){
+	var input="";
+	/* 자유게시판 등록 체크 */
+	$("#uploadBtn").click(function() {
 		// 제목
 		var title_chk = false;
 		// 내용
@@ -42,8 +42,7 @@ $(document).ready(function() {
 			return false;
 		}
 	})
-	
-	
+
 	// 첨부파일 공격에 대비하기 위한 업포드 파일 확장자 제한.((.exe .zip .aiz, 특정 크기 이상 파일) = 첨부x)
 	// 함수 선언
 	// 정규식을 이용하여 확장자 제한
@@ -66,13 +65,12 @@ $(document).ready(function() {
 		}
 		return true;
 	}
-	
-	// 이미지
+
 	$("#image").on("change",function(e){
 		e.preventDefault()
 		// .jsp에 form태그를 대체 (FormData함수)
 		var formData = new FormData();
-		var inputFile = $("input[name='free_image']");
+		var inputFile = $("input[name='free_board_img']");
 		var files = inputFile[0].files;
 		console.log("서브이미지(inputFile)="+inputFile);
 		console.log("서브이미지(files)="+files);
@@ -83,7 +81,7 @@ $(document).ready(function() {
 				return false;
 			}
 			// .jsp 파일선택을 통해 선택한 파일들을 form태그에 추가
-			formData.append("free_image", files[i]);
+			formData.append("free_board_img", files[i]);
 		}
 		// ajax를 사용하여 서버를 전송
 		$.ajax({
@@ -94,17 +92,17 @@ $(document).ready(function() {
 			dataType:"json",
 			type:"POST",
 			success:function(result){
-				console.log("서브이미지(result)="+result);
+				console.log(result);
 				
 				var str="";
 				
 				$(result).each(function(i,obj){
-					console.log("free_obj="+obj)
-					console.log("free_obj.filename="+obj.filename)
-				  	 input += "<input type='text' name='board_img["+(i+1)+"].free_image' value ='" + obj.free_image + "'><br>";					 					 
-					 input += "<input type='text' name='board_img["+(i+1)+"].free_upload' value ='" + "\\free_board\\" + obj.free_upload + "'><br>";				 
-					 input += "<input type='text' name='board_img["+(i+1)+"].free_uid' value ='" + obj.free_uid + "'><br>";
-					 input += "<input type='text' name='board_img["+(i+1)+"].free_name' value ='" + obj.free_name + "'><br>";					 
+					console.log(obj)
+
+				  	 input += "<input type='text' name='board_img["+i+"].free_image' value ='" + obj.free_image + "'><br>";					 					 
+					 input += "<input type='text' name='board_img["+i+"].free_upload' value ='" + "\\free_board\\" + obj.free_upload + "'><br>";				 
+					 input += "<input type='text' name='board_img["+i+"].free_uid' value ='" + obj.free_uid + "'><br>";
+					 input += "<input type='text' name='board_img["+i+"].free_name' value ='" + obj.free_name + "'><br>";					 
 					 // 만약 image 결과가 ture이면
 					 // obj.image == true or
 					 if(obj.free_image){
@@ -119,6 +117,7 @@ $(document).ready(function() {
 							str += "<li><a href='/download?filename="+filePath+"'>"+obj.free_name+"</a></li>"
 						 }
 				})
+				//$("#uploadBth").append(str);
 			}
 		})
 	})

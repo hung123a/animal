@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.animal.model.free_boardVO;
 import org.animal.model.informationVO;
+import org.animal.model.photo_uploadVO;
 import org.animal.model.tendinousVO;
 
 public interface boardService {
@@ -18,6 +19,9 @@ public interface boardService {
 	
 	/*동물 소개 서브 이미지 DB설계*/
 	public ArrayList<informationVO> sub(informationVO animal_info);
+	
+	/* 사진첩 이미지 등록 구현 */
+	public void photo_insert(photo_uploadVO p_img);	
 
 	/* 자유게시판 글 등록 DB설계 */
 	public void free_writing(free_boardVO board);

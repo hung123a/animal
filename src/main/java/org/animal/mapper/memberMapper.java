@@ -4,6 +4,10 @@ import org.animal.model.memberVO;
 
 public interface memberMapper {
 	/* 서비스 */
+	// 로그인
+	public memberVO login(memberVO mvo);
+	// 로그인 체크
+	public int logincheck(memberVO mvo);
 	// 회원가입
 	public void signup(memberVO member);
 

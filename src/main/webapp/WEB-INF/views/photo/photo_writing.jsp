@@ -27,6 +27,7 @@
 					<div id="photo_title">
 						<h1>사진첩 글쓰기</h1>
 					</div>
+					<form action="/photo_writing" method="post"></form>
 					<!-- 내용 전체 -->
 					<div id="photo_border">
 						<div class="photo_all">
@@ -34,7 +35,7 @@
 								<div class="photo_title">이미지을 해당 영역으로 끌어다 놓으세요.</div>
 								<label for="file" id="button">
 									<div class="btn-upload" id="upload">파일 업로드</div>
-								</label> <input type="file" id="file">
+								</label> <input type="file" id="file" name="photo" multiple>
 							</div>
 						</div>
 					</div>
@@ -51,6 +52,6 @@
 	</div>
 
 	<!-- 이미지 드래그 앤 드롭 이벤트 -->
-	<script type="text/javascript" src="/resources/js/photo/photo.js"></script>
+	<script type="text/javascript" src="/resources/js/photo/drop.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,9 +20,9 @@
 		</div>
 		<form>
 			<input type="text" name="id" class="text_field" placeholder="아이디"><br>
-			<input type="text" name="password" class="text_field"
+			<input type="password" name="pwd" class="text_field"
 				placeholder="비밀번호"><br> <input type="submit"
-				value="로그인" class="login_bth" formmethod="post"><br> <input type="submit"
+				value="로그인" class="login_bth" formmethod="post" formaction="/login/login_post"><br> <input type="submit"
 				value="회원가입" class="login_bth" formaction="/signup" formmethod="get">
 		</form>
 		<div class="links">
