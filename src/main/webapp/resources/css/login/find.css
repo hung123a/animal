@@ -25,6 +25,10 @@ body { /* 웹페이지 여백제거 */
   text-align: center;
 }
 
+.menu_tap {
+	cursor: pointer;
+}
+
 .text_field {
 	margin-bottom: 30px;
 	border-radius: 5px;

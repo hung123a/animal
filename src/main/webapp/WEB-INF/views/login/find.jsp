@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,12 +8,16 @@
 <title>아이디/비밀번호 찾기</title>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- 아이디 비밀번초 찾기 클릭 이벤트 -->
+<!-- 탭메뉴 클릭 이벤트 -->
 <script type="text/javascript" src="/resources/js/login/find.js"></script>
+<!-- 아이디 찾기 js -->
+<script type="text/javascript" src="/resources/js/login/find_id.js"></script>
 <link rel="stylesheet" href="/resources/css/login/find.css">
 </head>
 <body>
-
+	<!--파일 불러오기-->
+	<jsp:include page="../include/model.jsp"></jsp:include>
+	
 	<div id="frame">
 		<div id="tap">
 			<div id="id_search" class="menu_tap" onclick="ids()">아이디 찾기</div>
@@ -24,7 +29,7 @@
 					src="/resources/img/animal community(login).png" class="img"></a>
 			</div>
 			<form method="post">
-				<div id="find_id" style="display: bloak">
+				<div id="find_id">
 					<div class="area" id="name_box">
 						<div class="title_content">
 							<div class="title">Name</div>
@@ -34,7 +39,7 @@
 								<div class="box">
 									<img class="svg" src="/resources/img/person_icon.svg">
 								</div>
-								<input type="text" id="name" class="text" name="name"
+								<input type="text" id="id_name" class="text" name="id_name"
 									placeholder="이름" maxlength="10">
 							</div>
 						</div>
@@ -48,7 +53,7 @@
 								<div class="box">
 									<img class="email_svg" src="/resources/img/email.svg">
 								</div>
-								<input type="text" id="email" class="text" name="email"
+								<input type="text" id="id_email" class="text" name="email"
 									placeholder="이메일" maxlength="20">
 							</div>
 						</div>
@@ -62,15 +67,18 @@
 								<div class="box">
 									<img class="phone_svg" src="/resources/img/phone.svg">
 								</div>
-								<input type="text" id="phone" class="text" name="phone"
+								<input type="text" id="id_phone" class="text" name="phone"
 									placeholder="전화번호" maxlength="20">
 							</div>
 						</div>
-					</div>				
-				<input type="submit" value="아이디 찾기" class="login_bth">
+					</div>
+					<input type="button" value="아이디 찾기" class="login_bth"
+						id="find_id" onclick="id_click()">
 				</div>
-				
-				<!-- 비밀번호 찾기 -->
+			</form>
+
+			<!-- 비밀번호 찾기 -->
+			<form method="post">
 				<div id="find_pwd" style="display: none">
 					<div class="area" id="name_box">
 						<div class="title_content">
@@ -81,7 +89,7 @@
 								<div class="box">
 									<img class="svg" src="/resources/img/person_icon.svg">
 								</div>
-								<input type="text" id="name" class="text" name="name"
+								<input type="text" id="pwd_name" class="text" name="name"
 									placeholder="이름" maxlength="10">
 							</div>
 						</div>
@@ -95,7 +103,7 @@
 								<div class="box">
 									<img class="svg" src="/resources/img/person_icon.svg">
 								</div>
-								<input type="text" id="id" class="text" name="id"
+								<input type="text" id="pwd_id" class="text" name="id"
 									placeholder="아이디" maxlength="10">
 							</div>
 						</div>
@@ -109,7 +117,7 @@
 								<div class="box">
 									<img class="email_svg" src="/resources/img/email.svg">
 								</div>
-								<input type="text" id="email" class="text" name="email"
+								<input type="text" id="pwd_email" class="text" name="email"
 									placeholder="이메일" maxlength="20">
 							</div>
 						</div>
@@ -127,8 +135,9 @@
 									placeholder="전화번호" maxlength="20">
 							</div>
 						</div>
-					</div>				
-				<input type="submit" value="비밀번호 찾기" class="login_bth"	formaction="/signup">
+					</div>
+					<input type="submit" value="비밀번호 찾기" class="login_bth"
+						id="find_pwd" formaction="/signup">
 				</div>
 			</form>
 		</div>

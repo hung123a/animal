@@ -6,6 +6,8 @@ public interface memberMapper {
 	/* 서비스 */
 	// 로그인
 	public memberVO login(memberVO mvo);
+	// 아이디 찾기
+	public String find_id(String name, String email, String phone);
 	// 로그인 체크
 	public int logincheck(memberVO mvo);
 	// 회원가입

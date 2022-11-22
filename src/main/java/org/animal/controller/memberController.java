@@ -8,13 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class memberController {
@@ -27,25 +26,27 @@ public class memberController {
 	public String get_login() {
 		return "/login/login";
 	}
-	// 로그인 이동
+	// 로그인 
 	@RequestMapping(value = "/login/login_post", method = RequestMethod.POST)
-	public String post_login(memberVO mvo, HttpSession session, RedirectAttributes rttr) {
-		boolean result=ms.login(mvo, session);
-		if(result) { // 로그인 성공
-			System.out.println("로그인 성공");
-			rttr.addFlashAttribute("msg","success");
-			return "redirect:/";
-		}else {
-			System.out.println("로그인 실패");
-			rttr.addFlashAttribute("msg","fail");
-			return "redirect:/login";	
+	public String post_login(memberVO mvo, HttpSession session) {
+		memberVO login=ms.login(mvo);
+		if(login!=null) {
+			session.setAttribute("loginVO", login);
 		}
+		return"redirect:/";
 	}
 	// 로그아웃
 	@RequestMapping(value = "/login/logout", method = RequestMethod.GET)
 	public String get_logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:/";
+	}
+	// 아이디 찾기
+	@RequestMapping(value = "/find_id", method = RequestMethod.POST)
+	@ResponseBody
+	public String find_id(@RequestParam("name") String name, @RequestParam String email, @RequestParam("phone") String phone) {
+		String result = ms.find_id(name,email,phone);
+		return result;
 	}
 	// 로그인 체크
 	@RequestMapping(value = "/login/logincheck", method = RequestMethod.POST)

@@ -20,10 +20,9 @@
 		</div>
 		<form>
 			<input type="text" name="id" class="text_field" placeholder="아이디"><br>
-			<input type="password" name="pwd" class="text_field"
-				placeholder="비밀번호"><br> <input type="submit"
-				value="로그인" class="login_bth" formmethod="post" formaction="/login/login_post"><br> <input type="submit"
-				value="회원가입" class="login_bth" formaction="/signup" formmethod="get">
+			<input type="password" name="pwd" class="text_field" placeholder="비밀번호"><br> 
+			<input type="submit" value="로그인" class="login_bth" formmethod="post" formaction="/login/login_post"><br> 
+			<input type="submit" value="회원가입" class="login_bth" formaction="/signup" formmethod="get">
 		</form>
 		<div class="links">
 			<a href="/find">아이디/비밀번호 찾기</a>

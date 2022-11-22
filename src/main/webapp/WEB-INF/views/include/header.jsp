@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/resources/css/include/header.css">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!-- header 영역 -->
 <header id="head">
 	<div id="head_cont" class="wrap">
@@ -18,9 +19,20 @@
 		</div>
 		<div id="menu">
 			<ul id="menu_list">
-				<li><a href="/login">로그인</a></li>
-				<li><a href="/signup">회원가입</a></li>
-				<li><a href="/mypage">마이페이지</a></li>
+				<c:choose>
+					<c:when test="${loginVO.id==null}">
+						<li><a href="/login">로그인</a></li>
+						<li><a href="/signup">회원가입</a></li>						
+					</c:when>
+					<c:when test="${loginVO.id=='admin'}">
+						<li><a href="/login">관리자메뉴</a></li>
+						<li><a href="/login/logout">로그아웃</a></li>						
+					</c:when>
+					<c:otherwise>
+						<li><a href="/mypage?id=${loginVO.id}">${loginVO.id}님</a></li>
+						<li><a href="/login/logout">로그아웃</a></li>						
+					</c:otherwise>
+				</c:choose>
 			</ul>
 		</div>
 	</div>
