@@ -44,7 +44,7 @@ public class memberController {
 	// 아이디 찾기
 	@RequestMapping(value = "/find_id", method = RequestMethod.POST)
 	@ResponseBody
-	public String find_id(@RequestParam("name") String name, @RequestParam String email, @RequestParam("phone") String phone) {
+	public String find_id(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("phone") String phone) {
 		String result = ms.find_id(name,email,phone);
 		return result;
 	}

@@ -77,11 +77,12 @@ body { /* 웹페이지 여백제거 */
 }
 
 #frame{
-	transform: translate(-50%, -50%);
-	position: absolute;
-	width: 600px;
-	left: 50%;
-	top: 50%;
+    display: flex;
+    width: 600px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 .title {
 	font-weight: 600; /* 글자 굵기 지정 */

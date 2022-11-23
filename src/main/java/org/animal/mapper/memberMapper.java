@@ -1,13 +1,16 @@
 package org.animal.mapper;
 
 import org.animal.model.memberVO;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 public interface memberMapper {
 	/* 서비스 */
 	// 로그인
 	public memberVO login(memberVO mvo);
 	// 아이디 찾기
-	public String find_id(String name, String email, String phone);
+	@Select("select nvl(id, 0) from member where name=#{name} and email=#{email} and phone=#{phone}")
+	public String find_id(@Param("name") String name, @Param("email") String email, @Param("phone") String phone);
 	// 로그인 체크
 	public int logincheck(memberVO mvo);
 	// 회원가입

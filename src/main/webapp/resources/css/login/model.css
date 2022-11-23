@@ -19,7 +19,7 @@
 }
 
 #modal .modal-window {
-	background: rgba(0, 0, 0, 0.70); // 69, 139, 197
+	background: rgba(0, 0, 0, 0.70);
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 	backdrop-filter: blur(13.5px);
 	-webkit-backdrop-filter: blur(13.5px);
@@ -28,15 +28,15 @@
 	width: 400px;
 	height: 300px;
 	position: relative;
-	top: -100px;
 	padding: 10px;
 }
 
-#modal .title {
+#modal .mtitle {
 	padding-left: 10px;
 	display: inline;
 	text-shadow: 1px 1px 2px gray;
 	color: white;
+	float: left;
 }
 
 #modal .title h2 {
@@ -57,4 +57,5 @@
 	padding: 0px 10px;
 	text-shadow: 1px 1px 2px gray;
 	color: white;
+	float: left;
 }

@@ -4,11 +4,11 @@
 // 아이디 * 스토어 값 저장하기 위한 변수
 // 아이디 값 받고 출력하는 ajax
 function id_click(){
-	var name=$("input[name='name']").val();
-	var email = $("input[name='email']").val();
-	var phone = $("input[name='phone']").val();
+	var name = $("#id_name").val();
+	var email = $("#id_email").val();
+	var phone = $("#id_phone").val();
 	
-	$ajax({
+	$.ajax({
 		type:"POST",
 		url:"/find_id",
 		data:{"name":name, "email":email, "phone":phone},
@@ -18,11 +18,17 @@ function id_click(){
 				$("#id_name").val('');
 				$("#id_email").val('');
 				$("#id_phone").val('');
+				console.log(name);
+				console.log(email);
+				console.log(phone);
 			}else {
 				$("#id_value").text(data);
 				$("#id_name").val('');
 				$("#id_email").val('');
 				$("#id_phone").val('');
+				console.log(name);
+				console.log(email);
+				console.log(phone);
 			}			
 		},
 		error:function(){
@@ -32,7 +38,7 @@ function id_click(){
 };
 
 const modal = document.getElementById("modal");
-const btnModal = document.getElementById("find_id");
+const btnModal = document.getElementById("findid_search");
 
 btnModal.addEventListener("click", e => {
     modal.style.display = "flex"

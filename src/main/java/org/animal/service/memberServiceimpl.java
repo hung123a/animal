@@ -12,11 +12,11 @@ public class memberServiceimpl implements memberService {
 
 	/* 서비스 */
 	// 로그인
-	@Override
 	public memberVO login(memberVO mvo) {		
 		return mm.login(mvo);
 	}
 	// 아이디 찾기
+	@Override
 	public String find_id(String name, String email, String phone) {
 		String result="";
 		try {
