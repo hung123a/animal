@@ -8,7 +8,7 @@
 <title>아이디/비밀번호 찾기</title>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script
+<script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <!-- 탭메뉴 클릭 이벤트, 휴대폰 번호 하이픈 -->
 <script type="text/javascript" src="/resources/js/login/find_id.js"></script>
@@ -71,7 +71,7 @@
 									</div>
 									<input type="text" id="id_phone" class="text" name="phone"
 										placeholder="전화번호" oninput="autophone(this)" maxlength="13">
-										
+
 								</div>
 							</div>
 						</div>
@@ -81,68 +81,68 @@
 				</form>
 
 				<!-- 비밀번호 찾기 -->
-				<!-- <form method="post"> -->
-				<div id="find_pwd" style="display: none">
-					<div class="area" id="name_box">
-						<div class="title_content">
-							<div class="title">Name</div>
-						</div>
-						<div class="conten">
-							<div class="Information">
-								<div class="box">
-									<img class="svg" src="/resources/img/person_icon.svg">
+				<form method="post">
+					<div id="find_pwd" style="display: none">
+						<div class="area" id="name_box">
+							<div class="title_content">
+								<div class="title">Name</div>
+							</div>
+							<div class="conten">
+								<div class="Information">
+									<div class="box">
+										<img class="svg" src="/resources/img/person_icon.svg">
+									</div>
+									<input type="text" id="pwd_name" class="text" name="name"
+										placeholder="이름" maxlength="10">
 								</div>
-								<input type="text" id="pwd_name" class="text" name="name"
-									placeholder="이름" maxlength="10">
 							</div>
 						</div>
-					</div>
-					<div class="area" id="id_box">
-						<div class="title_content">
-							<div class="title">id</div>
-						</div>
-						<div class="conten">
-							<div class="Information">
-								<div class="box">
-									<img class="svg" src="/resources/img/person_icon.svg">
+						<div class="area" id="id_box">
+							<div class="title_content">
+								<div class="title">id</div>
+							</div>
+							<div class="conten">
+								<div class="Information">
+									<div class="box">
+										<img class="svg" src="/resources/img/person_icon.svg">
+									</div>
+									<input type="text" id="pwd_id" class="text" name="id"
+										placeholder="아이디" maxlength="10">
 								</div>
-								<input type="text" id="pwd_id" class="text" name="id"
-									placeholder="아이디" maxlength="10">
 							</div>
 						</div>
-					</div>
-					<div class="area" id="email_box">
-						<div class="title_content">
-							<div class="title">E-mail</div>
-						</div>
-						<div class="conten">
-							<div class="Information">
-								<div class="box">
-									<img class="email_svg" src="/resources/img/email.svg">
+						<div class="area" id="email_box">
+							<div class="title_content">
+								<div class="title">E-mail</div>
+							</div>
+							<div class="conten">
+								<div class="Information">
+									<div class="box">
+										<img class="email_svg" src="/resources/img/email.svg">
+									</div>
+									<input type="text" id="pwd_email" class="text" name="email"
+										placeholder="이메일" maxlength="20">
 								</div>
-								<input type="text" id="pwd_email" class="text" name="email"
-									placeholder="이메일" maxlength="20">
 							</div>
 						</div>
-					</div>
-					<div class="area" id="phone_box">
-						<div class="title_content">
-							<div class="title">phone</div>
-						</div>
-						<div class="conten">
-							<div class="Information">
-								<div class="box">
-									<img class="phone_svg" src="/resources/img/phone.svg">
+						<div class="area" id="phone_box">
+							<div class="title_content">
+								<div class="title">phone</div>
+							</div>
+							<div class="conten">
+								<div class="Information">
+									<div class="box">
+										<img class="phone_svg" src="/resources/img/phone.svg">
+									</div>
+									<input type="text" id="phone" class="text" name="phone"
+										placeholder="전화번호" maxlength="13">
 								</div>
-								<input type="text" id="phone" class="text" name="phone"
-									placeholder="전화번호" maxlength="13">
 							</div>
 						</div>
+						<input type="submit" value="비밀번호 찾기" class="login_bth"
+							id="find_pwd" formaction="/signup">
 					</div>
-					<input type="submit" value="비밀번호 찾기" class="login_bth"
-						id="find_pwd" formaction="/signup">
-				</div>
-				<!-- </form> -->
+				</form>
 			</div>
 		</div>
 	</div>

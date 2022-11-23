@@ -19,6 +19,9 @@ public class memberServiceimpl implements memberService {
 	@Override
 	public String find_id(String name, String email, String phone) {
 		String result="";
+		System.out.println("이름="+name);
+		System.out.println("이메일="+email);
+		System.out.println("전화번호="+phone);
 		try {
 			result=mm.find_id(name, email, phone);
 		} catch (Exception e) {

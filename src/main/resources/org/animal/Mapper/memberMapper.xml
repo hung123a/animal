@@ -27,7 +27,7 @@
 
 	<!-- 아이디 찾기 -->
 	<!-- <select id="find_id" resultType="org.animal.model.memberVO">
-		select name, email, phone from member where
+		select nvl(id,0) from member where
 		name=#{name} and email=#{email} and
 		phone=#{phone}
 	</select> -->

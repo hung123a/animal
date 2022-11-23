@@ -9,7 +9,7 @@ public interface memberMapper {
 	// 로그인
 	public memberVO login(memberVO mvo);
 	// 아이디 찾기
-	@Select("select nvl(id, 0) from member where name=#{name} and email=#{email} and phone=#{phone}")
+	@Select("select ifnull(id, 0),email,name,phone from member where name=#{name} and email=#{email} and phone=#{phone}")
 	public String find_id(@Param("name") String name, @Param("email") String email, @Param("phone") String phone);
 	// 로그인 체크
 	public int logincheck(memberVO mvo);
