@@ -13,9 +13,9 @@
 			information
 		</selectKey>
 		insert into information(ino, animal_name, habitat, look, life, food,
-		enemy, i_type)
+		enemy, i_type, id)
 		values(#{ino},#{animal_name},#{habitat}, #{look}, #{life},
-		#{food},#{enemy},#{i_type})
+		#{food},#{enemy},#{i_type},#{id})
 	</insert>
 
 	<!-- 동물 소개 리스트 -->
@@ -37,9 +37,8 @@
 			select ifnull(MAX(fno)+1,1)from
 			free_board
 		</selectKey>
-		insert into free_board(fno, title, contents, free_cnt)
-		values(#{fno}, #{title}, #{contents}, #{free_cnt}
-		)
+		insert into free_board(fno, title, contents, free_cnt, id)
+		values(#{fno}, #{title}, #{contents}, #{free_cnt}, #{id})
 	</insert>
 
 	<!-- 자유게시판 리스트 -->

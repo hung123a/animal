@@ -117,7 +117,6 @@ $(document).ready(function() {
 							str += "<li><a href='/download?filename="+filePath+"'>"+obj.free_name+"</a></li>"
 						 }
 				})
-				//$("#uploadBth").append(str);
 			}
 		})
 	})

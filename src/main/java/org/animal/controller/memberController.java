@@ -26,39 +26,52 @@ public class memberController {
 	public String get_login() {
 		return "/login/login";
 	}
-	// 로그인 
+
+	// 로그인
 	@RequestMapping(value = "/login/login_post", method = RequestMethod.POST)
 	public String post_login(memberVO mvo, HttpSession session) {
-		memberVO login=ms.login(mvo);
-		if(login!=null) {
+		memberVO login = ms.login(mvo);
+		if (login != null) {
 			session.setAttribute("loginVO", login);
 		}
-		return"redirect:/";
+		return "redirect:/";
 	}
+
 	// 로그아웃
 	@RequestMapping(value = "/login/logout", method = RequestMethod.GET)
 	public String get_logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:/";
 	}
+
 	// 아이디 찾기
 	@RequestMapping(value = "/find_id", method = RequestMethod.POST)
 	@ResponseBody
-	public String find_id(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("phone") String phone) {
-		String result = ms.find_id(name,email,phone);
+	public String find_id(@RequestParam("name") String name, @RequestParam("email") String email,
+			@RequestParam("phone") String phone) {
+		String result = ms.find_id(name, email, phone);
 		return result;
 	}
+
+	// 비밀번호 찾기
+	@RequestMapping(value = "/find_pwd", method = RequestMethod.POST)
+	@ResponseBody
+	public String find_pwd(@RequestParam("name") String name, @RequestParam("email") String email,
+			@RequestParam("phone") String phone, @RequestParam("id") String id) {
+		String result = ms.find_pwd(name, email, phone, id);
+		return result;
+	}
+
 	// 로그인 체크
 	@RequestMapping(value = "/login/logincheck", method = RequestMethod.POST)
 	public ResponseEntity<String> logincheck(@RequestBody memberVO mvo) {
 		System.out.println("회원 컨트롤러 = " + mvo);
-		int result=ms.logincheck(mvo);
+		int result = ms.logincheck(mvo);
 		System.out.println("result결과 = " + result);
-		
-		return result==1?new ResponseEntity<>("success", HttpStatus.OK)
-				        :new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+
+		return result == 1 ? new ResponseEntity<>("success", HttpStatus.OK)
+				: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-	
 
 	/* 회원가입 페이지 */
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)

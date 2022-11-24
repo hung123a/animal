@@ -30,13 +30,14 @@ public class menuController {
 		return "/tap/page";
 	}
 
-	/* 동물소개 글쓰기 페이지 */
+	/* 동물 소개 */
+	// 동물소개 글쓰기 페이지
 	@RequestMapping(value = "/information", method = RequestMethod.GET)
 	public String info_get() {
 		return "/information/information_writing";
 	}
 
-	/* 동물소개 글쓰기 등록 */
+	// 동물소개 글쓰기 등록
 	@RequestMapping(value = "/information_writing", method = RequestMethod.POST)
 	public String info_post(informationVO animal_info) {
 		System.out.println("동물소개 =" + animal_info);
@@ -44,25 +45,27 @@ public class menuController {
 		return "redirect:/page?type=information";
 	}
 
-	/* 사진첩 글쓰기 페이지 */
+	/* 사진첩 */
+	// 사진첩 글쓰기 페이지
 	@RequestMapping(value = "/photo", method = RequestMethod.GET)
 	public String photo_page() {
 		return "/photo/photo_writing";
 	}
 
-	/* 사진첩 글쓰기 등록 */
+	// 사진첩 글쓰기 등록
 	@RequestMapping(value = "/photo_writing", method = RequestMethod.POST)
 	public String photo_page_post() {
 		return "/photo/photo_writing";
 	}
 
-	/* 자유게시판 글쓰기 페이지 */
+	/* 자유게시판 */
+	// 자유게시판 글쓰기 페이지
 	@RequestMapping(value = "/free_board", method = RequestMethod.GET)
 	public String free_get() {
 		return "/free_board/free_writing";
 	}
 
-	/* 자유게시판 글쓰기 등록 */
+	// 자유게시판 글쓰기 등록
 	@RequestMapping(value = "/free_writing", method = RequestMethod.POST)
 	public String free_post(free_boardVO board) {
 		System.out.println("자유게시판=" + board);
@@ -70,18 +73,25 @@ public class menuController {
 		return "redirect:/page?type=free_board";
 	}
 
-	/* 건의게시판 글쓰기 페이지 */
+	/* 건의게시판 */
+	// 건의게시판 글쓰기 페이지
 	@RequestMapping(value = "/tendinous", method = RequestMethod.GET)
 	public String tendinous_get() {
 		return "/tendinous/tendinous_writing";
 	}
-
-	/* 건의게시판 글쓰기 등록 */
+	
+	// 건의게시판 글쓰기 등록
 	@RequestMapping(value = "/tendinous_writing", method = RequestMethod.POST)
 	public String tend_post(tendinousVO tend) {
 		System.out.println("건의게시판 글쓰기 등록 =" + tend);
 		bs.tend_writing(tend);
 		return "redirect:/page?type=tendinous";
+	}
+	
+	// 건의게시판 상세보기
+	@RequestMapping(value = "/tendinous_datall", method = RequestMethod.GET)
+	public String tendinous_datall_get() {
+		return "/tendinous/tendinous_datall";
 	}
 
 }

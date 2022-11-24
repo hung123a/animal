@@ -129,9 +129,13 @@ body, ul, li {
 }
 
 .photo_img { /* 이미지를 감싸는 영역 */
-	padding: 0 0 50 0; /* 패딩값 지정 */
+	padding: 0 30 50 0; /* 패딩값 지정 */
 	float: left; /* 영역 왼쪽 배치 */
-	width: 20%; /* 넓이 지정 */
+	width: 18%; /* 넓이 지정 */
+}
+
+.photo_img a img {
+	width: 100%;
 }
 
 /* 게시판 타이틀 */

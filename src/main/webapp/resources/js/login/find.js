@@ -1,58 +1,29 @@
 /**
- * 아이디 찾기 js
+ * 탭메뉴 클릭 이벤트, 전화번호 하이픈 js
  */
-// 아이디 * 스토어 값 저장하기 위한 변수
-// 아이디 값 받고 출력하는 ajax
-function id_click(){
-	var name = $("#id_name").val();
-	var email = $("#id_email").val();
-	var phone = $("#id_phone").val();
-	
-	$.ajax({
-		type:"POST",
-		url:"/find_id",
-		data:{"name":name, "email":email, "phone":phone},
-		success:function(data){
-			if(data == 0){
-				$("#id_value").text("회원 정보를 확인해주세요!");
-				$("#id_name").val('');
-				$("#id_email").val('');
-				$("#id_phone").val('');
-				console.log(name);
-				console.log(email);
-				console.log(phone);
-			}else {
-				$("#id_value").text(data);
-				$("#id_name").val('');
-				$("#id_email").val('');
-				$("#id_phone").val('');
-				console.log(name);
-				console.log(email);
-				console.log(phone);
-			}			
-		},
-		error:function(){
-			alert("에러입니다.");
+$(document).ready(function() {
+	/* 탭메뉴 클릭 이벤트 */
+	$('#id_search').click(function() {
+		if ($("#find_id").css('display') == 'block') {
+		} else {
+			$("#find_id").css('display', 'block');
+			$("#find_pwd").css('display', 'none');
 		}
 	});
-};
 
-const modal = document.getElementById("modal");
-const btnModal = document.getElementById("findid_search");
-
-btnModal.addEventListener("click", e => {
-    modal.style.display = "flex"
+	$('#pwd_search').click(function() {
+		if ($("#find_pwd").css('display') == 'block') {
+		} else {
+			$("#find_pwd").css('display', 'block');
+			$("#find_id").css('display', 'none');
+		}
+	});	
+	
 });
 
-    
-const closeBtn = modal.querySelector(".close-area")
-closeBtn.addEventListener("click", e => {
-    modal.style.display = "none"
-});
 
-modal.addEventListener("click", e => {
-    const evTarget = e.target
-    if(evTarget.classList.contains("modal-overlay")) {
-        modal.style.display = "none"
-    }
-});
+/*const autophone = (target) => { 
+	   target.value = target.value.replace(/[^0-9]/g, "")
+	   .replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/,"$1-$2-$3").replace("--", "-"); 
+	};*/
+ 

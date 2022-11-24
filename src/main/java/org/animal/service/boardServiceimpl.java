@@ -20,7 +20,7 @@ public class boardServiceimpl implements boardService {
 	AttachMapper am; // Sattach테이블 mapper
 
 	/* 동물 소개 글 등록 구현 */
-	public void info_writing(informationVO animal_info) {
+	public void info_writing(informationVO animal_info) {		
 		bm.info_writing(animal_info);
 
 		animal_info.getInfo().forEach(info -> {

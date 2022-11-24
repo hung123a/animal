@@ -210,7 +210,7 @@
 							<div class="board_cnt">조회수</div>
 						</div>
 						<c:forEach items="${tend}" var="tend">
-							<a href="#">
+							<a href="/tendinous_datall?tno=${tend.tno}">
 								<div id="tendinous_board_conten">
 									<div class="no">${tend.tno}</div>
 									<div class="board_title">${tend.tendinous_title}</div>

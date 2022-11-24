@@ -12,28 +12,41 @@ public class memberServiceimpl implements memberService {
 
 	/* 서비스 */
 	// 로그인
-	public memberVO login(memberVO mvo) {		
+	public memberVO login(memberVO mvo) {
 		return mm.login(mvo);
 	}
+
+	/* 아이디, 비밀번호 찾기 */
 	// 아이디 찾기
 	@Override
 	public String find_id(String name, String email, String phone) {
-		String result="";
-		System.out.println("이름="+name);
-		System.out.println("이메일="+email);
-		System.out.println("전화번호="+phone);
+		String result = "";
 		try {
-			result=mm.find_id(name, email, phone);
+			result = mm.find_id(name, email, phone);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return result;
 	}
+
+	// 아이디 찾기
+	@Override
+	public String find_pwd(String name, String email, String phone, String id) {
+		String result = "";
+		try {
+			result = mm.find_pwd(name, email, phone, id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 	// 로그인 체크
 	public int logincheck(memberVO mvo) {
 		System.out.println("로그인 체크=" + mvo);
 		return mm.logincheck(mvo);
 	}
+
 	// 회원가입
 	public void signup(memberVO member) {
 		mm.signup(member);

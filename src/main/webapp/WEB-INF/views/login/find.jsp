@@ -11,13 +11,14 @@
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <!-- 탭메뉴 클릭 이벤트, 휴대폰 번호 하이픈 -->
-<script type="text/javascript" src="/resources/js/login/find_id.js"></script>
+<script type="text/javascript" src="/resources/js/login/find.js"></script>
 <link rel="stylesheet" href="/resources/css/login/model.css">
 <link rel="stylesheet" href="/resources/css/login/find.css">
 </head>
 <body>
 	<!--파일 불러오기-->
-	<jsp:include page="../include/model.jsp"></jsp:include>
+	<jsp:include page="../include/id.jsp"></jsp:include>
+	<jsp:include page="../include/pwd.jsp"></jsp:include>
 
 	<div id="frame">
 		<div>
@@ -70,7 +71,7 @@
 										<img class="phone_svg" src="/resources/img/phone.svg">
 									</div>
 									<input type="text" id="id_phone" class="text" name="phone"
-										placeholder="전화번호" oninput="autophone(this)" maxlength="13">
+										placeholder="전화번호" oninput="i_phone(this)" maxlength="13">
 
 								</div>
 							</div>
@@ -79,7 +80,9 @@
 							id="findid_search" onclick="id_click()">
 					</div>
 				</form>
-
+				<!-- 아이디 찾기 js -->
+				<script type="text/javascript" src="/resources/js/login/find_id.js"></script>
+				
 				<!-- 비밀번호 찾기 -->
 				<form method="post">
 					<div id="find_pwd" style="display: none">
@@ -134,19 +137,19 @@
 									<div class="box">
 										<img class="phone_svg" src="/resources/img/phone.svg">
 									</div>
-									<input type="text" id="phone" class="text" name="phone"
-										placeholder="전화번호" maxlength="13">
+									<input type="text" id="pwd_phone" class="text" name="phone"
+										placeholder="전화번호" oninput="p_phone(this)" maxlength="13">
 								</div>
 							</div>
 						</div>
-						<input type="submit" value="비밀번호 찾기" class="login_bth"
-							id="find_pwd" formaction="/signup">
+						<input type="button" value="비밀번호 찾기" class="login_bth"
+							id="findpwd_search" onclick="pwd_click()">
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
 </body>
-<!-- 아이디 찾기 js -->
-<script type="text/javascript" src="/resources/js/login/find.js"></script>
+<!-- 비밀번호찾기 js -->
+<script type="text/javascript" src="/resources/js/login/find_pwd.js"></script>
 </html>

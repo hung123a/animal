@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
-<%@ page session="false"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -13,7 +12,6 @@
 <link rel="stylesheet" href="/resources/css/free_board/free_board.css">
 <!-- 자유게시판 글쓰기 ajax -->
 <script type="text/javascript" src="/resources/js/free_board/free_board.js"></script>
-<!-- <script type="text/javascript" src="/resources/js/free_board/free-2.js"></script> -->
 <!-- 겹치는 css -->
 <link rel="stylesheet" href="/resources/css/Public.css">
 </head>
@@ -26,10 +24,10 @@
 		<div id="free_center">
 			<div class="wrap" id="main">
 				<div class="wrap tap" id="tap">
-					<form action="/free_writing" method="post" id="free_form"
+					<form action="/free_writing?id=${loginVO.id}" method="post" id="free_form"
 						name="free_form" enctype="multipart/form-data">
 						<div id="free_title">
-							<h1>자유게시판 글쓰기</h1>
+							<h1>자유게시판 글쓰기</h1>							
 						</div>
 						<!-- 자유게시판 글쓰기 내용 -->
 						<div id="free_writing_board">
