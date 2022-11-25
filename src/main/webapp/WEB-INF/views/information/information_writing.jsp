@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
-<%@ page session="false"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -32,6 +31,7 @@
 						name="info_form" enctype="multipart/form-data">
 						<div class="title" id="animal_title">
 							<h1>동물 소개 글쓰기</h1>
+							<input type="hidden" id="bno" name="bno" value="1">
 						</div>
 						<!-- 동물 소개 분류 -->
 						<div id="animal_type">

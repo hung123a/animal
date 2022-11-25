@@ -26,6 +26,7 @@
 				<div class="wrap" id="photo_tap">
 					<div id="photo_title">
 						<h1>사진첩 글쓰기</h1>
+						<input type="hidden" name="bno" value="2">
 					</div>
 					<form action="/photo_writing" method="post"></form>
 					<!-- 내용 전체 -->

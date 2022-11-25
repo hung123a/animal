@@ -10,12 +10,12 @@ $(document).ready(function() {
 		// 내용
 		var contents_chk = false;
 		
-		
 		/* 체크대상변수 */
 		// 제목
 		var title = $("input[name='title']").val();
 		// 내용
 		var contents = $("textarea[name='contents']").val();
+		
 			
 		/* 입력란 공백 체크 */
 		if(title.length>0){
@@ -32,10 +32,8 @@ $(document).ready(function() {
 		}else{
 			$("#contents").css('display','block');
 			contents_chk=false;
-		}
-		
-		
-		if(title_chk && contents_chk){
+		}		
+		if(title_chk && contents_chk ){
 			alert('통과');
 			$("#free_form").append(input).submit();
 		}else{

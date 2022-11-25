@@ -19,6 +19,8 @@ $(document).ready(function() {
 		var enemy_chk = false;
 		// 동물 분류
 		var i_type_chk = false;
+		// 페이지 분류
+		var bno_chk = false;
 		
 		/* 체크대상변수 */
 		// 동물 이름
@@ -35,6 +37,8 @@ $(document).ready(function() {
 		var enemy = $("textarea[name='enemy']").val();
 		// 동물 본류
 		var i_type = $("select[name='i_type']").val();
+		// 페이지 분류
+		var bno = $("input[name='bno']").val();
 	
 		/* 입력란 공백 체크 */
 		if(animal_name.length>0){
@@ -92,7 +96,7 @@ $(document).ready(function() {
 			$("#i_type").css('display','block');
 			i_type_chk=false;
 		}
-		if(animal_name_chk && habitat_chk && look_chk && life_chk && food_chk && enemy_chk && i_type_chk){
+		if(animal_name_chk && habitat_chk && look_chk && life_chk && food_chk && enemy_chk && i_type_chk&bno_chk){
 			alert('통과');
 			$("#info_form").append(input).submit();
 		}else{

@@ -13,9 +13,9 @@
 			information
 		</selectKey>
 		insert into information(ino, animal_name, habitat, look, life, food,
-		enemy, i_type, id)
+		enemy, i_type, id, bno)
 		values(#{ino},#{animal_name},#{habitat}, #{look}, #{life},
-		#{food},#{enemy},#{i_type},#{id})
+		#{food},#{enemy},#{i_type},#{id},#{bno})
 	</insert>
 
 	<!-- 동물 소개 리스트 -->
@@ -37,8 +37,8 @@
 			select ifnull(MAX(fno)+1,1)from
 			free_board
 		</selectKey>
-		insert into free_board(fno, title, contents, free_cnt, id)
-		values(#{fno}, #{title}, #{contents}, #{free_cnt}, #{id})
+		insert into free_board(fno, title, contents, free_cnt, id, bno)
+		values(#{fno}, #{title}, #{contents}, #{free_cnt}, #{id}, #{bno})
 	</insert>
 
 	<!-- 자유게시판 리스트 -->
@@ -55,8 +55,8 @@
 			select ifnull(MAX(tno)+1,1)from
 			tendinous
 		</selectKey>
-		insert ignore into tendinous(tno, tendinous_title, tendinous_cont, id)
-		values(#{tno}, #{tendinous_title}, #{tendinous_cont}, #{id})
+		insert ignore into tendinous(tno, tendinous_title, tendinous_cont, id, bno)
+		values(#{tno}, #{tendinous_title}, #{tendinous_cont}, #{id}, #{bno})
 	</insert>
 
 	<!-- 건의게시판 리스트 -->
@@ -64,4 +64,7 @@
 		select *,
 		date_format(tendinous_data, '%Y-%m-%d')tendinous_date from tendinous;
 	</select>
+	
+	<!-- 테이블 전체 건수 구현 -->
+	<select id="total" resultType="int"></select>
 </mapper>

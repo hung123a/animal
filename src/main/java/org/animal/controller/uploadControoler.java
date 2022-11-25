@@ -263,8 +263,6 @@ public class uploadControoler {
 	/*화면 이미지 불러오기*/
 	@RequestMapping(value = "/display", method = RequestMethod.GET)
 	public ResponseEntity<byte[]> getFile(String filename) {
-		System.out.println("fileName=" + filename);
-
 		File file = new File("D:\\upload\\" + filename); // 경로 숨기는 작업
 
 		ResponseEntity<byte[]> result = null;

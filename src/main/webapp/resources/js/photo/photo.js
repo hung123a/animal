@@ -56,14 +56,15 @@ $(document).ready(function() {
 				console.log("서브이미지(result)="+result);
 				
 				var str="";
-				
+				var bno=$("input[name='bno']").val();
 				$(result).each(function(i,obj){
 					console.log("obj2="+obj)
 					console.log("obj2.filename="+obj.filename)
-				  	 input += "<input type='text' name='p_img["+(i+1)+"].photo_image' value ='" + obj.photo_image + "'><br>";					 					 
-					 input += "<input type='text' name='p_img["+(i+1)+"].photo_upload' value ='" + "\\photo\\" + obj.photo_upload + "'><br>";				 
-					 input += "<input type='text' name='p_img["+(i+1)+"].photo_uid' value ='" + obj.photo_uid + "'><br>";
-					 input += "<input type='text' name='p_img["+(i+1)+"].photo_name' value ='" + obj.photo_name + "'><br>";					 
+				  	 input += "<input type='text' name='p_img["+i+"].photo_image' value ='" + obj.photo_image + "'><br>";					 					 
+					 input += "<input type='text' name='p_img["+i+"].photo_upload' value ='" + "\\photo\\" + obj.photo_upload + "'><br>";				 
+					 input += "<input type='text' name='p_img["+i+"].photo_uid' value ='" + obj.photo_uid + "'><br>";
+					 input += "<input type='text' name='p_img["+i+"].photo_name' value ='" + obj.photo_name + "'><br>";					 
+					 input += "<input type='text' name='p_img["+i+"].bno' value ='" + obj.bno + "'><br>";
 					 // 만약 image 결과가 ture이면
 					 // obj.image == true or
 					 if(obj.photo_image){

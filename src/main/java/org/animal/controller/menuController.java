@@ -39,8 +39,8 @@ public class menuController {
 
 	// 동물소개 글쓰기 등록
 	@RequestMapping(value = "/information_writing", method = RequestMethod.POST)
-	public String info_post(informationVO animal_info) {
-		System.out.println("동물소개 =" + animal_info);
+	public String info_post(informationVO animal_info) {		
+		System.out.println("동물소개="+animal_info);
 		bs.info_writing(animal_info);
 		return "redirect:/page?type=information";
 	}
@@ -68,7 +68,7 @@ public class menuController {
 	// 자유게시판 글쓰기 등록
 	@RequestMapping(value = "/free_writing", method = RequestMethod.POST)
 	public String free_post(free_boardVO board) {
-		System.out.println("자유게시판=" + board);
+		System.out.println("자유게시판="+board);
 		bs.free_writing(board);
 		return "redirect:/page?type=free_board";
 	}
@@ -82,8 +82,7 @@ public class menuController {
 	
 	// 건의게시판 글쓰기 등록
 	@RequestMapping(value = "/tendinous_writing", method = RequestMethod.POST)
-	public String tend_post(tendinousVO tend) {
-		System.out.println("건의게시판 글쓰기 등록 =" + tend);
+	public String tend_post(tendinousVO tend) {		
 		bs.tend_writing(tend);
 		return "redirect:/page?type=tendinous";
 	}

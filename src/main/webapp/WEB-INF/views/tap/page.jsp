@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -62,7 +61,8 @@
 							<a href="#">
 								<div class="animal_smail_tap">
 									<div class="animal_img">
-										<img class="animal_img1" src="/display?filename=${info.main_img}">
+										<img class="animal_img1"
+											src="/display?filename=${info.main_img}">
 									</div>
 									<div class="main_contents">
 										<div class="small_title">
@@ -75,10 +75,17 @@
 							</a>
 						</c:forEach>
 					</div>
-					<div class="btn">
-						<a href="/information"><input type="button" value="글쓰기"
-							class="bth"></a>
-					</div>
+					<c:choose>
+						<c:when test="${loginVO.id==null}">
+							<div class="btn"></div>
+						</c:when>
+						<c:otherwise>
+							<div class="btn">
+								<a href="/information"><input type="button" value="글쓰기"
+									class="bth"></a>
+							</div>
+						</c:otherwise>
+					</c:choose>
 				</div>
 				<!-- 동물 소개 끝 -->
 
@@ -113,10 +120,17 @@
 							<img class="photo_img1" src="/resources/img/image1.jpg">
 						</div>
 					</div>
-					<div class="btn">
-						<a href="/photo"><input type="button" value="글쓰기"
-							class="bth"></a>
-					</div>
+					<c:choose>
+						<c:when test="${loginVO.id==null}">
+							<div class="btn"></div>
+						</c:when>
+						<c:otherwise>
+							<div class="btn">
+								<a href="/photo"><input type="button" value="글쓰기"
+									class="bth"></a>
+							</div>
+						</c:otherwise>
+					</c:choose>
 				</div>
 				<!-- 사진첩 끝 -->
 
@@ -146,6 +160,7 @@
 							<form id="seachForm" method="get">
 								<select name="menu" class="select_menu">
 									<optgroup label="CATEGORY" class="CATEGORY"></optgroup>
+									<option value="TS">제목+작성자</option>
 									<option value="T">제목</option>
 									<option value="S">작성자</option>
 								</select> <input type="text" name="keyword" class="keyword"> <input
@@ -178,10 +193,17 @@
 							</a>
 						</c:forEach>
 					</div>
-					<div class="btn">
-						<a href="/free_board"><input type="button" value="글쓰기"
-							class="bth"></a>
-					</div>
+					<c:choose>
+						<c:when test="${loginVO.id==null}">
+							<div class="btn"></div>
+						</c:when>
+						<c:otherwise>
+							<div class="btn">
+								<a href="/free_board"><input type="button" value="글쓰기"
+									class="bth"></a>
+							</div>
+						</c:otherwise>
+					</c:choose>
 					<!-- 자유게시판 미리 보기 끝 -->
 				</div>
 				<!-- 자유게시판 끝 -->
@@ -221,10 +243,17 @@
 							</a>
 						</c:forEach>
 					</div>
-					<div class="btn">
-						<a href="/tendinous"><input type="button" value="글쓰기"
-							class="bth"></a>
-					</div>
+					<c:choose>
+						<c:when test="${loginVO.id==null}">
+							<div class="btn"></div>
+						</c:when>
+						<c:otherwise>
+							<div class="btn">
+								<a href="/tendinous"><input type="button" value="글쓰기"
+									class="bth"></a>
+							</div>
+						</c:otherwise>
+					</c:choose>
 					<!-- 건의 게시판 미리 보기 끝 -->
 				</div>
 				<!-- 건의게시판 끝 -->
