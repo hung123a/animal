@@ -1,5 +1,6 @@
 package org.animal.controller;
 
+import org.animal.model.CriteriaVO;
 import org.animal.model.free_boardVO;
 import org.animal.model.informationVO;
 import org.animal.model.tendinousVO;
@@ -20,13 +21,13 @@ public class menuController {
 
 	/* 서브 페이지 */
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
-	public String page(Model model, informationVO animal_info) {
+	public String page(Model model, informationVO animal_info, CriteriaVO cri) {
 		/* 건의 게시판 리스트 */
-		model.addAttribute("tend", bs.tend_list());
+		model.addAttribute("tend", bs.tend_list(cri));
 		/* 자유게시판 리스트 */
-		model.addAttribute("free", bs.free_list());
+		model.addAttribute("free", bs.free_list(cri));
 		/* 동물 소개 리스트 */
-		model.addAttribute("info", bs.info_list(animal_info));
+		model.addAttribute("info", bs.info_list(cri));
 		return "/tap/page";
 	}
 
