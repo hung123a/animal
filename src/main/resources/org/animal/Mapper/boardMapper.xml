@@ -8,14 +8,14 @@
 	<!-- 건의게시판 글쓰기 등록 -->
 	<insert id="info_writing">
 		<selectKey keyProperty="ino" order="BEFORE" resultType="int">
-			<!-- select 값을 keyProperty="bno"에 추가BEFORE로 먼저 select -->
+			<!-- select 값을 keyProperty="ino"에 추가BEFORE로 먼저 select -->
 			select ifnull(MAX(ino)+1,1)from
 			information
 		</selectKey>
 		insert into information(ino, animal_name, habitat, look, life, food,
-		enemy, i_type, id, bno)
+		enemy, i_type, id)
 		values(#{ino},#{animal_name},#{habitat}, #{look}, #{life},
-		#{food},#{enemy},#{i_type},#{id},#{bno})
+		#{food},#{enemy},#{i_type},#{id})
 	</insert>
 
 	<!-- 동물 소개 리스트 -->
@@ -33,12 +33,12 @@
 	<!-- 자유게시판 글쓰기 등록 -->
 	<insert id="free_writing">
 		<selectKey keyProperty="fno" order="BEFORE" resultType="int">
-			<!-- select 값을 keyProperty="bno"에 추가BEFORE로 먼저 -->
+			<!-- select 값을 keyProperty="fno"에 추가BEFORE로 먼저 -->
 			select ifnull(MAX(fno)+1,1)from
 			free_board
 		</selectKey>
-		insert into free_board(fno, title, contents, free_cnt, id, bno)
-		values(#{fno}, #{title}, #{contents}, #{free_cnt}, #{id}, #{bno})
+		insert into free_board(fno, title, contents, free_cnt, id)
+		values(#{fno}, #{title}, #{contents}, #{free_cnt}, #{id})
 	</insert>
 
 	<!-- 자유게시판 리스트 -->
@@ -51,12 +51,12 @@
 	<!-- 건의게시판 글쓰기 등록 -->
 	<insert id="tend_writing">
 		<selectKey keyProperty="tno" order="BEFORE" resultType="int">
-			<!-- select 값을 keyProperty="bno"에 추가BEFORE로 먼저 -->
+			<!-- select 값을 keyProperty="tno"에 추가BEFORE로 먼저 -->
 			select ifnull(MAX(tno)+1,1)from
 			tendinous
 		</selectKey>
-		insert ignore into tendinous(tno, tendinous_title, tendinous_cont, id, bno)
-		values(#{tno}, #{tendinous_title}, #{tendinous_cont}, #{id}, #{bno})
+		insert ignore into tendinous(tno, tendinous_title, tendinous_cont, id)
+		values(#{tno}, #{tendinous_title}, #{tendinous_cont}, #{id})
 	</insert>
 
 	<!-- 건의게시판 리스트 -->
@@ -65,6 +65,18 @@
 		date_format(tendinous_data, '%Y-%m-%d')tendinous_date from tendinous;
 	</select>
 	
-	<!-- 테이블 전체 건수 구현 -->
-	<select id="total" resultType="int"></select>
+	<!-- 테이블 전체 건수  -->
+	<select id="info_total" resultType="int">
+	select count(*) from information;
+	</select>
+	<select id="photo_total" resultType="int">
+	select count(*) from photo;
+	</select>
+	<select id="free_total" resultType="int">
+	select count(*) from photo;
+	</select>
+	<select id="tend_total" resultType="int">
+	select count(*) from tendinous;
+	</select>
+	
 </mapper>

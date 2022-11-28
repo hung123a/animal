@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 import org.animal.mapper.AttachMapper;
 import org.animal.mapper.boardMapper;
-import org.animal.model.CriteriaVO;
+import org.animal.model.info_CriteriaVO;
+import org.animal.model.free_CriteriaVO;
 import org.animal.model.free_boardVO;
 import org.animal.model.informationVO;
+import org.animal.model.photo_CriteriaVO;
+import org.animal.model.tend_CriteriaVO;
 import org.animal.model.tendinousVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,8 +35,8 @@ public class boardServiceimpl implements boardService {
 	}
 
 	// 동물 소개 리스트 구현
-	public ArrayList<informationVO> info_list(CriteriaVO cri) {
-		return bm.info_list(cri);
+	public ArrayList<informationVO> info_list(info_CriteriaVO icri) {
+		return bm.info_list(icri);
 	}
 
 	// 동물 소개 메인 이미지 구현
@@ -69,8 +72,8 @@ public class boardServiceimpl implements boardService {
 	}
 
 	// 자유게시판 리스트 구현
-	public ArrayList<free_boardVO> free_list(CriteriaVO cri) {
-		return bm.free_list(cri);
+	public ArrayList<free_boardVO> free_list(free_CriteriaVO fcri) {
+		return bm.free_list(fcri);
 	}
 
 	/* 건의게시판 */
@@ -79,13 +82,22 @@ public class boardServiceimpl implements boardService {
 		bm.tend_writing(tend);
 	}
 	// 건의게시판 리스트 구현
-	public ArrayList<tendinousVO> tend_list(CriteriaVO cri) {
-		return bm.tend_list(cri);
+	public ArrayList<tendinousVO> tend_list(tend_CriteriaVO tcri) {
+		return bm.tend_list(tcri);
 	}
 	
 	/* 페이징 */
 	// 테이블 전체 건수 구현
-	public int total(CriteriaVO cri) {
-		return bm.total(cri);
-	};
+	public int info_total(info_CriteriaVO icri) {
+		return bm.info_total(icri);
+	}
+	public int photo_total(photo_CriteriaVO pcri) {
+		return bm.photo_total(pcri);
+	}
+	public int free_total(free_CriteriaVO fcri) {
+		return bm.free_total(fcri);
+	}
+	public int tend_total(tend_CriteriaVO tcri) {
+		return bm.tend_total(tcri);
+	}
 }

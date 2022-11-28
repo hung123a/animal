@@ -24,9 +24,7 @@
 					<div class="wrap tap" id="tap">
 						<div id="tendinous_title">
 							<h1>건의게시판 글쓰기</h1>
-							<input type="hidden" name="bno" value="4">
 						</div>
-
 						<!-- 자유게시판 글쓰기 내용 -->
 						<div id="tendinous_writing_board">
 							<div id="middle">

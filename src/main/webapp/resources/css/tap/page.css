@@ -48,7 +48,6 @@
 
 /* 내용 전체 div */
 .contents {
-	border-bottom: 3px solid #ddd; /* 바닥선 색싱 및 두께 변경 */
 	overflow: hidden; /* float인한 오버플로우 */
 }
 
@@ -186,4 +185,14 @@ img.photo_img1 { /* 사진  */
 
 .board_cnt { /* 건의게시판 조회수 */
 	width: 10%; /* 넓이 지정 */
+}
+
+.pbtn {
+	padding-left: 10px;
+    padding-top: 10px;
+}
+.bottom {
+	border-top: 4px solid #ddd;
+	text-align: center;
+	padding: 10px;
 }

@@ -27,8 +27,8 @@
 					<form action="/free_writing?id=${loginVO.id}" method="post" id="free_form"
 						name="free_form" enctype="multipart/form-data">
 						<div id="free_title">
-							<h1>자유게시판 글쓰기</h1>		
-							<input type="hidden" name="bno" value="3">					
+							<h1>자유게시판 글쓰기</h1>	
+												
 						</div>
 						<!-- 자유게시판 글쓰기 내용 -->
 						<div id="free_writing_board">

@@ -1,8 +1,15 @@
 package org.animal.controller;
 
-import org.animal.model.CriteriaVO;
+import org.animal.model.info_CriteriaVO;
+import org.animal.model.info_pageVO;
+import org.animal.model.free_CriteriaVO;
 import org.animal.model.free_boardVO;
+import org.animal.model.free_pageVO;
 import org.animal.model.informationVO;
+import org.animal.model.photo_CriteriaVO;
+import org.animal.model.photo_pageVO;
+import org.animal.model.tend_CriteriaVO;
+import org.animal.model.tend_pageVO;
 import org.animal.model.tendinousVO;
 import org.animal.service.boardService;
 import org.animal.service.memberService;
@@ -21,14 +28,23 @@ public class menuController {
 
 	/* 서브 페이지 */
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
-	public String page(Model model, informationVO animal_info, CriteriaVO cri) {
+	public String page(Model model, informationVO animal_info, info_CriteriaVO icri,photo_CriteriaVO pcri, free_CriteriaVO fcri, tend_CriteriaVO tcri) {
 		/* 건의 게시판 리스트 */
-		model.addAttribute("tend", bs.tend_list(cri));
+		model.addAttribute("tend", bs.tend_list(tcri));
 		/* 자유게시판 리스트 */
-		model.addAttribute("free", bs.free_list(cri));
+		model.addAttribute("free", bs.free_list(fcri));
 		/* 동물 소개 리스트 */
-		model.addAttribute("info", bs.info_list(cri));
+		model.addAttribute("info", bs.info_list(icri));
+		int info_total=bs.info_total(icri);
+		int photo_total=bs.photo_total(pcri);
+		int free_total=bs.free_total(fcri);
+		int tend_total=bs.tend_total(tcri);
+		model.addAttribute("ipaging", new info_pageVO(icri, info_total));
+		model.addAttribute("ppaging", new photo_pageVO(pcri, photo_total));
+		model.addAttribute("fpaging", new free_pageVO(fcri, free_total));
+		model.addAttribute("tpaging", new tend_pageVO(tcri, tend_total));
 		return "/tap/page";
+		
 	}
 
 	/* 동물 소개 */

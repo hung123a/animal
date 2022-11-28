@@ -17,7 +17,6 @@ public class informationVO {
 	private String id; // 회원테이블과 조인을 위한 아이디 (관리자)
 	private String animal_date; // 동물 정보 등록 날짜
 	private ArrayList<info_uploadVO> info; // 동물 소개 이미지 업로드 vo와 연결 
-	private int bno; // 페이지 분류
 	public int getIno() {
 		return ino;
 	}
@@ -103,19 +102,12 @@ public class informationVO {
 	public void setInfo(ArrayList<info_uploadVO> info) {
 		this.info = info;
 	}
-	
-	public int getBno() {
-		return bno;
-	}
-	public void setBno(int bno) {
-		this.bno = bno;
-	}
 	@Override
 	public String toString() {
 		return "informationVO [ino=" + ino + ", main_img=" + main_img + ", sub_img=" + sub_img + ", animal_name="
 				+ animal_name + ", habitat=" + habitat + ", look=" + look + ", life=" + life + ", food=" + food
 				+ ", enemy=" + enemy + ", animal_data=" + animal_data + ", i_type=" + i_type + ", id=" + id
-				+ ", animal_date=" + animal_date + ", info=" + info + ", bno=" + bno + "]";
+				+ ", animal_date=" + animal_date + ", info=" + info +  "]";
 	}
 
 }

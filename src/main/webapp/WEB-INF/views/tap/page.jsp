@@ -48,7 +48,7 @@
 									<option value="L">육지 동물</option>
 									<option value="B">조류</option>
 									<option value="S">해상 동물</option>
-								</select> <input type="text" name="keyword" class="keyword"> <input
+								</select> <input type="text" name="ikeyword" class="keyword"> <input
 									type="hidden" name="pageNum" value="#"> <input
 									type="hidden" name="amount" value="#"> <input
 									type="button" value="검색" class="button">
@@ -75,17 +75,39 @@
 							</a>
 						</c:forEach>
 					</div>
-					<c:choose>
-						<c:when test="${loginVO.id==null}">
-							<div class="btn"></div>
-						</c:when>
-						<c:otherwise>
-							<div class="btn">
-								<a href="/information"><input type="button" value="글쓰기"
-									class="bth"></a>
-							</div>
-						</c:otherwise>
-					</c:choose>
+					<div class="bottom">
+						<!-- prev(이전)이 true이면 이전버튼 화설화 -->
+						<c:if test="${paging.prev}">
+							<a
+								href="/page?type=information?pageNum=${ipaging.startPage-1}&amount=${ipaging.icri.amount}">이전</a>
+						</c:if>
+
+						<!-- begin(1) end(10)될 동안 반복(1일 10일 될 동안 반복) -->
+						<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
+							var="num">
+							<a
+								href="/page?type=information?ktype=${ipaging.icri.itype}&keyword=${ipaging.icri.ikeyword}&pageNum=${num}&amount=${ipaging.icri.amount}">${num}</a>
+						</c:forEach>
+
+						<!-- next(다음)이 true이면 다음버튼 활성화 -->
+						<c:if test="${ipaging.next}">
+							<a
+								href="/page?type=information?pageNum=${ipaging.endPage+1}&amount=${ipaging.icri.amount}">다음</a>
+						</c:if>
+						<br>
+						<!-- ${paging} -->
+						<c:choose>
+							<c:when test="${loginVO.id==null}">
+								<div class="pbtn"></div>
+							</c:when>
+							<c:otherwise>
+								<div class="pbtn">
+									<a href="/information"><input type="button" value="글쓰기"
+										class="bth"></a>
+								</div>
+							</c:otherwise>
+						</c:choose>
+					</div>
 				</div>
 				<!-- 동물 소개 끝 -->
 
@@ -120,17 +142,39 @@
 							<img class="photo_img1" src="/resources/img/image1.jpg">
 						</div>
 					</div>
-					<c:choose>
-						<c:when test="${loginVO.id==null}">
-							<div class="btn"></div>
-						</c:when>
-						<c:otherwise>
-							<div class="btn">
-								<a href="/photo"><input type="button" value="글쓰기"
-									class="bth"></a>
-							</div>
-						</c:otherwise>
-					</c:choose>
+					<div class="bottom">
+						<!-- prev(이전)이 true이면 이전버튼 화설화 -->
+						<c:if test="${paging.prev}">
+							<a
+								href="/page?type=information?pageNum=${ipaging.startPage-1}&amount=${ipaging.icri.amount}">이전</a>
+						</c:if>
+
+						<!-- begin(1) end(10)될 동안 반복(1일 10일 될 동안 반복) -->
+						<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
+							var="num">
+							<a
+								href="/page?type=information?ktype=${ipaging.icri.itype}&keyword=${ipaging.icri.ikeyword}&pageNum=${num}&amount=${ipaging.icri.amount}">${num}</a>
+						</c:forEach>
+
+						<!-- next(다음)이 true이면 다음버튼 활성화 -->
+						<c:if test="${ipaging.next}">
+							<a
+								href="/page?type=information?pageNum=${ipaging.endPage+1}&amount=${ipaging.icri.amount}">다음</a>
+						</c:if>
+						<br>
+						<!-- ${paging} -->
+						<c:choose>
+							<c:when test="${loginVO.id==null}">
+								<div class="pbtn"></div>
+							</c:when>
+							<c:otherwise>
+								<div class="pbtn">
+									<a href="/photo"><input type="button" value="글쓰기"
+										class="bth"></a>
+								</div>
+							</c:otherwise>
+						</c:choose>
+					</div>
 				</div>
 				<!-- 사진첩 끝 -->
 
@@ -163,7 +207,7 @@
 									<option value="TS">제목+작성자</option>
 									<option value="T">제목</option>
 									<option value="S">작성자</option>
-								</select> <input type="text" name="keyword" class="keyword"> <input
+								</select> <input type="text" name="fkeyword" class="keyword"> <input
 									type="hidden" name="pageNum" value="#"> <input
 									type="hidden" name="amount" value="#"> <input
 									type="button" value="검색" class="button">
@@ -193,18 +237,40 @@
 							</a>
 						</c:forEach>
 					</div>
-					<c:choose>
-						<c:when test="${loginVO.id==null}">
-							<div class="btn"></div>
-						</c:when>
-						<c:otherwise>
-							<div class="btn">
-								<a href="/free_board"><input type="button" value="글쓰기"
-									class="bth"></a>
-							</div>
-						</c:otherwise>
-					</c:choose>
-					<!-- 자유게시판 미리 보기 끝 -->
+					<div class="bottom">
+						<!-- prev(이전)이 true이면 이전버튼 화설화 -->
+						<c:if test="${paging.prev}">
+							<a
+								href="/page?type=information?pageNum=${ipaging.startPage-1}&amount=${ipaging.icri.amount}">이전</a>
+						</c:if>
+
+						<!-- begin(1) end(10)될 동안 반복(1일 10일 될 동안 반복) -->
+						<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
+							var="num">
+							<a
+								href="/page?type=information?ktype=${ipaging.icri.itype}&keyword=${ipaging.icri.ikeyword}&pageNum=${num}&amount=${ipaging.icri.amount}">${num}</a>
+						</c:forEach>
+
+						<!-- next(다음)이 true이면 다음버튼 활성화 -->
+						<c:if test="${ipaging.next}">
+							<a
+								href="/page?type=information?pageNum=${ipaging.endPage+1}&amount=${ipaging.icri.amount}">다음</a>
+						</c:if>
+						<br>
+						<!-- ${paging} -->
+						<c:choose>
+							<c:when test="${loginVO.id==null}">
+								<div class="pbtn"></div>
+							</c:when>
+							<c:otherwise>
+								<div class="pbtn">
+									<a href="/free_board"><input type="button" value="글쓰기"
+										class="bth"></a>
+								</div>
+							</c:otherwise>
+						</c:choose>
+						<!-- 자유게시판 미리 보기 끝 -->
+					</div>
 				</div>
 				<!-- 자유게시판 끝 -->
 
@@ -243,18 +309,40 @@
 							</a>
 						</c:forEach>
 					</div>
-					<c:choose>
-						<c:when test="${loginVO.id==null}">
-							<div class="btn"></div>
-						</c:when>
-						<c:otherwise>
-							<div class="btn">
-								<a href="/tendinous"><input type="button" value="글쓰기"
-									class="bth"></a>
-							</div>
-						</c:otherwise>
-					</c:choose>
-					<!-- 건의 게시판 미리 보기 끝 -->
+					<div class="bottom">
+						<!-- prev(이전)이 true이면 이전버튼 화설화 -->
+						<c:if test="${paging.prev}">
+							<a
+								href="/page?type=information?pageNum=${ipaging.startPage-1}&amount=${ipaging.icri.amount}">이전</a>
+						</c:if>
+
+						<!-- begin(1) end(10)될 동안 반복(1일 10일 될 동안 반복) -->
+						<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
+							var="num">
+							<a
+								href="/page?type=information?ktype=${ipaging.icri.itype}&keyword=${ipaging.icri.ikeyword}&pageNum=${num}&amount=${ipaging.icri.amount}">${num}</a>
+						</c:forEach>
+
+						<!-- next(다음)이 true이면 다음버튼 활성화 -->
+						<c:if test="${ipaging.next}">
+							<a
+								href="/page?type=information?pageNum=${ipaging.endPage+1}&amount=${ipaging.icri.amount}">다음</a>
+						</c:if>
+						<br>
+						<!-- ${paging} -->
+						<c:choose>
+							<c:when test="${loginVO.id==null}">
+								<div class="pbtn"></div>
+							</c:when>
+							<c:otherwise>
+								<div class="pbtn">
+									<a href="/tendinous"><input type="button" value="글쓰기"
+										class="bth"></a>
+								</div>
+							</c:otherwise>
+						</c:choose>
+						<!-- 건의 게시판 미리 보기 끝 -->
+					</div>
 				</div>
 				<!-- 건의게시판 끝 -->
 			</div>

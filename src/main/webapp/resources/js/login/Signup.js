@@ -195,10 +195,10 @@ $(document).ready(function() {
 		if(idresult == true && passwordresult == true && password2result == true && nameresult == true && emailresult == true){
 			alert("회원가입을 축하합니다.");
 		}else if( idcheckresult== false){
-			alert("id가 중복되었습니다")
+			alert("id를 입력해주세요")
 			return false;
 		}else if(emailcheckresult==false){
-			alert("email이 중복되었습니다")
+			alert("email를 입력해주세요")
 			return false;
 		}else{
 			alert("다시 확인해 주세요.");

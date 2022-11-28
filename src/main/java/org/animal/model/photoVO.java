@@ -5,7 +5,6 @@ public class photoVO {
 	private String photo_img; // 사진첩 이미지
 	private String photo_data; // 사진첩 등록 일자
 	private String id; // 회원테이블과 조인을 위한 아이디(관리자)
-	private int bno; // 페이지 분류를 위한 컬럼
 	public int getPno() {
 		return pno;
 	}
@@ -30,16 +29,11 @@ public class photoVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public int getBno() {
-		return bno;
-	}
-	public void setBno(int bno) {
-		this.bno = bno;
-	}
+
 	@Override
 	public String toString() {
 		return "photoVO [pno=" + pno + ", photo_img=" + photo_img + ", photo_data=" + photo_data + ", id=" + id
-				+ ", bno=" + bno + "]";
+				+ "]";
 	}
 	
 }

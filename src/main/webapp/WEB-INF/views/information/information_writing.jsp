@@ -28,10 +28,9 @@
 				<!-- 동물 소개 -->
 				<div class="wrap tap">
 					<form action="/information_writing?id=${loginVO.id}" method="post" id="info_form"
-						name="info_form" enctype="multipart/form-data">
+						name="info_form" enctype="multipart/form-data">					
 						<div class="title" id="animal_title">
-							<h1>동물 소개 글쓰기</h1>
-							<input type="hidden" id="bno" name="bno" value="1">
+							<h1>동물 소개 글쓰기</h1>							
 						</div>
 						<!-- 동물 소개 분류 -->
 						<div id="animal_type">
