@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-	.area {
-		margin-bottom: 20px; /* 입력란 아래 칸 간격 지정  */
-		overflow: hidden; /* float으로 없어진 높이 속성 지정 */
-	}
+.area {
+	margin-bottom: 20px; /* 입력란 아래 칸 간격 지정  */
+	overflow: hidden; /* float으로 없어진 높이 속성 지정 */
+}
 
 .title {
 	font-weight: 600; /* 글자 굵기 지정 */
@@ -52,28 +52,32 @@
 	padding-left: 15px;
 }
 
+.box_alert {
+	float: left;
+}
+
 .alert {
-    float: left;
-    font-size: 10px;
+	display: inline;
+	font-size: 12px;
 }
 
 .email_svg {
-    width: 25px;
-    margin: 7px;
+	width: 25px;
+	margin: 7px;
 }
 
 .phone_svg {
-    width: 18px;
-    margin: 7px;
+	width: 18px;
+	margin: 7px;
 }
 
 #signup_btn {
 	background-color: #1BBC9B;
 	margin: 10px 0px 10px 0px;
-    border-radius: 5px;
-    font-size: 14px;
-    padding: 15px;
-    color: white;
-    border: none;
-    width: 90%;
+	border-radius: 5px;
+	font-size: 14px;
+	padding: 15px;
+	color: white;
+	border: none;
+	width: 90%;
 }

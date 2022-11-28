@@ -4,7 +4,7 @@
 $(document).ready(function() {
 	var str = "";
 	var idresult = "";
-	var idcheckresult="";
+	var idcheckresult=$("input[name='id']").val();
 	var passwordresult = "";
 	var password2result = "";
 	var nameresult = "";
@@ -23,7 +23,7 @@ $(document).ready(function() {
 			console.log(data)
 			$("#id_alert").remove();
 			
-			str = "<div id='id_alert' class='alert'> 사용중입니다 </div>"
+			str = "<div class='box_alert'><div id='id_alert' class='alert'>사용중입니다 </div></div>"
 			
 			$("#id_box").append(str);
 			
@@ -34,7 +34,7 @@ $(document).ready(function() {
 			if(idRegex.test($("#id").val())) {
 			$("#id_alert").remove();
 			
-			str = "<div id='id_alert' class='alert'> 사용가능합니다  </div>"
+			str = "<div class='box_alert'><div id='id_alert' class='alert'>사용가능합니다  </div></div>"
 			
 			$("#id_box").append(str);
 			
@@ -43,7 +43,7 @@ $(document).ready(function() {
 		} else {
 			
 			$("#id_alert").remove();
-			str = "<div id='id_alert' class='alert'>아이디는 5자 이상, 20자 이하로 써주세요.</div>"
+			str = "<div class='box_alert'><div id='id_alert' class='alert'>아이디는 5자 이상, 20자 이하로 써주세요.</div></div>"
 			$("#id_box").append(str);
 			$("#id_alert").css("color", "red").css("margin-left", "230px");
 			idresult=false;
@@ -58,15 +58,15 @@ $(document).ready(function() {
 		
 		if (pwreg.test(($("#pwd").val()))) {
 			$("#pwd_alert").remove();
-			str = "<div id='pwd_alert' class='alert'>사용가능합니다 </div>"
+			str = "<div class='box_alert'><div id='pwd_alert' class='alert'>사용가능합니다 </div></div>"
 			$("#pwd_box").append(str);
 			$("#pwd_alert").css("color", "green").css("margin-left", "230px");
 			passwordresult = true;
 		} else {
 			$("#pwd_alert").remove();
-				str = "<div id='pwd_alert' class='alert'>비밀번호는 특수문자를 포함한 영문자,숫자로 7자 이상~13자이하로 써주세요. </div>"
+				str = "<div class='box_alert'><div id='pwd_alert' class='alert'>비밀번호는 특수문자를 포함한 영문자,숫자로 7자 이상~13자이하로 써주세요.</div></div>"
 				$("#pwd_box").append(str);
-				$("#pwd_alert").css("color", "red").css("margin-left", "230px");
+				$("#pwd_alert").css("color", "red").css("margin-left", "230px").css("padding-right", "10px");
 			passwordresult=false;
 		}
 	})
@@ -84,7 +84,7 @@ $(document).ready(function() {
 			password2result=false;
 		} else {
 			$("#pwd2_alert").remove();
-			str = "<div id='pwd2_alert' class='alert'>  비밀번호가 일치합니다.</div>"
+			str = "<div class='box_alert'><div class='box_alert'><div id='pwd2_alert' class='alert'>비밀번호가 일치합니다.</div></div></div>"
 				$("#pwd_box2").append(str);
 				$("#pwd2_alert").css("color", "green").css("margin-left", "230px");
 				
@@ -101,13 +101,13 @@ $(document).ready(function() {
 		
 		if(nameRegex.test($("#name").val())){
 			$("#name_alert").remove();
-			str="<div id='name_alert' class='alert'>사용가능합니다.</div>"
+			str="<div class='box_alert'><div id='name_alert' class='alert'>사용가능합니다.</div></div>"
 			$("#name_box").append(str);
 			$("#name_alert").css("color", "green").css("margin-left", "230px");
 			nameresult = true;
 		}else{
 			$("#name_alert").remove();
-			str="<div id='name_alert' class='alert'>이름 형식에 맞게 입력해주세요.</div>"
+			str="<div class='box_alert'><div id='name_alert' class='alert'>이름 형식에 맞게 입력해주세요.</div></div>"
 			$("#name_box").append(str);
 			$("#name_alert").css("color", "red").css("margin-left", "230px");
 			nameresult=false;
@@ -124,7 +124,7 @@ $(document).ready(function() {
 			console.log(data)
 			$("#email_alert").remove();
 			
-			str = "<div id='email_alert' class='alert'> 사용중입니다 </div>"
+			str = "<div class='box_alert'><div id='email_alert' class='alert'>사용중입니다 </div></div>"
 			
 			$("#email_box").append(str);
 			
@@ -136,7 +136,7 @@ $(document).ready(function() {
 			if(emailRegex.test($("#email").val())){
 				$("#email_alert").remove();
 				
-				str="<div id='email_alert' class='alert'>사용가능합니다.</div>"
+				str="<div class='box_alert'><div id='email_alert' class='alert'>사용가능합니다.</div></div>"
 				
 				$("#email_box").append(str);
 				
@@ -146,7 +146,7 @@ $(document).ready(function() {
 		} else {
 			
 			$("#email_alert").remove();
-			str="<div id='email_alert' class='alert'>이메일 형식에 맞게 입력해주세요.</div>"
+			str="<div class='box_alert'><div id='email_alert' class='alert'>이메일 형식에 맞게 입력해주세요.</div></div>"
 			$("#email_box").append(str);
 			$("#email_alert").css("color", "red").css("margin-left", "230px");
 			emailresult=false;
@@ -165,7 +165,7 @@ $(document).ready(function() {
 			console.log(data)
 			$("#phone_alert").remove();
 			
-			str = "<div id='phone_alert' class='alert'> 사용중입니다 </div>"
+			str = "<div class='box_alert'><div id='phone_alert' class='alert'> 사용중입니다 </div></div>"
 			
 			$("#phone_box").append(str);
 			
@@ -175,13 +175,13 @@ $(document).ready(function() {
 			// select된 결과가 없으면 fail로 인식
 		if(numberRegex.test($("#phone").val())){
 			$("#phone_alert").remove();
-			str="<div id='phone_alert' class='alert'>사용가능합니다.</div>"
+			str="<div class='box_alert'><div id='phone_alert' class='alert'>사용가능합니다.</div></div>"
 			$("#phone_box").append(str);
 			$("#phone_alert").css("color", "green").css("margin-left", "230px");
 			numberresult = true;
 		}else{
 			$("#phone_alert").remove();
-			str="<div id='phone_alert' class='alert'>숫자, -을 포함해 휴대전화 형식에 맞게 입력해주세요</div>"
+			str="<div class='box_alert'><div id='phone_alert' class='alert'>숫자,-을 포함해 휴대전화 형식에 맞게 입력해주세요</div></div>"
 			$("#phone_box").append(str);
 			$("#phone_alert").css("color", "red").css("margin-left", "230px");
 			numberresult=false;
@@ -194,10 +194,10 @@ $(document).ready(function() {
 
 		if(idresult == true && passwordresult == true && password2result == true && nameresult == true && emailresult == true){
 			alert("회원가입을 축하합니다.");
-		}else if( idcheckresult== false){
+		}else if( idcheckresult == false){
 			alert("id를 입력해주세요")
 			return false;
-		}else if(emailcheckresult==false){
+		}else if( emailcheckresult == false){
 			alert("email를 입력해주세요")
 			return false;
 		}else{
