@@ -155,7 +155,6 @@ $(document).ready(function() {
 				console.log("result1 = "+result)
 				
 				var str = "";		
-				// $(result).each(function(i, obj){
 					 input += "<input type='text' name='info["+0+"].info_image' value ='" + result.info_image + "'><br>";					 					 
 					 input += "<input type='text' name='info["+0+"].info_upload' value ='" + "\\information\\main\\" +result.info_upload + "'><br>";				 
 					 input += "<input type='text' name='info["+0+"].info_uid' value ='" + result.info_uid + "'><br>";
@@ -173,8 +172,7 @@ $(document).ready(function() {
 							// 다운로드 할 수 있도록 실행
 							var filePath=encodeURIComponent(result.info_upload+"\\"+result.info_uid+"_"+result.info_name)
 							str += "<li><a href='/download?filename="+filePath+"'>"+result.info_name+"</a></li>"
-						 }
-				// })					 	
+						 }					 	
 		   }
 	    })
     })

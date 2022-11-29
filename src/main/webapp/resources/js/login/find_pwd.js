@@ -1,8 +1,7 @@
 /**
- * 아이디 찾기 js
+ *  비밀번호 찾기 js
  */
-// 아이디 * 스토어 값 저장하기 위한 변수
-// 아이디 값 받고 출력하는 ajax
+// 비밀번호 값 받고 출력하는 ajax
 function pwd_click(){
 	var id = $("#pwd_id").val();
 	var name = $("#pwd_name").val();

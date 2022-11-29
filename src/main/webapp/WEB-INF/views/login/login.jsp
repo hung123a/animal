@@ -10,6 +10,7 @@
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="/resources/css/login/login.css">
+<script type="text/javascript" src="/resources/js/login/login.js"></script>
 </head>
 <body>
 
@@ -18,10 +19,10 @@
 			<a href="/"><img src="/resources/img/animal community(login).png"
 				class="img"></a>
 		</div>
-		<form>
-			<input type="text" name="id" class="text_field" placeholder="아이디"><br>
-			<input type="password" name="pwd" class="text_field" placeholder="비밀번호"><br> 
-			<input type="submit" value="로그인" class="login_bth" formmethod="post" formaction="/login/login_post"><br> 
+		<form name="f1" method="post">
+			<input type="text" id="id" name="id" class="text_field" placeholder="아이디" maxlength="20" onKeyDown="if(event.keyCode == 13) loginChk()"><br>
+			<input type="password" id="pwd" name="pwd" class="text_field" placeholder="비밀번호" maxlength="20" onKeyDown="if(event.keyCode == 13) loginChk()"><br> 
+			<input type="button" value="로그인" class="login_bth" onclick="loginChk()"><br> 
 			<input type="submit" value="회원가입" class="login_bth" formaction="/signup" formmethod="get">
 		</form>
 		<div class="links">

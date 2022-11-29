@@ -14,7 +14,8 @@
 		</selectKey>
 		insert into information(ino, animal_name, habitat, look, life, food,
 		enemy, i_type, id)
-		values(#{ino},#{animal_name},#{habitat}, #{look}, #{life},
+		values(#{ino},#{animal_name},#{habitat}, #{look},
+		#{life},
 		#{food},#{enemy},#{i_type},#{id})
 	</insert>
 
@@ -22,12 +23,17 @@
 	<select id="info_list"
 		resultType="org.animal.model.informationVO">
 		select
-		i.ino,animal_name,habitat,look,life,food,enemy,date_format(animal_data,
-		'%Y-%m-%d')animal_date,i_type,vision,Concat(Replace(info_upload,'\\','/'),'/',info_uid,'_'
-		,info_name)AS main_img
-		from information i join info_img f on i.ino =
-		f.ino where info_image = 1 and
-		vision = 'm';
+		rownum,i.ino,animal_name,habitat,look,life,food,enemy,date_format(animal_data,
+		'%Y-%m-%d')animal_date,i_type, vision,
+		Concat(Replace(info_upload,'\\','/'),'/',info_uid,'_',info_name)AS
+		main_img
+		from(select @rownum:=@rownum+1 rownum, i.* from information i,(select
+		@rownum:=0)as tmp
+		)as i join info_img f on i.ino = f.ino
+		<![CDATA[
+				where rownum> (#{pageNum}-1)*#{amount} and rownum<=#{pageNum}*#{amount} 
+				and vision = 'm'
+			]]>		
 	</select>
 
 	<!-- 자유게시판 글쓰기 등록 -->
@@ -64,19 +70,19 @@
 		select *,
 		date_format(tendinous_data, '%Y-%m-%d')tendinous_date from tendinous;
 	</select>
-	
-	<!-- 테이블 전체 건수  -->
+
+	<!-- 테이블 전체 건수 -->
 	<select id="info_total" resultType="int">
-	select count(*) from information;
+		select count(*) from information;
 	</select>
 	<select id="photo_total" resultType="int">
-	select count(*) from photo;
+		select count(*) from photo;
 	</select>
 	<select id="free_total" resultType="int">
-	select count(*) from photo;
+		select count(*) from photo;
 	</select>
 	<select id="tend_total" resultType="int">
-	select count(*) from tendinous;
+		select count(*) from tendinous;
 	</select>
-	
+
 </mapper>
