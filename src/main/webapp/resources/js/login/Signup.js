@@ -12,7 +12,6 @@ $(document).ready(function() {
 	var emailcheckresult="";
 	var phoneresult="";
 	var phonecheckresult="";
-	
 	// 아이디 길이 체크
 	$("#id").on("blur",function() {
 		var idRegex = /^[a-z]+[a-z0-9-_]{4,20}$/g;
@@ -21,27 +20,30 @@ $(document).ready(function() {
 		// 아이디 중복 체크
 		$.getJSON("/signup/idcheck/"+id+".json",function(data){
 			// select된 결과가 있으면 success로 인식
-			console.log(data)
 			$("#id_alert").remove();
 			str = "<div class='box_alert'><div id='id_alert' class='alert'>사용중입니다 </div></div>"
 			$("#id_box").append(str);			
 			$("#id_alert").css("color", "red").css("margin-left", "230px");
-			idcheckresult= false;
+			idresult=false;			
+			console.log("idcheckresult="+idcheckresult);
 		}).fail(function(data){
 			// select된 결과가 없으면 fail로 인식
 			if(idRegex.test($("#id").val())) {
-			$("#id_alert").remove();			
-			str = "<div class='box_alert'><div id='id_alert' class='alert'>사용가능합니다  </div></div>"
-			$("#id_box").append(str);			
-			$("#id_alert").css("color", "green").css("margin-left", "230px");
-			idresult = true;
-		} else {			
-			$("#id_alert").remove();
-			str = "<div class='box_alert'><div id='id_alert' class='alert'>아이디는 5자 이상, 20자 이하로 써주세요.</div></div>"
-			$("#id_box").append(str);
-			$("#id_alert").css("color", "red").css("margin-left", "230px");
-			idresult=false;
-		}
+				$("#id_alert").remove();			
+				str = "<div class='box_alert'><div id='id_alert' class='alert'>사용가능합니다  </div></div>"
+				$("#id_box").append(str);			
+				$("#id_alert").css("color", "green").css("margin-left", "230px");			
+				idresult = true;
+				console.log("idcheckresult="+idcheckresult);
+				console.log("true_idresult="+idresult);
+			} else {			
+				$("#id_alert").remove();
+				str = "<div class='box_alert'><div id='id_alert' class='alert'>아이디는 5자 이상, 20자 이하로 써주세요.</div></div>"
+				$("#id_box").append(str);
+				$("#id_alert").css("color", "red").css("margin-left", "230px");
+				idresult=false;
+				console.log("false_idresult="+idresult);
+			}
 		})
 	})
 	
@@ -161,23 +163,19 @@ $(document).ready(function() {
 		}
 		})
 	})
-	
 	// 필요한 데이터가 전부 입력되었다면 submit을 진행한다//
 	$("form").on("submit", function(e) {
 		var password = $("#pwd").val();
 		var password2 = $("#pwd2").val();
-		if(idresult == true &&  passwordresult == true && password2result == true && nameresult == true && emailresult == true && phoneresult == true){
+		if(idresult == true && passwordresult == true && password2result == true && nameresult == true && emailresult == true && phoneresult == true){
 			alert("회원가입을 축하합니다.");			
 		}else if( nameresult == false ){
 			alert("이름을 입력해주세요");
 			e.preventDefault();
 		}else if( idresult == false){
-			alert("id를 입력해주세요");
+			alert("id를 다시 한번 확인해주세요 .");
 			e.preventDefault();
-			return false;
-		}else if( idcheckresult == false){
-			alert("id가 중복되었습니다");
-			e.preventDefault();
+			console.log("from_idresult="+idresult);
 			return false;
 		}else if( passwordresult == false){
 			alert("비밀번호를 입력해주세요");
@@ -188,11 +186,11 @@ $(document).ready(function() {
 			e.preventDefault();
 			return false;
 		}else if( emailresult == false){
-			alert("email를 입력해주세요");
+			alert("email를 다시 한번 확인해주세요");
 			e.preventDefault();
 			return false;
 		}else if( phoneresult == false){
-			alert("전화번호를 입력해주세요");
+			alert("전화번호를 다시 한번 확인해주세요");
 			e.preventDefault();
 			return false;
 		}else{
