@@ -36,9 +36,9 @@
 						<div id="animal_type">
 							<div id="animal_i_type">
 								<select id="i_type" name="i_type">
-									<option>동물</option>
+									<option>육지 동물</option>
 									<option>조류</option>
-									<option>어류</option>
+									<option>해상 동물</option>
 								</select>
 							</div>
 						</div>

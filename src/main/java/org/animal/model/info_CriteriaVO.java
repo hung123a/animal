@@ -4,7 +4,7 @@ public class info_CriteriaVO {
 	private int pageNum; // 페이지번호
 	private int amount; // 한 페이지당 게시물 갯수
 	private String ikeyword; // 키워드를 통해 검색
-	private String itype; // 키워드 기준
+	private String i_type; // 키워드 기준
 
 	// 생성자
 	public info_CriteriaVO() {
@@ -25,12 +25,12 @@ public class info_CriteriaVO {
 	}
 	
 
-	public String getItype() {
-		return itype;
+	public String getI_type() {
+		return i_type;
 	}
 
-	public void setKtype(String itype) {
-		this.itype = itype;
+	public void seti_type(String i_type) {
+		this.i_type = i_type;
 	}
 
 	public int getAmount() {
@@ -52,7 +52,7 @@ public class info_CriteriaVO {
 
 	@Override
 	public String toString() {
-		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", ikeyword=" + ikeyword + ", itype=" + itype
+		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", ikeyword=" + ikeyword + ", i_type=" + i_type
 				+ "]";
 	}
 

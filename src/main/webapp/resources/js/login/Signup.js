@@ -3,15 +3,12 @@
  */
 $(document).ready(function() {
 	var str = "";
-	var idresult = "";
-	var idcheckresult="";
+	var idresult = "";	
 	var passwordresult = "";
 	var password2result = "";
 	var nameresult = "";
-	var emailresult = "";
-	var emailcheckresult="";
-	var phoneresult="";
-	var phonecheckresult="";
+	var emailresult = "";	
+	var phoneresult="";	
 	// 아이디 길이 체크
 	$("#id").on("blur",function() {
 		var idRegex = /^[a-z]+[a-z0-9-_]{4,20}$/g;
@@ -25,7 +22,6 @@ $(document).ready(function() {
 			$("#id_box").append(str);			
 			$("#id_alert").css("color", "red").css("margin-left", "230px");
 			idresult=false;			
-			console.log("idcheckresult="+idcheckresult);
 		}).fail(function(data){
 			// select된 결과가 없으면 fail로 인식
 			if(idRegex.test($("#id").val())) {
@@ -33,16 +29,13 @@ $(document).ready(function() {
 				str = "<div class='box_alert'><div id='id_alert' class='alert'>사용가능합니다  </div></div>"
 				$("#id_box").append(str);			
 				$("#id_alert").css("color", "green").css("margin-left", "230px");			
-				idresult = true;
-				console.log("idcheckresult="+idcheckresult);
-				console.log("true_idresult="+idresult);
+				idresult = true;				
 			} else {			
 				$("#id_alert").remove();
 				str = "<div class='box_alert'><div id='id_alert' class='alert'>아이디는 5자 이상, 20자 이하로 써주세요.</div></div>"
 				$("#id_box").append(str);
 				$("#id_alert").css("color", "red").css("margin-left", "230px");
-				idresult=false;
-				console.log("false_idresult="+idresult);
+				idresult=false;				
 			}
 		})
 	})
@@ -113,7 +106,7 @@ $(document).ready(function() {
 			str = "<div class='box_alert'><div id='email_alert' class='alert'>사용중입니다 </div></div>"			
 			$("#email_box").append(str);			
 			$("#email_alert").css("color", "red").css("margin-left", "230px");			
-			emailcheckresult = false;				
+			emailresult = false;				
 		}).fail(function(data){// select된 결과가 없으면 fail로 인식
 			if(emailRegex.test($("#email").val())){
 				$("#email_alert").remove();				
@@ -145,7 +138,7 @@ $(document).ready(function() {
 			str = "<div class='box_alert'><div id='phone_alert' class='alert'> 사용중입니다 </div></div>"			
 			$("#phone_box").append(str);			
 			$("#phone_alert").css("color", "red").css("margin-left", "230px");
-			phonecheckresult = false;
+			phoneresult = false;
 		}).fail(function(data){
 			// select된 결과가 없으면 fail로 인식
 		if(numberRegex.test($("#phone").val())){
@@ -170,15 +163,15 @@ $(document).ready(function() {
 		if(idresult == true && passwordresult == true && password2result == true && nameresult == true && emailresult == true && phoneresult == true){
 			alert("회원가입을 축하합니다.");			
 		}else if( nameresult == false ){
-			alert("이름을 입력해주세요");
+			alert("이름을 다시 한번 확인해주세요");
 			e.preventDefault();
 		}else if( idresult == false){
-			alert("id를 다시 한번 확인해주세요 .");
+			alert("id를 다시 한번 확인해주세요");
 			e.preventDefault();
 			console.log("from_idresult="+idresult);
 			return false;
 		}else if( passwordresult == false){
-			alert("비밀번호를 입력해주세요");
+			alert("비밀번호를 다시 한번해주세요");
 			e.preventDefault();
 			return false;
 		}else if( password != password2 ){

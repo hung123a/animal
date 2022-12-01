@@ -42,7 +42,7 @@
 						<!-- 검색영역 -->
 						<div class="seach" id="animal_seach">
 							<form id="seachForm" method="get">
-								<select name="menu" class="select_menu">
+								<select name="i_type" class="select_menu">
 									<optgroup label="CATEGORY" class="CATEGORY"></optgroup>
 									<option value="LBS">전체 글 보기</option>
 									<option value="L">육지 동물</option>
@@ -77,22 +77,22 @@
 					</div>
 					<div class="bottom">
 						<!-- prev(이전)이 true이면 이전버튼 화설화 -->
-						<c:if test="${paging.prev}">
+						<c:if test="${ipaging.prev}">
 							<a
-								href="/page?type=information?pageNum=${ipaging.startPage-1}&amount=${ipaging.icri.amount}">이전</a>
+								href="/page?type=information&pageNum=${ipaging.startPage-1}&amount=${ipaging.icri.amount}">이전</a>
 						</c:if>
 
 						<!-- begin(1) end(10)될 동안 반복(1일 10일 될 동안 반복) -->
-						<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
+						<c:forEach begin="${ipaging.startPage}" end="${ipaging.endPage}"
 							var="num">
 							<a
-								href="/page?type=information?ktype=${ipaging.icri.itype}&keyword=${ipaging.icri.ikeyword}&pageNum=${num}&amount=${ipaging.icri.amount}">${num}</a>
+								href="/page?type=information&i_type=${ipaging.icri.i_type}&ikeyword=${ipaging.icri.ikeyword}&pageNum=${num}&amount=${ipaging.icri.amount}">${num}</a>
 						</c:forEach>
 
 						<!-- next(다음)이 true이면 다음버튼 활성화 -->
 						<c:if test="${ipaging.next}">
 							<a
-								href="/page?type=information?pageNum=${ipaging.endPage+1}&amount=${ipaging.icri.amount}">다음</a>
+								href="/page?type=information&pageNum=${ipaging.endPage+1}&amount=${ipaging.icri.amount}">다음</a>
 						</c:if>
 						<br>
 						<!-- ${paging} -->
@@ -142,7 +142,7 @@
 							<img class="photo_img1" src="/resources/img/image1.jpg">
 						</div>
 					</div>
-					<div class="bottom">
+					<%-- <div class="bottom">
 						<!-- prev(이전)이 true이면 이전버튼 화설화 -->
 						<c:if test="${paging.prev}">
 							<a
@@ -174,7 +174,7 @@
 								</div>
 							</c:otherwise>
 						</c:choose>
-					</div>
+					</div> --%>
 				</div>
 				<!-- 사진첩 끝 -->
 
@@ -237,7 +237,7 @@
 							</a>
 						</c:forEach>
 					</div>
-					<div class="bottom">
+					<%-- <div class="bottom">
 						<!-- prev(이전)이 true이면 이전버튼 화설화 -->
 						<c:if test="${paging.prev}">
 							<a
@@ -270,7 +270,7 @@
 							</c:otherwise>
 						</c:choose>
 						<!-- 자유게시판 미리 보기 끝 -->
-					</div>
+					</div> --%>
 				</div>
 				<!-- 자유게시판 끝 -->
 
@@ -309,7 +309,7 @@
 							</a>
 						</c:forEach>
 					</div>
-					<div class="bottom">
+					<%-- <div class="bottom">
 						<!-- prev(이전)이 true이면 이전버튼 화설화 -->
 						<c:if test="${paging.prev}">
 							<a
@@ -342,7 +342,7 @@
 							</c:otherwise>
 						</c:choose>
 						<!-- 건의 게시판 미리 보기 끝 -->
-					</div>
+					</div> --%>
 				</div>
 				<!-- 건의게시판 끝 -->
 			</div>
