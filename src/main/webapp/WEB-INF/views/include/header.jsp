@@ -7,10 +7,10 @@
 	<div id="head_cont" class="wrap">
 		<div id="tap_menu">
 			<ul class="tap_list">
-				<li><a href="/page?type=information">동물 소개</a></li>
-				<li><a href="/page?type=photo">사진 첩</a></li>
-				<li><a href="/page?type=free_board">자유게시판</a></li>
-				<li><a href="/page?type=tendinous">건의게시판</a></li>
+				<li><a href="/page" class="href" onclick="javascript:tabcustom(type=information);">동물 소개</a></li>
+				<li><a href="/page" class="href" onclick="javascript:tabcustom(2);">사진 첩</a></li>
+				<li><a href="/page" class="href" onclick="javascript:tabcustom(3);">자유게시판</a></li>
+				<li><a href="/page" class="href" onclick="javascript:tabcustom(4);">건의게시판</a></li>
 			</ul>
 		</div>
 		<div id="logo">
