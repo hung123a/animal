@@ -1,9 +1,7 @@
 /**
  * 
  */
-$(document).ready(function() {
-	var url = location.href;
-	
+$(document).ready(function() {	
 	/*document.querySelector(".href").removeAttribute('href');
 	var animalUrl = "http://localhost:8080/page?type=information";
 	var photoUrl = "http://localhost:8080/page?type=photo";

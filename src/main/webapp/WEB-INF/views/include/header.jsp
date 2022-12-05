@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="/resources/css/include/header.css">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<link rel="stylesheet" href="/resources/css/include/header.css">
 <!-- header 영역 -->
 <header id="head">
 	<div id="head_cont" class="wrap">
 		<div id="tap_menu">
 			<ul class="tap_list">
-				<li><a href="/page" class="href" onclick="javascript:tabcustom(type=information);">동물 소개</a></li>
+				<li><a href="/page" class="href" onclick="javascript:tabcustom(1);">동물 소개</a></li>
 				<li><a href="/page" class="href" onclick="javascript:tabcustom(2);">사진 첩</a></li>
 				<li><a href="/page" class="href" onclick="javascript:tabcustom(3);">자유게시판</a></li>
 				<li><a href="/page" class="href" onclick="javascript:tabcustom(4);">건의게시판</a></li>

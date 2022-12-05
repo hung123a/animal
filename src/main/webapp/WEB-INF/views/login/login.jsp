@@ -22,9 +22,9 @@
 		<form name="f1" method="post">
 			<input type="text" id="id" name="id" class="text_field" placeholder="아이디" maxlength="20" onKeyDown="if(event.keyCode == 13) loginChk()"><br>
 			<input type="password" id="pwd" name="pwd" class="text_field" placeholder="비밀번호" maxlength="20" onKeyDown="if(event.keyCode == 13) loginChk()"><br> 
-			<input type="button" value="로그인" class="login_bth" onclick="loginChk()"><br> 
-			<input type="submit" value="회원가입" class="login_bth" formaction="/signup" formmethod="get">
-		</form>
+			<input type="button" value="로그인" class="login_bth" onclick="loginChk()"><br>
+		</form> 
+			<a href="/signup"><input type="button" value="회원가입" class="login_bth"></a>		
 		<div class="links">
 			<a href="/find">아이디/비밀번호 찾기</a>
 		</div>
