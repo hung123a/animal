@@ -5,7 +5,7 @@ public class photo_uploadVO {
 	private String photo_name; // 파일 이름
 	private boolean photo_image; // 파일 설명 사진
 	private String photo_upload; // 파일 저장되어 있는 경로
-	private int photo_no; // 사진 번호
+	private int pno; // 사진 번호
 	
 	public String getPhoto_uid() {
 		return photo_uid;
@@ -39,17 +39,17 @@ public class photo_uploadVO {
 		this.photo_upload = photo_upload;
 	}
 
-	public int getPhoto_no() {
-		return photo_no;
+	public int getPno() {
+		return pno;
 	}
 
-	public void setPhoto_no(int photo_no) {
-		this.photo_no = photo_no;
+	public void setPno(int pno) {
+		this.pno = pno;
 	}
 
 	@Override
 	public String toString() {
 		return "photo_uploadVO [photo_uid=" + photo_uid + ", photo_name=" + photo_name + ", photo_image=" + photo_image
-				+ ", photo_upload=" + photo_upload + ", photo_no=" + photo_no + "]";
+				+ ", photo_upload=" + photo_upload + ", pno=" + pno + "]";
 	}	
 }

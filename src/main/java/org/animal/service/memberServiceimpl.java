@@ -29,7 +29,7 @@ public class memberServiceimpl implements memberService {
 		return result;
 	}
 
-	// 아이디 찾기
+	// 비밀번호 찾기
 	@Override
 	public String find_pwd(String name, String email, String phone, String id) {
 		String result = "";
@@ -51,17 +51,14 @@ public class memberServiceimpl implements memberService {
 	public void signup(memberVO member) {
 		mm.signup(member);
 	}
-
 	// 아이디 중복 체크
 	public memberVO idcheck(String id) {
 		return mm.idcheck(id);
 	}
-
 	// 이메일 중복 체크
 	public memberVO emailcheck(String email) {
 		return mm.emailcheck(email);
 	}
-
 	// 전화번호 중복 체크
 	public memberVO phonecheck(String phone) {
 		return mm.phonecheck(phone);
