@@ -62,9 +62,11 @@
 }
 #uploadResult li {
     list-style: none;
+    border: 1px solid #d3c6c5;
 }
 #uploadResult img {
-    width: 250;
+    width: 200;
+    margin: 25 0 25 25;
 }
 #button {
 	display: inline-block;

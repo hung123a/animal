@@ -191,6 +191,10 @@ img.photo_img1 { /* 사진  */
 	padding-left: 10px;
     padding-top: 10px;
 }
+#uploadResult li {
+    list-style: none;
+    border: 1px solid #d3c6c5;
+}
 .bottom {
 	border-top: 4px solid #ddd;
 	text-align: center;

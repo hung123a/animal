@@ -50,10 +50,7 @@ $(document).ready(function() {
 			dataType:"json",
 			type:"POST",
 			success:function(result){
-				console.log("서브이미지(result)="+result);
-				
-				showUploadFile(result);
-				
+				console.log("서브이미지(result)="+result);			
 				var str="";			
 				$(result).each(function(i,obj){
 					console.log("obj2="+obj)
@@ -69,7 +66,7 @@ $(document).ready(function() {
 							var filePath=encodeURIComponent("\\photo\\" +obj.photo_upload+"\\"+obj.photo_uid+"_"+obj.photo_name)
 							console.log("filePath="+filePath)
 							
-							str += "<li><img src='/display?filename="+filePath+"'><input type='submit' value='삭제하기'></li>"
+							str += "<li><img src='/display?filename="+filePath+"'><input type='submit' value='삭제하기' class='del'></li>"
 						}else{// 그렇지 않으면
 							// 다운로드 할 수 있도록 실행
 							var filePath=encodeURIComponent("\\photo\\" +obj.photo_upload+"\\"+obj.photo_uid+"_"+obj.photo_name)
