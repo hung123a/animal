@@ -26,16 +26,13 @@ $(document).ready(function() {
 		return true;
 	}
 	
-	// sub이미지
+	
 	$("#file").on("change",function(e){
 		e.preventDefault()
 		// .jsp에 form태그를 대체 (FormData함수)
 		var formData = new FormData();
 		var inputFile = $("input[name='photo']");
-		var files = inputFile[0].files;
-		console.log("서브이미지(inputFile)="+inputFile);
-		console.log("서브이미지(files)="+files);
-		
+		var files = inputFile[0].files;		
 		for (var i = 0; i < files.length; i++) {
 			// 함수 호출(checkExtension)
 			if (!checkExtension(files[i].name, files[i].size)){
@@ -55,8 +52,9 @@ $(document).ready(function() {
 			success:function(result){
 				console.log("서브이미지(result)="+result);
 				
-				var str="";
-				var bno=$("input[name='bno']").val();
+				showUploadFile(result);
+				
+				var str="";			
 				$(result).each(function(i,obj){
 					console.log("obj2="+obj)
 					console.log("obj2.filename="+obj.filename)
@@ -64,21 +62,21 @@ $(document).ready(function() {
 					 input += "<input type='text' name='p_img["+i+"].photo_upload' value ='" + "\\photo\\" + obj.photo_upload + "'><br>";				 
 					 input += "<input type='text' name='p_img["+i+"].photo_uid' value ='" + obj.photo_uid + "'><br>";
 					 input += "<input type='text' name='p_img["+i+"].photo_name' value ='" + obj.photo_name + "'><br>";					 
-					 input += "<input type='text' name='p_img["+i+"].bno' value ='" + obj.bno + "'><br>";
 					 // 만약 image 결과가 ture이면
 					 // obj.image == true or
 					 if(obj.photo_image){
 							// 아래에 있는거 실행
-							var filePath=encodeURIComponent(obj.photo_upload+"\\"+obj.photo_uid+"_"+obj.photo_name)
+							var filePath=encodeURIComponent("\\photo\\" +obj.photo_upload+"\\"+obj.photo_uid+"_"+obj.photo_name)
 							console.log("filePath="+filePath)
 							
-							str += "<li><img src='/display?filename="+filePath+"'></li>"
+							str += "<li><img src='/display?filename="+filePath+"'><input type='submit' value='삭제하기'></li>"
 						}else{// 그렇지 않으면
 							// 다운로드 할 수 있도록 실행
-							var filePath=encodeURIComponent(obj.photo_upload+"\\"+obj.photo_uid+"_"+obj.photo_name)
+							var filePath=encodeURIComponent("\\photo\\" +obj.photo_upload+"\\"+obj.photo_uid+"_"+obj.photo_name)
 							str += "<li><a href='/download?filename="+filePath+"'>"+obj.photo_name+"</a></li>"
 						 }
 				})
+				$("#uploadResult ul").html(str);
 			}
 		})
 	})

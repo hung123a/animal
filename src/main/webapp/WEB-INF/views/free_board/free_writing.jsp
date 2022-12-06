@@ -24,7 +24,7 @@
 		<div id="free_center">
 			<div class="wrap" id="main">
 				<div class="wrap tap" id="tap">
-					<form action="/free_writing?id=${loginVO.id}" method="post" id="free_form"
+					<form action="/free_writing?id=${sessionScope.login.id}" method="post" id="free_form"
 						name="free_form" enctype="multipart/form-data">
 						<div id="free_title">
 							<h1>자유게시판 글쓰기</h1>	
@@ -34,6 +34,7 @@
 						<div id="free_writing_board">
 							<div id="middle">
 								<div class="main_content">
+								<input type="hidden" name="bgno" value="3">
 									<div class="content_title" id="main_title">제목</div>
 									<div class="Contents" id="main_Contents">내용</div>
 									<div class="img">이미지</div>

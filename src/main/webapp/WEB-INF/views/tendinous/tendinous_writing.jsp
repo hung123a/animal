@@ -29,6 +29,7 @@
 						<div id="tendinous_writing_board">
 							<div id="middle">
 								<div class="main_content">
+								    <input type="hidden" name="bgno" value="4">
 									<div class="content_title" id="main_title">제목</div>
 									<div class="Contents" id="main_Contents">내용</div>
 								</div>
@@ -43,7 +44,7 @@
 							</div>
 						</div>
 						<div class="btn">
-							<input type="submit" value="등록하기" class="bth" formaction="/tendinous_writing?id=${loginVO.id}" formmethod="post">
+							<input type="submit" value="등록하기" class="bth" formaction="/tendinous_writing?id=${sessionScope.login.id}" formmethod="post">
 						</div>
 
 						<div class="btn">

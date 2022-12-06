@@ -12,9 +12,8 @@
 					<div class="page_menu">
 						<div class="ranking">
 							<ul>
-								<li><a href="#">최신순</a></li>
-								<li><a href="#">조회수</a></li>
-								<li><a href="#">오래된순</a></li>
+								<li><a href="#" id="inew">최신순</a></li>								
+								<li><a href="#" id="irow">오래된순</a></li>
 							</ul>
 						</div>
 						<!-- 검색영역 -->
@@ -75,7 +74,7 @@
 						<br>
 						<!-- ${paging} -->
 						<c:choose>
-							<c:when test="${loginVO.id==null}">
+							<c:when test="${sessionScope.login.id==null}">
 								<div class="pbtn"></div>
 							</c:when>
 							<c:otherwise>

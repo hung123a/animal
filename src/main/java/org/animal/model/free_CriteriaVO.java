@@ -5,6 +5,7 @@ public class free_CriteriaVO {
 	private int amount; // 한 페이지당 게시물 갯수
 	private String fkeyword; // 키워드를 통해 검색
 	private String ftype; // 키워드 기준
+	private int bgno; // 페이지 분류
 
 	// 생성자
 	public free_CriteriaVO() {
@@ -40,20 +41,25 @@ public class free_CriteriaVO {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
 
-	public String getKeyword() {
-		return fkeyword;
+	public int getBgno() {
+		return bgno;
 	}
 
+	public void setBgno(int bgno) {
+		this.bgno = bgno;
+	}
+
+	public String getFkeyword() {
+		return fkeyword;
+	}
 	public void setFkeyword(String fkeyword) {
 		this.fkeyword = fkeyword;
 	}
-
 	@Override
 	public String toString() {
-		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", fkeyword=" + fkeyword + ", ftype=" + ftype
-				+  "]";
+		return "free_CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", fkeyword=" + fkeyword + ", ftype="
+				+ ftype + ", bgno=" + bgno + "]";
 	}
 
 }

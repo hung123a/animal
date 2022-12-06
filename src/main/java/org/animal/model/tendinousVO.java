@@ -8,6 +8,7 @@ public class tendinousVO {
 	private String tendinous_data; // 건의게시판 등록 일자
 	private String tendinous_date; // 건의게시판 등록 일자
 	private String id; // 회원테이블과 조인을 위한 아이디
+	private int bgno; // 페이지 분류
 	public int getTno() {
 		return tno;
 	}
@@ -64,11 +65,19 @@ public class tendinousVO {
 		this.id = id;
 	}
 
+	public int getBgno() {
+		return bgno;
+	}
+
+	public void setBgno(int bgno) {
+		this.bgno = bgno;
+	}
+
 	@Override
 	public String toString() {
 		return "tendinousVO [tno=" + tno + ", tendinous_title=" + tendinous_title + ", tendinous_cont=" + tendinous_cont
 				+ ", tendinous_cnt=" + tendinous_cnt + ", tendinous_data=" + tendinous_data + ", tendinous_date="
-				+ tendinous_date + ", id=" + id +  "]";
+				+ tendinous_date + ", id=" + id + ", bgno=" + bgno + "]";
 	}
 
 }

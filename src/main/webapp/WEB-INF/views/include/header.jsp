@@ -20,16 +20,16 @@
 		<div id="menu">
 			<ul id="menu_list">
 				<c:choose>
-					<c:when test="${loginVO.id==null}">
+					<c:when test="${sessionScope.login.id==null}">
 						<li><a href="/login">로그인</a></li>
 						<li><a href="/signup">회원가입</a></li>						
 					</c:when>
-					<c:when test="${loginVO.id=='admin'}">
+					<c:when test="${sessionScope.login.rating=='관리자'}">
 						<li><a href="/login">관리자메뉴</a></li>
 						<li><a href="/login/logout">로그아웃</a></li>						
 					</c:when>
 					<c:otherwise>
-						<li><a href="/mypage?id=${loginVO.id}">${loginVO.id}님</a></li>
+						<li><a href="/mypage?id=${sessionScope.login.id}">${sessionScope.login.id}님</a></li>
 						<li><a href="/login/logout">로그아웃</a></li>						
 					</c:otherwise>
 				</c:choose>

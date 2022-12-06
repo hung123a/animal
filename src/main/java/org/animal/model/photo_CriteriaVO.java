@@ -5,10 +5,11 @@ public class photo_CriteriaVO {
 	private int amount; // 한 페이지당 게시물 갯수
 	private String pkeyword; // 키워드를 통해 검색
 	private String ptype; // 키워드 기준
+	private int bgno; // 페이지 분류
 
 	// 생성자
 	public photo_CriteriaVO() {
-		this(1,10);
+		this(1, 10);
 	}
 
 	public photo_CriteriaVO(int pageNum, int amount) {
@@ -23,15 +24,6 @@ public class photo_CriteriaVO {
 	public void setPageNum(int pageNum) {
 		this.pageNum = pageNum;
 	}
-	
-
-	public String getType() {
-		return ptype;
-	}
-
-	public void setPtype(String ptype) {
-		this.ptype = ptype;
-	}
 
 	public int getAmount() {
 		return amount;
@@ -40,7 +32,6 @@ public class photo_CriteriaVO {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
 
 	public String getPkeyword() {
 		return pkeyword;
@@ -50,10 +41,26 @@ public class photo_CriteriaVO {
 		this.pkeyword = pkeyword;
 	}
 
+	public String getPtype() {
+		return ptype;
+	}
+
+	public void setPtype(String ptype) {
+		this.ptype = ptype;
+	}
+
+	public int getBgno() {
+		return bgno;
+	}
+
+	public void setBgno(int bgno) {
+		this.bgno = bgno;
+	}
+
 	@Override
 	public String toString() {
-		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", pkeyword=" + pkeyword + ", ptype=" + ptype
-				+  "]";
+		return "photo_CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", pkeyword=" + pkeyword + ", ptype="
+				+ ptype + ", bgno=" + bgno + "]";
 	}
 
 }

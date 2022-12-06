@@ -5,7 +5,7 @@ public class tend_CriteriaVO {
 	private int amount; // 한 페이지당 게시물 갯수
 	private String tkeyword; // 키워드를 통해 검색
 	private String ttype; // 키워드 기준
-
+	private int bgno; // 페이지 분류
 	// 생성자
 	public tend_CriteriaVO() {
 		this(1,10);
@@ -23,16 +23,6 @@ public class tend_CriteriaVO {
 	public void setPageNum(int pageNum) {
 		this.pageNum = pageNum;
 	}
-	
-
-	public String getTtype() {
-		return ttype;
-	}
-
-	public void setTtype(String ttype) {
-		this.ttype = ttype;
-	}
-
 	public int getAmount() {
 		return amount;
 	}
@@ -40,7 +30,7 @@ public class tend_CriteriaVO {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
+
 
 	public String getTkeyword() {
 		return tkeyword;
@@ -50,10 +40,26 @@ public class tend_CriteriaVO {
 		this.tkeyword = tkeyword;
 	}
 
+	public String getTtype() {
+		return ttype;
+	}
+
+	public void setTtype(String ttype) {
+		this.ttype = ttype;
+	}
+
+	public int getBgno() {
+		return bgno;
+	}
+
+	public void setBgno(int bgno) {
+		this.bgno = bgno;
+	}
+
 	@Override
 	public String toString() {
-		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", tkeyword=" + tkeyword + ", ttype=" + ttype
-				+ "]";
+		return "tend_CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", tkeyword=" + tkeyword + ", ttype="
+				+ ttype + ", bgno=" + bgno + "]";
 	}
 
 }

@@ -17,7 +17,6 @@ body { /* 바디태그 */
 }
 
 .tap {
-	padding-top: 30px; /* 헤더와 칸을 띄우기 위한 패딩 */
 	height: 100%; /* 높이 지정 */
 	/* display: none; 페이지 이동시 나올 수 있게 */
 }

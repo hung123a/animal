@@ -1,5 +1,7 @@
 package org.animal.service;
 
+import javax.servlet.http.HttpSession;
+
 import org.animal.mapper.memberMapper;
 import org.animal.model.memberVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +14,18 @@ public class memberServiceimpl implements memberService {
 
 	/* 서비스 */
 	// 로그인
-	public memberVO login(memberVO mvo) {
-		return mm.login(mvo);
+	public boolean login(memberVO mvo, HttpSession session) {
+		memberVO login=mm.login(mvo);
+		boolean result=false;
+		// login가 null이 아니면
+		if(login!=null) {
+			System.out.println("세션값");
+			session.setAttribute("login", login);
+			session.setAttribute("loginid", login.getId());
+			System.out.println("세션값="+session.getAttribute("login"));
+			result=true;
+		}
+		return result;
 	}
 
 	/* 아이디, 비밀번호 찾기 */

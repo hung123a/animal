@@ -25,6 +25,12 @@
 				class="img"></a>
 		</div>
 		<form action="/signup" method="post">
+			<div>
+				<select id="rating" name="rating">
+				<option>일반인</option>
+				<option>관리자</option>
+				</select>
+			</div>
 			<div id="signup">
 				<div class="area" id="name_box">
 					<div class="title_content">
@@ -63,7 +69,7 @@
 							<div class="box">
 								<img class="svg" src="/resources/img/person_icon.svg">
 							</div>
-							<input type="password" id="pwd" class="text" name="pwd"
+							<input type="password" id="pwd" class="text" name="password"
 								placeholder="비밀번호">
 						</div>
 					</div>

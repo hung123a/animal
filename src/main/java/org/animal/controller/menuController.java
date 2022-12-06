@@ -29,12 +29,24 @@ public class menuController {
 	/* 서브 페이지 */
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
 	public String page(Model model, informationVO animal_info, info_CriteriaVO icri,photo_CriteriaVO pcri, free_CriteriaVO fcri, tend_CriteriaVO tcri) {
-		/* 건의 게시판 리스트 */
-		model.addAttribute("tend", bs.tend_list(tcri));
-		/* 자유게시판 리스트 */
-		model.addAttribute("free", bs.free_list(fcri));
-		/* 동물 소개 리스트 */
-		model.addAttribute("info", bs.info_list(icri));
+		String path="";
+		if(icri.getBgno()==1) { // 만약에 bgno가 1이면
+			// 동물 소개
+			model.addAttribute("info", bs.info_list(icri));
+			path="tap/page";
+		}else if(pcri.getBgno()==2) { // 만약에 bgno가 2이면
+			// 사진첩
+			model.addAttribute("photo", bs.photo_list(pcri));
+			path="tap/page";
+		}else if(fcri.getBgno()==3) { // 만약에 bgno가 3이면
+			// 자유게시판
+			model.addAttribute("free", bs.free_list(fcri));
+			path="tap/page";
+		}else if(tcri.getBgno()==4) {
+			// 건의 게시판
+			model.addAttribute("tend", bs.tend_list(tcri));
+			path="tap/page";
+		}		
 		int info_total=bs.info_total(icri);
 		int photo_total=bs.photo_total(pcri);
 		int free_total=bs.free_total(fcri);
@@ -43,7 +55,7 @@ public class menuController {
 		model.addAttribute("ppaging", new photo_pageVO(pcri, photo_total));
 		model.addAttribute("fpaging", new free_pageVO(fcri, free_total));
 		model.addAttribute("tpaging", new tend_pageVO(tcri, tend_total));
-		return "/tap/page";
+		return path;
 		
 	}
 

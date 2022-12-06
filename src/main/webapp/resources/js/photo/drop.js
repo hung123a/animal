@@ -1,8 +1,8 @@
 /**
  * 이미지 드래고 앤 드롭 이벤트
  */
-
-  var sec9 = document.querySelector('#photo_border'); 
+$(document).ready(function() {
+	var sec9 = document.querySelector('#photo_border'); 
     var btnUpload = sec9.querySelector('.btn-upload');
     var inputFile = sec9.querySelector('input[type="file"]');
     var uploadBox = sec9.querySelector('.photo_all');
@@ -44,3 +44,4 @@
         var data = e.dataTransfer.files[0];
         console.dir(data);   
     });
+})

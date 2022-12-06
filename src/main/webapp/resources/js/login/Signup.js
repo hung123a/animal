@@ -9,6 +9,7 @@ $(document).ready(function() {
 	var nameresult = "";
 	var emailresult = "";	
 	var phoneresult="";	
+	var rating = $("#rating").val();
 	// 아이디 길이 체크
 	$("#id").on("blur",function() {
 		var idRegex = /^[a-z]+[a-z0-9-_]{4,20}$/g;
@@ -160,15 +161,14 @@ $(document).ready(function() {
 	$("form").on("submit", function(e) {
 		var password = $("#pwd").val();
 		var password2 = $("#pwd2").val();
-		if(idresult == true && passwordresult == true && password2result == true && nameresult == true && emailresult == true && phoneresult == true){
+		if(idresult == true && passwordresult == true && password2result == true && nameresult == true && emailresult == true && phoneresult == true && rating){
 			alert("회원가입을 축하합니다.");			
 		}else if( nameresult == false ){
 			alert("이름을 다시 한번 확인해주세요");
 			e.preventDefault();
 		}else if( idresult == false){
 			alert("id를 다시 한번 확인해주세요");
-			e.preventDefault();
-			console.log("from_idresult="+idresult);
+			e.preventDefault();			
 			return false;
 		}else if( passwordresult == false){
 			alert("비밀번호를 다시 한번해주세요");

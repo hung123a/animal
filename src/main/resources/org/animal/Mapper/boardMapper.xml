@@ -13,10 +13,10 @@
 			information
 		</selectKey>
 		insert into information(ino, animal_name, habitat, look, life, food,
-		enemy, i_type, id)
+		enemy, i_type, id, bgno)
 		values(#{ino},#{animal_name},#{habitat}, #{look},
 		#{life},
-		#{food},#{enemy},#{i_type},#{id})
+		#{food},#{enemy},#{i_type},#{id},#{bgno})
 	</insert>
 
 	<!-- 동물 소개 리스트 -->
@@ -24,13 +24,13 @@
 		resultType="org.animal.model.informationVO">
 		select
 		rownum,i.ino,animal_name,habitat,look,life,food,enemy,date_format(animal_data,
-		'%Y-%m-%d')animal_date,i_type, vision,
+		'%Y-%m-%d')animal_date,i_type, vision, bgno,
 		Concat(Replace(info_upload,'\\','/'),'/',info_uid,'_',info_name)AS
 		main_img
 		from(select @rownum:=@rownum+1 rownum, i.* from information
 		i,(select
 		@rownum:=0)as tmp
-		<if test="ikeyword != null">
+		<!-- <if test="ikeyword != null">
 			<choose>
 				<when test="i_type == 'L'.toString()">
 					where animal_name like concat('%',#{ikeyword},'%')
@@ -40,17 +40,27 @@
 				</when>
 				<when test="i_type == 'S'.toString()">
 					where animal_name like concat('%',#{ikeyword},'%')
-				</when>				
+				</when>
 				<otherwise>
-					where animal_name like concat('%',#{ikeyword},'%')					
+					where animal_name like concat('%',#{ikeyword},'%')
 				</otherwise>
 			</choose>
+		</if> -->
+		<if test="i_type != null">
+			<choose>
+				<when test="type == 'inew'.toString()">
+					ORDER BY ino desc
+				</when>
+				<when test="type == 'irow'.toString()">
+					ORDER BY ino 
+				</when>
+			</choose>
 		</if>
-		order by ino desc		
+		order by ino desc
 		)as i join info_img f on i.ino = f.ino
 		<![CDATA[
 				where rownum > (#{pageNum}-1)*#{amount} and rownum<=#{pageNum}*#{amount} 
-				and vision = 'm'
+				and vision = 'm' and bgno = '1'
 			]]>
 	</select>
 
@@ -61,8 +71,8 @@
 			select ifnull(MAX(fno)+1,1)from
 			free_board
 		</selectKey>
-		insert into free_board(fno, title, contents, free_cnt, id)
-		values(#{fno}, #{title}, #{contents}, #{free_cnt}, #{id})
+		insert into free_board(fno, title, contents, free_cnt, id, bgno)
+		values(#{fno}, #{title}, #{contents}, #{free_cnt}, #{id}, #{bgno})
 	</insert>
 
 	<!-- 자유게시판 리스트 -->
@@ -79,8 +89,8 @@
 			select ifnull(MAX(tno)+1,1)from
 			tendinous
 		</selectKey>
-		insert ignore into tendinous(tno, tendinous_title, tendinous_cont, id)
-		values(#{tno}, #{tendinous_title}, #{tendinous_cont}, #{id})
+		insert ignore into tendinous(tno, tendinous_title, tendinous_cont, id, bgno)
+		values(#{tno}, #{tendinous_title}, #{tendinous_cont}, #{id}, #{bgno})
 	</insert>
 
 	<!-- 건의게시판 리스트 -->

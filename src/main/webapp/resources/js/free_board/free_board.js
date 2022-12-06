@@ -15,6 +15,8 @@ $(document).ready(function() {
 		var title = $("input[name='title']").val();
 		// 내용
 		var contents = $("textarea[name='contents']").val();
+		// 페이지 분류
+		var bgno = $("input[name='bgno']").val();
 		
 			
 		/* 입력란 공백 체크 */
@@ -33,7 +35,7 @@ $(document).ready(function() {
 			$("#contents").css('display','block');
 			contents_chk=false;
 		}		
-		if(title_chk && contents_chk ){
+		if(title_chk && contents_chk && bgno){
 			alert('통과');
 			$("#free_form").append(input).submit();
 		}else{

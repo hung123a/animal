@@ -1,12 +1,14 @@
 package org.animal.service;
 
+import javax.servlet.http.HttpSession;
+
 import org.animal.model.memberVO;
 
 public interface memberService {
 	/* 서비스 */
 	/* 로그인 */
 	// 로그인
-	public memberVO login(memberVO mvo);
+	public boolean login(memberVO mvo, HttpSession session);
 
 	/* 아이디, 비밀번호 찾기 */
 	// 아이디 찾기

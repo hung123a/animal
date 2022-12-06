@@ -82,7 +82,7 @@
 						<br>
 						<!-- ${paging} -->
 						<c:choose>
-							<c:when test="${loginVO.id==null}">
+							<c:when test="${sessionScope.login.id==null}">
 								<div class="pbtn"></div>
 							</c:when>
 							<c:otherwise>

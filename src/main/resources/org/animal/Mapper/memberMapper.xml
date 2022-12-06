@@ -6,8 +6,8 @@
 <mapper namespace="org.animal.mapper.memberMapper">
 	<!-- 회원가입 -->
 	<insert id="signup">
-		insert into member(id, pwd, name, phone, email)
-		values(#{id},#{pwd},#{name},#{phone},#{email})
+		insert into member(id, password, name, phone, email, rating)
+		values(#{id},#{password},#{name},#{phone},#{email}, #{rating})
 	</insert>
 	<!-- 아이디 중복 체크 -->
 	<select id="idcheck" resultType="org.animal.model.memberVO">
@@ -28,7 +28,7 @@
 	<select id="login" resultType="org.animal.model.memberVO">
 		select * from member
 		where id=#{id}
-		and pwd=#{pwd}
+		and password=#{password}
 	</select>
 	<!--로그인 체크 -->
 	<select id="logincheck" resultType="int">
