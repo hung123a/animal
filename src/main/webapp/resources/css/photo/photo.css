@@ -6,10 +6,11 @@
 	/* display: none; 페이지 이동시 나올 수 있게 */
 }
 
-#photo_title{
+#photo_title {
 	border-bottom: 5px solid gray; /* 하단 테두리 및 선 색상 지정 */
 	padding-bottom: 10px; /* 하단 패딩값 10지정 */
 }
+
 #photo_border {
 	padding: 20 0 20 0;
 	text-align: center;
@@ -53,21 +54,42 @@
 .photo_title {
 	padding-bottom: 30px;
 }
+
 #menu_bth {
 	border-top: 3px solid #ddd;
-    overflow: hidden;
+	overflow: hidden;
 }
+
 #uploadResult {
-    padding: 0px 100px 20 100;
+	width: 1300px;
+	margin: auto;
 }
+
 #uploadResult li {
-    list-style: none;
-    border: 1px solid #d3c6c5;
+	border: 1px solid #d3c6c5;
+	margin-bottom: 25px;
+	list-style: none;
+	width: 1300px;
 }
+
 #uploadResult img {
-    width: 200;
-    margin: 25 0 25 25;
+	margin: 25px 0 25px 25px;
+	height: 180px;
+	width: 180px;
 }
+
+.del {
+	margin: 98px 25px 98px 0;
+	border-radius: 9px;
+	padding: 10px;
+	float: right;
+}
+
+.del:hover {
+	background-color: green;
+	color: white;
+}
+
 #button {
 	display: inline-block;
 }

@@ -2,6 +2,8 @@ package org.animal.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -10,7 +12,7 @@ import java.util.UUID;
 
 import org.animal.model.free_uploadVO;
 import org.animal.model.info_uploadVO;
-import org.animal.model.photo_uploadVO;
+import org.animal.model.photoVO;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -162,9 +164,9 @@ public class uploadControoler {
 	
 	/* 사진첩 이미지 업로드 */
 	@RequestMapping(value = "/photo_img", method = RequestMethod.POST)
-	public ResponseEntity<photo_uploadVO> photo_img_Post(MultipartFile photo) {
+	public ResponseEntity<photoVO> photo_img_Post(MultipartFile photo) {
 		// SAttachFileVO클래스 포함
-		photo_uploadVO photovo = new photo_uploadVO();
+		photoVO photovo = new photoVO();
 		// 폴더 경로
 		String uploadFolder = "D:\\upload\\photo";
 		// 서버 업로드 경로와 getFolder메서드의 날짜문자열을 이어서 하나의 폴더 생성
@@ -258,6 +260,24 @@ public class uploadControoler {
 			}
 		}
 		return new ResponseEntity<>(list,HttpStatus.OK);
+	}
+	/*이미지 삭제*/
+	@RequestMapping(value = "/deleteFile", method = RequestMethod.POST)
+	public ResponseEntity<String> deleteFile(String filename, String type) {
+		File file;
+		try {
+			file = new File("D:\\upload\\" + URLDecoder.decode(filename, "UTF-8"));
+			file.delete();
+			if(type.equals("image")) {
+				String largeFileName = file.getAbsolutePath().replace("s_", "");
+				file = new File(largeFileName);
+				file.delete();
+			}
+		}catch(UnsupportedEncodingException e){
+			e.printStackTrace();
+			return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<String>("deleted", HttpStatus.OK);
 	}
 	
 	/*화면 이미지 불러오기*/

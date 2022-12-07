@@ -7,20 +7,31 @@
 <mapper namespace="org.animal.mapper.AttachMapper">
 	<!-- 동물 소개 이미지 -->
 	<insert id="info_insert">
-		insert ignore into info_img(info_uid, info_name, info_image, info_upload,
+		insert ignore into info_img(info_uid, info_name,
+		info_image, info_upload,
 		vision, ino)
-		values(#{info_uid},#{info_name}, #{info_image}, #{info_upload}, #{vision}, #{ino})
+		values(#{info_uid},#{info_name},
+		#{info_image}, #{info_upload}, #{vision}, #{ino})
 	</insert>
-	
+
 	<!-- 자유게시판 이미지 -->
 	<insert id="photo_insert">
-		insert ignore into photo_img(photo_uid, photo_name, photo_image, photo_upload, pno)
-		values(#{photo_uid},#{photo_name}, #{photo_image}, #{photo_upload}, #{pno})
+		<selectKey keyProperty="pno" order="BEFORE" resultType="int">
+			<!-- select 값을 keyProperty="tno"에 추가BEFORE로 먼저 -->
+			select ifnull(MAX(pno)+1,1)from
+			photo
+		</selectKey>
+		insert ignore into photo(photo_uid, photo_name, photo_image,
+		photo_upload, pno, id, bgno)
+		values(#{photo_uid},#{photo_name},
+		#{photo_image}, #{photo_upload}, #{pno}, #{id}, #{bgno})
 	</insert>
-	
+
 	<!-- 자유게시판 이미지 -->
 	<insert id="free_insert">
-		insert ignore into free_img(free_uid, free_name, free_image, free_upload, fno)
-		values(#{free_uid},#{free_name}, #{free_image}, #{free_upload}, #{fno})
+		insert ignore into free_img(free_uid, free_name,
+		free_image, free_upload, fno)
+		values(#{free_uid},#{free_name},
+		#{free_image}, #{free_upload}, #{fno})
 	</insert>
 </mapper>

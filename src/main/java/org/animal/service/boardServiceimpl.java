@@ -9,7 +9,7 @@ import org.animal.model.free_CriteriaVO;
 import org.animal.model.free_boardVO;
 import org.animal.model.informationVO;
 import org.animal.model.photo_CriteriaVO;
-import org.animal.model.photo_uploadVO;
+import org.animal.model.photoVO;
 import org.animal.model.tend_CriteriaVO;
 import org.animal.model.tendinousVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,14 +52,14 @@ public class boardServiceimpl implements boardService {
 
 	/* 사진첩 */
 	// 사진첩 이미지 등록 구현
-/*	public void photo_insert(photo_uploadVO p_img) {
+	public void photo_insert(photoVO p_img) {
 		am.photo_insert(p_img);
 	}
 
 	// 사진첩 리스트 구현
-	public ArrayList<photo_uploadVO> photo_list(photo_CriteriaVO pcri) {
+	public ArrayList<photoVO> photo_list(photo_CriteriaVO pcri) {
 		return bm.photo_list(pcri);
-	}*/
+	}
 
 	/* 자유게시판 */
 	// 자유게시판 글 등록 구현

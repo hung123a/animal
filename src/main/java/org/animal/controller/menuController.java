@@ -6,6 +6,7 @@ import org.animal.model.free_CriteriaVO;
 import org.animal.model.free_boardVO;
 import org.animal.model.free_pageVO;
 import org.animal.model.informationVO;
+import org.animal.model.photoVO;
 import org.animal.model.photo_CriteriaVO;
 import org.animal.model.photo_pageVO;
 import org.animal.model.tend_CriteriaVO;
@@ -83,7 +84,9 @@ public class menuController {
 
 	// 사진첩 글쓰기 등록
 	@RequestMapping(value = "/photo_writing", method = RequestMethod.POST)
-	public String photo_page_post() {
+	public String photo_page_post(photoVO p_img) {
+		System.out.println("사진첩="+p_img);
+		bs.photo_insert(p_img);
 		return "/photo/photo_writing";
 	}
 

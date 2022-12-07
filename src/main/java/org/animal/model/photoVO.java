@@ -1,25 +1,37 @@
 package org.animal.model;
 
-import java.util.ArrayList;
-
 public class photoVO {
-	private int pno; // 사진첩 번호
-	private String photo_img; // 사진첩 이미지
+	private String photo_uid; // 사진 파일정보
+	private String photo_name; // 파일 이름
+	private boolean photo_image; // 파일 설명 사진
+	private String photo_upload; // 파일 저장되어 있는 경로
 	private String photo_data; // 사진첩 등록 일자
-	private String id; // 회원테이블과 조인을 위한 아이디(관리자)
+	private String id; // 회원 아이디
 	private int bgno; // 페이지 분류
-	private ArrayList<photo_uploadVO> p_img;
-	public int getPno() {
-		return pno;
+	private int pno; // 사진 번호
+	public String getPhoto_uid() {
+		return photo_uid;
 	}
-	public void setPno(int pno) {
-		this.pno = pno;
+	public void setPhoto_uid(String photo_uid) {
+		this.photo_uid = photo_uid;
 	}
-	public String getPhoto_img() {
-		return photo_img;
+	public String getPhoto_name() {
+		return photo_name;
 	}
-	public void setPhoto_img(String photo_img) {
-		this.photo_img = photo_img;
+	public void setPhoto_name(String photo_name) {
+		this.photo_name = photo_name;
+	}
+	public boolean isPhoto_image() {
+		return photo_image;
+	}
+	public void setPhoto_image(boolean photo_image) {
+		this.photo_image = photo_image;
+	}
+	public String getPhoto_upload() {
+		return photo_upload;
+	}
+	public void setPhoto_upload(String photo_upload) {
+		this.photo_upload = photo_upload;
 	}
 	public String getPhoto_data() {
 		return photo_data;
@@ -33,23 +45,22 @@ public class photoVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-
 	public int getBgno() {
 		return bgno;
 	}
 	public void setBgno(int bgno) {
 		this.bgno = bgno;
 	}
-	public ArrayList<photo_uploadVO> getP_img() {
-		return p_img;
+	public int getPno() {
+		return pno;
 	}
-	public void setP_img(ArrayList<photo_uploadVO> p_img) {
-		this.p_img = p_img;
+	public void setPno(int pno) {
+		this.pno = pno;
 	}
 	@Override
 	public String toString() {
-		return "photoVO [pno=" + pno + ", photo_img=" + photo_img + ", photo_data=" + photo_data + ", id=" + id
-				+ ", bgno=" + bgno + ", p_img=" + p_img + "]";
-	}
-	
+		return "photoVO [photo_uid=" + photo_uid + ", photo_name=" + photo_name + ", photo_image=" + photo_image
+				+ ", photo_upload=" + photo_upload + ", photo_data=" + photo_data + ", id=" + id + ", bgno=" + bgno
+				+ ", pno=" + pno + "]";
+	}		
 }

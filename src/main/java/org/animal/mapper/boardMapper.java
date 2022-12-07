@@ -7,7 +7,7 @@ import org.animal.model.free_CriteriaVO;
 import org.animal.model.free_boardVO;
 import org.animal.model.informationVO;
 import org.animal.model.photo_CriteriaVO;
-import org.animal.model.photo_uploadVO;
+import org.animal.model.photoVO;
 import org.animal.model.tend_CriteriaVO;
 import org.animal.model.tendinousVO;
 
@@ -24,9 +24,9 @@ public interface boardMapper {
 
 	/* 사진첩 */
 	// 사진첩 이미지 등록 설계
-	/*public void photo_insert(photo_uploadVO p_img);
+	public void photo_insert(photoVO p_img);
 	// 사진첩 리스트 설계
-	public ArrayList<photo_uploadVO> photo_list(photo_CriteriaVO pcri);*/
+	public ArrayList<photoVO> photo_list(photo_CriteriaVO pcri);
 	
 	/* 자유게시판 */
 	// 자유게시판 글 등록 DB설계 

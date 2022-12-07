@@ -43,5 +43,5 @@ $(document).ready(function() {
 
         var data = e.dataTransfer.files[0];
         console.dir(data);   
-    });
+    });    
 })
