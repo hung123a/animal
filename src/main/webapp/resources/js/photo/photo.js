@@ -13,7 +13,7 @@ $(document).ready(function() {
 	function checkExtension(filename, fileSize) {
 		// 파일크기 제한
 		// 실제파일의 크기 > 최대 크기
-		if (fileSize > maxSize) {
+		if (fileSize >= maxSize) {
 			alert("파일 사이즈 초과")
 			return false;
 		}
@@ -26,22 +26,18 @@ $(document).ready(function() {
 		return true;
 	}
 	
-	
-	$("#file").on("change",function(e){
-		e.preventDefault()
-		// .jsp에 form태그를 대체 (FormData함수)
-		var formData = new FormData();
-		var inputFile = $("input[name='photo']");
-		var files = inputFile[0].files;		
+	var cloneojb=$("#uploaddiv").clone();
+	$("input[type='file']").on("change",function(){ // onchange이벤트 : 요소 값이 바뀌였을 때
+		var formData = new FormData(); 	// .jsp에 form태그를 대체 (FormData함수)
+		var inputFile = $("input[name='photo']"); // photo이라는 name을 가진 input
+		var files = inputFile[0].files;	// input 0번에 저장
 		for (var i = 0; i < files.length; i++) {
 			// 함수 호출(checkExtension)
 			if (!checkExtension(files[i].name, files[i].size)){
 				return false;
-			}
-			// .jsp 파일선택을 통해 선택한 파일들을 form태그에 추가
-			formData.append("photo", files[i]);
-		}
-		// ajax를 사용하여 서버를 전송
+			}			
+			formData.append("photo", files[i]); // .jsp 파일선택을 통해 선택한 파일들을 form태그에 추가			
+		}// ajax를 사용하여 서버를 전송
 		$.ajax({
 			url:'/photo_img',
 			data:formData,
@@ -50,31 +46,68 @@ $(document).ready(function() {
 			dataType:"json",
 			type:"POST",
 			success:function(result){
-				console.log("서브이미지(result)="+result);			
-				var str="";			
-				$(result).each(function(i,obj){
-					console.log("obj2="+obj)
-					console.log("obj2.filename="+obj.filename)
-				  	 input += "<input type='text' name='p_img["+i+"].photo_image' value ='" + obj.photo_image + "'><br>";					 					 
-					 input += "<input type='text' name='p_img["+i+"].photo_upload' value ='" + "\\photo\\" + obj.photo_upload + "'><br>";				 
-					 input += "<input type='text' name='p_img["+i+"].photo_uid' value ='" + obj.photo_uid + "'><br>";
-					 input += "<input type='text' name='p_img["+i+"].photo_name' value ='" + obj.photo_name + "'><br>";					 
-					 // 만약 image 결과가 ture이면
-					 // obj.image == true or
-					 if(obj.photo_image){
-							// 아래에 있는거 실행
-							var filePath=encodeURIComponent("\\photo\\" +obj.photo_upload+"\\"+obj.photo_uid+"_"+obj.photo_name)
-							console.log("filePath="+filePath)
-							
-							str += "<li><img src='/display?filename="+filePath+"'><input type='submit' value='삭제하기' class='del'></li>"
-						}else{// 그렇지 않으면
-							// 다운로드 할 수 있도록 실행
-							var filePath=encodeURIComponent("\\photo\\" +obj.photo_upload+"\\"+obj.photo_uid+"_"+obj.photo_name)
-							str += "<li><a href='/download?filename="+filePath+"'>"+obj.photo_name+"</a></li>"
-						 }
-				})
-				$("#uploadResult ul").html(str);
+		
+				console.log("이미지(result)="+result);
+				
+				fileUploadFile(result);
 			}
 		})
+	})
+				
+	var uploadResult = ("#uploadResult ul");
+        // 글쓰기 파트 파일을 삭제할 수 있게하는 파트
+       function fileUploadFile(arr) {
+    	   if(!arr||arr.length==0){return}
+    		var str="";
+				$(arr).each(function(i,file){
+					if(file.image) {
+						// 아래에 있는거 실행
+						var filePath=encodeURIComponent("\\photo\\" +file.photo_upload+"\\"+file.photo_uid+"_"+file.photo_name)
+						str+="<li data-path='"+file.photo_upload+"' data-uuid='"+file.photo_uid+"' data-fileName='"+file.photo_name+"' data-type='"+file.image+"'><div>";
+						str += "<img src='/display?filename="+filePath+"'>"							
+						str += "<button data-file=\'"+ filePath+"\' data-type='image' class='del'>delete</button></li>"
+					}else { // 그렇지 않으면
+						// 다운로드 할 수 있도록 실행
+						var filePath=encodeURIComponent("\\photo\\" +file.photo_upload+"\\"+file.photo_uid+"_"+file.photo_name)
+						str+="<li data-path='"+file.photo_upload+"' data-uuid='"+file.photo_uid+"' data-fileName='"+file.photo_name+"' data-type='"+file.image+"'><div>";
+						str += "<img src='/display?filename="+filePath+"'>"							
+						str += "<button data-file=\'"+ filePath+"\' data-type='image' class='del'>delete</button></li>"
+					}										  	
+				})
+				 $("#uploadResult ul").append(str);								
+			}
+		
+	
+	
+	$("#uploadResult").on("click","button", function(e){
+			console.log("delete File");
+			if(confirm("정말로 지우시겠습니까 ?")) {
+			var targetFile=$(this).data("file");
+			var type=$(this).data("type");
+			var targetLi=$(this).closest("li");
+			$.ajax({
+				url:'/deleteFile',
+				data:{filename:targetFile,type:type},
+				dataType:'text',
+				type:'POST',
+				success:function(result){
+					alert(result);
+					targetLi.remove();
+				}
+			})
+		}
+	})
+	var form=$("form[id='photo_from']");
+	$(".bth").on("click",function(e){
+		var str="";
+		$("#uploadResult ul li").each(function(i,file){
+			
+			str += "<input type='text' name='p_img["+i+"].photo_image' value ='" + file.photo_image + "'><br>";					 					 
+			str += "<input type='text' name='p_img["+i+"].photo_upload' value ='" + "\\photo\\" + file.photo_upload + "'><br>";				 
+			str += "<input type='text' name='p_img["+i+"].photo_uid' value ='" +  file.photo_uid + "'><br>";
+			str += "<input type='text' name='p_img["+i+"].photo_name' value ='" + file.photo_name + "'><br>"; 
+		})
+		console.log("테스트="+file)
+		form.append(str).submit();				 
 	})
 })

@@ -16,15 +16,10 @@
 
 	<!-- 자유게시판 이미지 -->
 	<insert id="photo_insert">
-		<selectKey keyProperty="pno" order="BEFORE" resultType="int">
-			<!-- select 값을 keyProperty="tno"에 추가BEFORE로 먼저 -->
-			select ifnull(MAX(pno)+1,1)from
-			photo
-		</selectKey>
-		insert ignore into photo(photo_uid, photo_name, photo_image,
-		photo_upload, pno, id, bgno)
+		insert ignore into photo_img(photo_uid, photo_name, photo_image,
+		photo_upload, pno)
 		values(#{photo_uid},#{photo_name},
-		#{photo_image}, #{photo_upload}, #{pno}, #{id}, #{bgno})
+		#{photo_image}, #{photo_upload}, #{pno})
 	</insert>
 
 	<!-- 자유게시판 이미지 -->

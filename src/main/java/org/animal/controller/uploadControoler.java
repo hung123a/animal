@@ -12,7 +12,7 @@ import java.util.UUID;
 
 import org.animal.model.free_uploadVO;
 import org.animal.model.info_uploadVO;
-import org.animal.model.photoVO;
+import org.animal.model.photo_uploadVO;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -164,9 +164,9 @@ public class uploadControoler {
 	
 	/* 사진첩 이미지 업로드 */
 	@RequestMapping(value = "/photo_img", method = RequestMethod.POST)
-	public ResponseEntity<photoVO> photo_img_Post(MultipartFile photo) {
+	public ResponseEntity<photo_uploadVO> photo_img_Post(MultipartFile photo) {
 		// SAttachFileVO클래스 포함
-		photoVO photovo = new photoVO();
+		photo_uploadVO photovo = new photo_uploadVO();
 		// 폴더 경로
 		String uploadFolder = "D:\\upload\\photo";
 		// 서버 업로드 경로와 getFolder메서드의 날짜문자열을 이어서 하나의 폴더 생성
@@ -184,7 +184,7 @@ public class uploadControoler {
 		// 실제 파일명(multiparFile.getOriginalFilename())
 		// UUID 적용(UUID_multiparFile.getOriginalFilename())
 		UUID uuid = UUID.randomUUID();
-		System.out.println("info_UUID= " + uuid.toString());
+		System.out.println("photo_img= " + uuid.toString());
 
 		// SAttachFileVO의 uploadPath 변수에 저장()
 		photovo.setPhoto_upload(getFolder());
@@ -206,7 +206,7 @@ public class uploadControoler {
 		} catch (Exception e) {// 예외를 처리하라.
 			System.out.println(e.getMessage());
 		}
-		return new ResponseEntity<>(photovo, HttpStatus.OK);// new ResponseEntity<>(list, HttpStatus.OK);
+		return new ResponseEntity<>(photovo, HttpStatus.OK);
 	}
 	
 	/* 자유게시판 이미지  업로드 */

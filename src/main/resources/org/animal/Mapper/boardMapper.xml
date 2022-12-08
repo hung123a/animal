@@ -63,7 +63,17 @@
 				and vision = 'm' and bgno = '1'
 			]]>
 	</select>
-
+	
+    <!-- 사진첩 글쓰기 등록 -->
+	<insert id="photo_writing">
+		<selectKey keyProperty="pno" order="BEFORE" resultType="int">
+			<!-- select 값을 keyProperty="ino"에 추가BEFORE로 먼저 select -->
+			select ifnull(MAX(pno)+1,1)from
+			photo
+		</selectKey>
+		insert into photo(pno, id, bgno)
+		values(#{pno},#{id},#{bgno})
+	</insert>
 	<!-- 자유게시판 글쓰기 등록 -->
 	<insert id="free_writing">
 		<selectKey keyProperty="fno" order="BEFORE" resultType="int">

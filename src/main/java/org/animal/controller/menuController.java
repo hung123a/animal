@@ -84,10 +84,10 @@ public class menuController {
 
 	// 사진첩 글쓰기 등록
 	@RequestMapping(value = "/photo_writing", method = RequestMethod.POST)
-	public String photo_page_post(photoVO p_img) {
-		System.out.println("사진첩="+p_img);
-		bs.photo_insert(p_img);
-		return "/photo/photo_writing";
+	public String photo_page_post(photoVO photo) {
+		System.out.println("사진첩="+photo);
+		bs.photo_writing(photo);
+		return "redirect:/";
 	}
 
 	/* 자유게시판 */

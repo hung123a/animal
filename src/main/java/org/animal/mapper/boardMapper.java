@@ -24,7 +24,7 @@ public interface boardMapper {
 
 	/* 사진첩 */
 	// 사진첩 이미지 등록 설계
-	public void photo_insert(photoVO p_img);
+	public void photo_writing(photoVO photo);
 	// 사진첩 리스트 설계
 	public ArrayList<photoVO> photo_list(photo_CriteriaVO pcri);
 	

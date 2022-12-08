@@ -52,8 +52,12 @@ public class boardServiceimpl implements boardService {
 
 	/* 사진첩 */
 	// 사진첩 이미지 등록 구현
-	public void photo_insert(photoVO p_img) {
-		am.photo_insert(p_img);
+	public void photo_writing(photoVO photo) {
+		bm.photo_writing(photo);
+		photo.getP_img().forEach(p_img -> {
+			p_img.setPno(photo.getPno());
+			am.photo_insert(p_img);
+		});
 	}
 
 	// 사진첩 리스트 구현
