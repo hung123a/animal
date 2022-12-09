@@ -16,18 +16,6 @@
 	text-align: center;
 }
 
-.photo_all {
-	border: 1px dashed rgba(43, 59, 74, 0.3);
-	background-color: #F8F9F9;
-	justify-content: center;
-	padding: 150 50 150 50;
-	flex-direction: column;
-	align-items: center;
-	border-radius: 4px;
-	width: 1200px;
-	margin: auto;
-}
-
 .btn-upload {
 	width: 150px;
 	height: 30px;

@@ -2,6 +2,9 @@ package org.animal.controller;
 
 import org.animal.model.info_CriteriaVO;
 import org.animal.model.info_pageVO;
+
+import javax.servlet.http.HttpSession;
+
 import org.animal.model.free_CriteriaVO;
 import org.animal.model.free_boardVO;
 import org.animal.model.free_pageVO;
@@ -17,6 +20,7 @@ import org.animal.service.memberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -85,7 +89,7 @@ public class menuController {
 	// 사진첩 글쓰기 등록
 	@RequestMapping(value = "/photo_writing", method = RequestMethod.POST)
 	public String photo_page_post(photoVO photo) {
-		System.out.println("사진첩="+photo);
+		System.out.println("사진첩="+photo);		
 		bs.photo_writing(photo);
 		return "redirect:/";
 	}
