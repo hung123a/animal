@@ -7,10 +7,10 @@
 	<div id="head_cont" class="wrap">
 		<div id="tap_menu">
 			<ul class="tap_list">
-				<li><a href="/page" class="href" onclick="javascript:tabcustom(1);">동물 소개</a></li>
-				<li><a href="/page" class="href" onclick="javascript:tabcustom(2);">사진 첩</a></li>
-				<li><a href="/page" class="href" onclick="javascript:tabcustom(3);">자유게시판</a></li>
-				<li><a href="/page" class="href" onclick="javascript:tabcustom(4);">건의게시판</a></li>
+				<li id="service_aside_list1" class="service_main_kategori" data-tab="tab-1"><a href="/page?bgno=1&pageNum=1" class="href" onclick="javascript:tabcustom(1);">동물 소개</a></li>
+				<li id="service_aside_list2" class="service_main_kategori" data-tab="tab-2"><a href=/page?bgno=2&pageNum=1 class="href" onclick="javascript:tabcustom(2);">사진 첩</a></li>
+				<li id="service_aside_list3" class="service_main_kategori" data-tab="tab-3"><a href="/page?bgno=3&pageNum=1" class="href" onclick="javascript:tabcustom(3);">자유게시판</a></li>
+				<li id="service_aside_list4" class="service_main_kategori" data-tab="tab-4"><a href="/page?bgno=4&pageNum=1" class="href" onclick="javascript:tabcustom(4);">건의게시판</a></li>
 			</ul>
 		</div>
 		<div id="logo">
