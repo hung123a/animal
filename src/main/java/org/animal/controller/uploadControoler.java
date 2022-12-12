@@ -86,7 +86,7 @@ public class uploadControoler {
 		// SAttachFileVO의 fileName 변수에 저장()
 		infovo.setInfo_name(main.getOriginalFilename());
 		// SAttachFileVO의 uuid 변수에 저장()
-		infovo.setInfo_uid(uuid.toString());	
+		infovo.setInfo_uid(uuid.toString());
 		// SAttachFileVO의 vision 변수에 저장()
 		infovo.setVision("m");
 
@@ -138,12 +138,12 @@ public class uploadControoler {
 			// SAttachFileVO의 fileName 변수에 저장()
 			infovo.setInfo_name(multipartFile.getOriginalFilename());
 			// SAttachFileVO의 uuid 변수에 저장()
-			infovo.setInfo_uid(uuid.toString());	
+			infovo.setInfo_uid(uuid.toString());
 			// SAttachFileVO의 vision 변수에 저장()
 			infovo.setVision("s");
 
 			// 어느폴더에(D:\\upload\\현재날짜), 어떤파일이름으로(mainlogo_new.png)
-			File saveFile = new File(uploadPath+"\\"+uuid.toString() + "_" + multipartFile.getOriginalFilename());
+			File saveFile = new File(uploadPath + "\\" + uuid.toString() + "_" + multipartFile.getOriginalFilename());
 			// D:\\upload\\mainlogo_new.png에 파일을 전송(transferTo)
 			try {// transferTo() 메소드에 예외가 있으면
 				multipartFile.transferTo(saveFile); // 서버 원본파일 전송
@@ -159,10 +159,10 @@ public class uploadControoler {
 				System.out.println(e.getMessage());
 			}
 		}
-		return new ResponseEntity<>(list,HttpStatus.OK);
+		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
-	
-	/* 사진첩 이미지 업로드 */
+
+	/* 동물 소개 이미지 메인 업로드 */
 	@RequestMapping(value = "/photo_img", method = RequestMethod.POST)
 	public ResponseEntity<photo_uploadVO> photo_img_Post(MultipartFile photo) {
 		// SAttachFileVO클래스 포함
@@ -173,7 +173,9 @@ public class uploadControoler {
 		File uploadPath = new File(uploadFolder, getFolder());
 
 		// 폴더 생성
-		if (uploadPath.exists() == false) {// uploadPath가 존재하지 않으면,
+		if (uploadPath.exists() == false)
+
+		{// uploadPath가 존재하지 않으면,
 			uploadPath.mkdirs(); // 만들어라
 		}
 
@@ -191,7 +193,7 @@ public class uploadControoler {
 		// SAttachFileVO의 fileName 변수에 저장()
 		photovo.setPhoto_name(photo.getOriginalFilename());
 		// SAttachFileVO의 uuid 변수에 저장()
-		photovo.setPhoto_uid(uuid.toString());		
+		photovo.setPhoto_uid(uuid.toString());
 
 		// 어느폴더에(D:\\upload\\현재날짜), 어떤파일이름으로(mainlogo_new.png)
 		File saveFile = new File(uploadPath + "\\" + uuid.toString() + "_" + photo.getOriginalFilename());
@@ -208,8 +210,8 @@ public class uploadControoler {
 		}
 		return new ResponseEntity<>(photovo, HttpStatus.OK);
 	}
-	
-	/* 자유게시판 이미지  업로드 */
+
+	/* 자유게시판 이미지 업로드 */
 	@RequestMapping(value = "/free_img", method = RequestMethod.POST)
 	public ResponseEntity<ArrayList<free_uploadVO>> free_img_post(MultipartFile[] free_board_img) {
 		ArrayList<free_uploadVO> list = new ArrayList<>();
@@ -240,10 +242,10 @@ public class uploadControoler {
 			// SAttachFileVO의 fileName 변수에 저장()
 			freevo.setFree_name(multipartFile.getOriginalFilename());
 			// SAttachFileVO의 uuid 변수에 저장()
-			freevo.setFree_uid(uuid.toString());			
+			freevo.setFree_uid(uuid.toString());
 
 			// 어느폴더에(D:\\upload\\현재날짜), 어떤파일이름으로(mainlogo_new.png)
-			File saveFile = new File(uploadPath+"\\"+uuid.toString() + "_" + multipartFile.getOriginalFilename());
+			File saveFile = new File(uploadPath + "\\" + uuid.toString() + "_" + multipartFile.getOriginalFilename());
 			// D:\\upload\\mainlogo_new.png에 파일을 전송(transferTo)
 			try {// transferTo() 메소드에 예외가 있으면
 				multipartFile.transferTo(saveFile); // 서버 원본파일 전송
@@ -259,28 +261,29 @@ public class uploadControoler {
 				System.out.println(e.getMessage());
 			}
 		}
-		return new ResponseEntity<>(list,HttpStatus.OK);
+		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
-	/*이미지 삭제*/
+
+	/* 이미지 삭제 */
 	@RequestMapping(value = "/deleteFile", method = RequestMethod.POST)
 	public ResponseEntity<String> deleteFile(String filename, String type) {
 		File file;
 		try {
 			file = new File("D:\\upload\\" + URLDecoder.decode(filename, "UTF-8"));
 			file.delete();
-			if(type.equals("image")) {
+			if (type.equals("image")) {
 				String largeFileName = file.getAbsolutePath().replace("s_", "");
 				file = new File(largeFileName);
 				file.delete();
 			}
-		}catch(UnsupportedEncodingException e){
+		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 			return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<String>("deleted", HttpStatus.OK);
 	}
-	
-	/*화면 이미지 불러오기*/
+
+	/* 화면 이미지 불러오기 */
 	@RequestMapping(value = "/display", method = RequestMethod.GET)
 	public ResponseEntity<byte[]> getFile(String filename) {
 		File file = new File("D:\\upload\\" + filename); // 경로 숨기는 작업
@@ -297,8 +300,7 @@ public class uploadControoler {
 
 		return result;
 	}
-	
-	
+
 	@RequestMapping(value = "/download", method = RequestMethod.GET)
 	public ResponseEntity<Resource> downloadFile(String filename) {
 		Resource resource = new FileSystemResource("D:\\upload\\" + filename);

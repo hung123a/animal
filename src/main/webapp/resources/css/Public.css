@@ -17,8 +17,12 @@ body { /* 바디태그 */
 }
 
 .tap {
-	height: 100%; /* 높이 지정 */
-	/* display: none; 페이지 이동시 나올 수 있게 */
+	height: 100%; /* 높이 지정 */ 
+}
+
+.tap.current {
+	display:inherit;
+	height: 100%; /* 높이 지정 */ 
 }
 
 .btn { /* 버튼 영역 */

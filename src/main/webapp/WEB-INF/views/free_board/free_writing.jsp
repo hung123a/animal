@@ -57,7 +57,7 @@
 						</div>
 					</form>
 					<div class="btn">
-						<a href="/page?type=free_board"><input type="button"
+						<a href="/page?bgno=3&pageNum=1"><input type="button"
 							value="목록으로" class="bth"></a>
 					</div>
 				</div>

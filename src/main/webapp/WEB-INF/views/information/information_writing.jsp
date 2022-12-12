@@ -110,7 +110,7 @@
 						</div>
 					</form>
 					<div class="btn">
-						<a href="/page?type=information"><input type="button"
+						<a href="/page?bgno=1&pageNum=1"><input type="button"
 							value="목록으로" class="bth"></a>
 					</div>
 				</div>

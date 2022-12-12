@@ -7,6 +7,7 @@ public class photoVO {
 	private String id; // 회원 아이디
 	private int bgno; // 페이지 분류
 	private int pno; // 사진 번호
+	private String ph_img; // 이미지 컬럼 합치기
 	private ArrayList<photo_uploadVO> p_img; // 사진첩 이미지 정보 vo 연결
 	public String getPhoto_data() {
 		return photo_data;
@@ -38,10 +39,16 @@ public class photoVO {
 	public void setP_img(ArrayList<photo_uploadVO> p_img) {
 		this.p_img = p_img;
 	}
+	public String getPh_img() {
+		return ph_img;
+	}
+	public void setPh_img(String ph_img) {
+		this.ph_img = ph_img;
+	}
 	@Override
 	public String toString() {
-		return "photoVO [photo_data=" + photo_data + ", id=" + id + ", bgno=" + bgno + ", pno=" + pno + ", p_img="
-				+ p_img + "]";
+		return "photoVO [photo_data=" + photo_data + ", id=" + id + ", bgno=" + bgno + ", pno=" + pno + ", ph_img="
+				+ ph_img + ", p_img=" + p_img + "]";
 	}
 	
 }

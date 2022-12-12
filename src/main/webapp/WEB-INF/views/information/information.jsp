@@ -56,20 +56,20 @@
 						<!-- prev(이전)이 true이면 이전버튼 화설화 -->
 						<c:if test="${ipaging.prev}">
 							<a 
-								href="/page?type=information&pageNum=${ipaging.startPage-1}&amount=${ipaging.icri.amount}">이전</a>
+								href="/page?bgno=1&pageNum=${ipaging.startPage-1}&amount=${ipaging.icri.amount}">이전</a>
 						</c:if>
 
 						<!-- begin(1) end(10)될 동안 반복(1일 10일 될 동안 반복) -->
 						<c:forEach begin="${ipaging.startPage}" end="${ipaging.endPage}"
 							var="num">
 							<a 
-								href="/page?type=information&i_type=${ipaging.icri.i_type}&ikeyword=${ipaging.icri.ikeyword}&pageNum=${num}&amount=${ipaging.icri.amount}">${num}</a>
+								href="/page?bgno=1&i_type=${ipaging.icri.i_type}&ikeyword=${ipaging.icri.ikeyword}&pageNum=${num}&amount=${ipaging.icri.amount}">${num}</a>
 						</c:forEach>
 
 						<!-- next(다음)이 true이면 다음버튼 활성화 -->
 						<c:if test="${ipaging.next}">
 							<a 
-								href="/page?type=information&pageNum=${ipaging.endPage+1}&amount=${ipaging.icri.amount}">다음</a>
+								href="/page?bgno=1&pageNum=${ipaging.endPage+1}&amount=${ipaging.icri.amount}">다음</a>
 						</c:if>
 						<br>
 						<!-- ${paging} -->

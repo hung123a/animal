@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 public class informationVO {
 	private int ino; // 동물 정보 번호
-	private String main_img; // 메인 이미지
-	private String sub_img; // 서브 이미지
+	private String main_img; // 메인 이미지	
 	private String animal_name; // 동물 이름
 	private String habitat; // 서식지
 	private String look; // 생김새와 특징
@@ -29,12 +28,6 @@ public class informationVO {
 	}
 	public void setMain_img(String main_img) {
 		this.main_img = main_img;
-	}
-	public String getSub_img() {
-		return sub_img;
-	}
-	public void setSub_img(String sub_img) {
-		this.sub_img = sub_img;
 	}
 	public String getAnimal_name() {
 		return animal_name;
@@ -112,7 +105,7 @@ public class informationVO {
 	}
 	@Override
 	public String toString() {
-		return "informationVO [ino=" + ino + ", main_img=" + main_img + ", sub_img=" + sub_img + ", animal_name="
+		return "informationVO [ino=" + ino + ", main_img=" + main_img + ", animal_name="
 				+ animal_name + ", habitat=" + habitat + ", look=" + look + ", life=" + life + ", food=" + food
 				+ ", enemy=" + enemy + ", animal_data=" + animal_data + ", i_type=" + i_type + ", id=" + id
 				+ ", animal_date=" + animal_date + ", info=" + info + ", bgno=" + bgno + "]";

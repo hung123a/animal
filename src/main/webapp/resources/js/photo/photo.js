@@ -59,7 +59,7 @@ $(document).ready(function() {
 				$(result).each(function(i, obj) {
 					//console.log(obj)
 					//console.log(obj.fileName)
-				 input += "<input type='text' name='p_img["+i+"].photo_upload' value ='" + obj.photo_upload + "'><br>";
+				 input += "<input type='text' name='p_img["+i+"].photo_upload' value ='" + "\\photo\\" + obj.photo_upload + "'><br>";
 				 input += "<input type='text' name='p_img["+i+"].photo_name' value ='" + obj.photo_name + "'><br>";
 				 input += "<input type='text' name='p_img["+i+"].photo_uid' value ='" + obj.photo_uid + "'><br>";
 				 input += "<input type='text' name='p_img["+i+"].photo_image' value ='" + obj.photo_image + "'><br>";

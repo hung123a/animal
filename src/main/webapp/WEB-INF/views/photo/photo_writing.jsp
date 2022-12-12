@@ -57,7 +57,7 @@
 						</div>
 
 						<div class="btn">
-							<a href="/page?type=photo"><input type="button" value="목록으로"
+							<a href="/page?bgno=2&pageNum=1"><input type="button" value="목록으로"
 								class="bth"></a>
 						</div>
 					</div>
