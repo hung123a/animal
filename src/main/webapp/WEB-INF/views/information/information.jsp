@@ -1,8 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!-- freeboard 영역 -->
-<div class="wrap tap" id="animal_tap" style="display: none;">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동물 커뮤니티</title>
+<!-- 제이쿼리 -->
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
+<!-- 페이지 이동 관련 JS -->
+<script type="text/javascript" src="/resources/js/tap/info.js"></script>
+<link rel="stylesheet" href="/resources/css/tap/page.css">
+<link rel="stylesheet" href="/resources/css/Public.css">
+
+</head>
+<body>
+	<div id="cont">
+		<!-- header 영역 -->
+		<jsp:include page="../include/header.jsp"></jsp:include>
+		<!-- header 영역 끝 -->
+		<div id="center">
+			<div class="wrap" id="main">
+				<div class="wrap tap" id="animal_tap">
 					<!-- 동물 소개 제목 -->
 					<div class="title">
 						<div id="animal_title">
@@ -11,7 +32,7 @@
 					</div>
 					<div class="page_menu">
 						<div class="ranking">
-							<ul>
+							<ul name="type">
 								<li><a href="#" id="inew">최신순</a></li>								
 								<li><a href="#" id="irow">오래된순</a></li>
 							</ul>
@@ -86,4 +107,9 @@
 						</c:choose>
 					</div>
 				</div>
-<!-- freeboard 영역 끝 -->
+			</div>
+		</div>
+		<!-- 센터 영역 끝-->
+	</div>
+</body>
+</html>

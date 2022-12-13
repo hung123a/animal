@@ -1,8 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!-- freeboard 영역 -->
-<div class="wrap tap" id="free_tap" style="display: none;">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동물 커뮤니티</title>
+<!-- 제이쿼리 -->
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
+<link rel="stylesheet" href="/resources/css/tap/page.css">
+<link rel="stylesheet" href="/resources/css/Public.css">
+
+</head>
+<body>
+	<div id="cont">
+		<!-- header 영역 -->
+		<jsp:include page="../include/header.jsp"></jsp:include>
+		<!-- header 영역 끝 -->
+		<div id="center">
+			<div class="wrap" id="main">
+				<div class="wrap tap" id="free_tap">
 					<div class="title">
 						<h1>자유게시판</h1>
 					</div>
@@ -64,20 +83,20 @@
 						<!-- prev(이전)이 true이면 이전버튼 화설화 -->
 						<c:if test="${fpaging.prev}">
 							<a
-								href="/page?type=information?pageNum=${fpaging.startPage-1}&amount=${fpaging.fcri.amount}">이전</a>
+								href="/page?bgno=3&pageNum=${fpaging.startPage-1}&amount=${fpaging.fcri.amount}">이전</a>
 						</c:if>
 
 						<!-- begin(1) end(10)될 동안 반복(1일 10일 될 동안 반복) -->
 						<c:forEach begin="${fpaging.startPage}" end="${fpaging.endPage}"
 							var="num">
 							<a
-								href="/page?type=information?ktype=${fpaging.fcri.ftype}&keyword=${fpaging.fcri.fkeyword}&pageNum=${num}&amount=${fpaging.fcri.amount}">${num}</a>
+								href="/page?bgno=3&ktype=${fpaging.fcri.ftype}&keyword=${fpaging.fcri.fkeyword}&pageNum=${num}&amount=${fpaging.fcri.amount}">${num}</a>
 						</c:forEach>
 
 						<!-- next(다음)이 true이면 다음버튼 활성화 -->
 						<c:if test="${fpaging.next}">
 							<a
-								href="/page?type=information?pageNum=${fpaging.endPage+1}&amount=${fpaging.fcri.amount}">다음</a>
+								href="/page?bgno=3&pageNum=${fpaging.endPage+1}&amount=${fpaging.fcri.amount}">다음</a>
 						</c:if>
 						<br>
 						<!-- ${paging} -->
@@ -95,4 +114,9 @@
 						<!-- 자유게시판 미리 보기 끝 -->
 					</div>
 				</div>
-<!-- freeboard 영역 끝 -->
+			</div>
+		</div>
+		<!-- 센터 영역 끝-->
+	</div>
+</body>
+</html>

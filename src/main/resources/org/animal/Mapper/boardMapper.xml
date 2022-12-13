@@ -30,7 +30,7 @@
 		from(select @rownum:=@rownum+1 rownum, i.* from information
 		i,(select
 		@rownum:=0)as tmp
-		 <!-- <if test="ikeyword != null">
+		<!--   <if test="ikeyword != null">
 			<choose>
 				<when test="i_type == 'L'.toString()">
 					where animal_name like concat('%',#{ikeyword},'%')
@@ -46,7 +46,7 @@
 				</otherwise>
 			</choose>
 		</if>  -->
-		<!-- <if test="i_type != null">
+		<if test="i_type != null">
 			<choose>
 				<when test="type == 'inew'.toString()">
 					ORDER BY ino desc
@@ -55,7 +55,7 @@
 					ORDER BY ino 
 				</when>
 			</choose>
-		</if> -->
+		</if> 
 		order by ino desc
 		)as i join info_img f on i.ino = f.ino
 		<![CDATA[
@@ -131,7 +131,7 @@
 		select count(*) from photo;
 	</select>
 	<select id="free_total" resultType="int">
-		select count(*) from photo;
+		select count(*) from free_board;
 	</select>
 	<select id="tend_total" resultType="int">
 		select count(*) from

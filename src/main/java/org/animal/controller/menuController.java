@@ -38,19 +38,19 @@ public class menuController {
 		if(icri.getBgno()==1) { // 만약에 bgno가 1이면
 			// 동물 소개
 			model.addAttribute("info", bs.info_list(icri));
-			path="tap/page";
+			path="information/information";
 		}else if(pcri.getBgno()==2) { // 만약에 bgno가 2이면
 			// 사진첩
 			model.addAttribute("photo", bs.photo_list(pcri));
-			path="tap/page";
+			path="photo/photo";
 		}else if(fcri.getBgno()==3) { // 만약에 bgno가 3이면
 			// 자유게시판
 			model.addAttribute("free", bs.free_list(fcri));
-			path="tap/page";
+			path="free_board/freeboard";
 		}else if(tcri.getBgno()==4) {
 			// 건의 게시판
 			model.addAttribute("tend", bs.tend_list(tcri));
-			path="tap/page";
+			path="tendinous/tendinous";
 		}		
 		int info_total=bs.info_total(icri);
 		int photo_total=bs.photo_total(pcri);
