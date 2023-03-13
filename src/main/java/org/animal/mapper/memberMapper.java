@@ -15,7 +15,7 @@ public interface memberMapper {
 	public String find_id(@Param("name") String name, @Param("email") String email, @Param("phone") String phone);
 
 	// 비밀번호 찾기
-	@Select("select ifnull(pwd, 0) from member where name=#{name} and email=#{email} and phone=#{phone} and id=#{id}")
+	@Select("select ifnull(password, 0) from member where name=#{name} and email=#{email} and phone=#{phone} and id=#{id}")
 	public String find_pwd(@Param("name") String name, @Param("email") String email, @Param("phone") String phone, @Param("id") String id);
 
 	// 로그인 체크

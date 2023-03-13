@@ -10,8 +10,7 @@
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
-<!-- 페이지 이동 관련 JS -->
-<script type="text/javascript" src="/resources/js/tap/info.js"></script>
+<script type="text/javascript" src="/resources/js/information/info.js"></script>
 <link rel="stylesheet" href="/resources/css/tap/page.css">
 <link rel="stylesheet" href="/resources/css/Public.css">
 
@@ -32,24 +31,26 @@
 					</div>
 					<div class="page_menu">
 						<div class="ranking">
+						<%-- <input type="text" value="${info.type}"> --%>
 							<ul name="type">
-								<li><a href="#" id="inew">최신순</a></li>								
+								<li><a href="#" id="inew">최신순</a></li>
 								<li><a href="#" id="irow">오래된순</a></li>
 							</ul>
 						</div>
 						<!-- 검색영역 -->
 						<div class="seach" id="animal_seach">
-							<form id="seachForm" method="get">
-								<select name="i_type" class="select_menu">
-									<optgroup label="CATEGORY" class="CATEGORY"></optgroup>
-									<option value="LBS">전체 글 보기</option>
+							<form id="seachForm" action="/page" method="get">								
+								<select name="i_type" class="select_menu">									
 									<option value="L">육지 동물</option>
 									<option value="B">조류</option>
 									<option value="S">해상 동물</option>
-								</select> <input type="text" name="ikeyword" class="keyword"> <input
-									type="hidden" name="pageNum" value="#"> <input
-									type="hidden" name="amount" value="#"> <input
-									type="button" value="검색" class="button">
+									<option value="LBS">전체 글 보기</option>
+								</select> 								
+								<input type="text" name="ikeyword" class="keyword">		
+								<input type="text" name="bgno" value="${ipaging.icri.bgno}">
+								<input type="text" name="pageNum" value="${ipaging.icri.pageNum}">						 
+								<input type="text" name="amount" value="${ipaging.icri.amount}">								 
+								<input type="button" value="검색" class="button">
 							</form>
 						</div>
 					</div>
@@ -76,20 +77,20 @@
 					<div class="bottom" id="information_bottom">
 						<!-- prev(이전)이 true이면 이전버튼 화설화 -->
 						<c:if test="${ipaging.prev}">
-							<a 
+							<a
 								href="/page?bgno=1&pageNum=${ipaging.startPage-1}&amount=${ipaging.icri.amount}">이전</a>
 						</c:if>
 
 						<!-- begin(1) end(10)될 동안 반복(1일 10일 될 동안 반복) -->
 						<c:forEach begin="${ipaging.startPage}" end="${ipaging.endPage}"
 							var="num">
-							<a 
+							<a
 								href="/page?bgno=1&i_type=${ipaging.icri.i_type}&ikeyword=${ipaging.icri.ikeyword}&pageNum=${num}&amount=${ipaging.icri.amount}">${num}</a>
 						</c:forEach>
 
 						<!-- next(다음)이 true이면 다음버튼 활성화 -->
 						<c:if test="${ipaging.next}">
-							<a 
+							<a
 								href="/page?bgno=1&pageNum=${ipaging.endPage+1}&amount=${ipaging.icri.amount}">다음</a>
 						</c:if>
 						<br>

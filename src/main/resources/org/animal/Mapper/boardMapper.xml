@@ -29,24 +29,24 @@
 		main_img
 		from(select @rownum:=@rownum+1 rownum, i.* from information
 		i,(select
-		@rownum:=0)as tmp
-		<!--   <if test="ikeyword != null">
+		@rownum:=0)as tmp		
+		   <if test="ikeyword != null">
 			<choose>
 				<when test="i_type == 'L'.toString()">
-					where animal_name like concat('%',#{ikeyword},'%')
+					where i_type="육지 동물" and animal_name like concat('%',#{ikeyword},'%') 					
 				</when>
 				<when test="i_type == 'B'.toString()">
-					where animal_name like concat('%',#{ikeyword},'%')
+					where i_type="조류" and animal_name like concat('%',#{ikeyword},'%')					
 				</when>
 				<when test="i_type == 'S'.toString()">
-					where animal_name like concat('%',#{ikeyword},'%')
+					where i_type="해상 동물" and animal_name like concat('%',#{ikeyword},'%')
 				</when>
 				<otherwise>
 					where animal_name like concat('%',#{ikeyword},'%')
 				</otherwise>
 			</choose>
-		</if>  -->
-		<if test="i_type != null">
+		</if>  
+		 <if test="i_type != null">
 			<choose>
 				<when test="type == 'inew'.toString()">
 					ORDER BY ino desc
@@ -55,8 +55,7 @@
 					ORDER BY ino 
 				</when>
 			</choose>
-		</if> 
-		order by ino desc
+		</if> 		
 		)as i join info_img f on i.ino = f.ino
 		<![CDATA[
 				where rownum > (#{pageNum}-1)*#{amount} and rownum<=#{pageNum}*#{amount} 

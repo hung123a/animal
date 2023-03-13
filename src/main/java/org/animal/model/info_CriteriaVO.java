@@ -5,6 +5,7 @@ public class info_CriteriaVO {
 	private int amount; // 한 페이지당 게시물 갯수
 	private String ikeyword; // 키워드를 통해 검색
 	private String i_type; // 키워드 기준
+	private String type;
 	private int bgno; // 페이지 분류
 
 	// 생성자
@@ -57,10 +58,18 @@ public class info_CriteriaVO {
 		this.bgno = bgno;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	@Override
 	public String toString() {
 		return "info_CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", ikeyword=" + ikeyword + ", i_type="
-				+ i_type + ", bgno=" + bgno + "]";
+				+ i_type + ", type=" + type + ", bgno=" + bgno + "]";
 	}
 
 }

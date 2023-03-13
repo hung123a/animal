@@ -76,7 +76,7 @@ public class menuController {
 	public String info_post(informationVO animal_info) {		
 		System.out.println("동물소개="+animal_info);
 		bs.info_writing(animal_info);
-		return "redirect:/page?type=information";
+		return "redirect:/page?bgno=1&pageNum=1";
 	}
 
 	/* 사진첩 */
@@ -91,7 +91,7 @@ public class menuController {
 	public String photo_page_post(photoVO photo) {
 		System.out.println("사진첩="+photo);		
 		bs.photo_writing(photo);
-		return "redirect:/";
+		return "redirect:/page?bgno=2&pageNum=1";
 	}
 
 	/* 자유게시판 */
@@ -106,7 +106,7 @@ public class menuController {
 	public String free_post(free_boardVO board) {
 		System.out.println("자유게시판="+board);
 		bs.free_writing(board);
-		return "redirect:/page?type=free_board";
+		return "redirect:/page?bgno=3&pageNum=1";
 	}
 
 	/* 건의게시판 */
@@ -120,7 +120,7 @@ public class menuController {
 	@RequestMapping(value = "/tendinous_writing", method = RequestMethod.POST)
 	public String tend_post(tendinousVO tend) {		
 		bs.tend_writing(tend);
-		return "redirect:/page?type=tendinous";
+		return "redirect:/page?bgno=4&pageNum=1";
 	}
 	
 	// 건의게시판 상세보기
